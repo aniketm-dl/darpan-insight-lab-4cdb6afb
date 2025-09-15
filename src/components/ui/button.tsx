@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary-hover shadow-elegant",
+        default: "bg-primary text-primary-foreground hover:bg-primary-hover neon-glow-green",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-border bg-background hover:bg-accent hover:text-accent-foreground hover:border-primary/20",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        outline: "border border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:neon-glow-green",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 neon-glow-blue",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-primary text-black hover:neon-glow-green hover:scale-105 font-semibold border-2 border-transparent hover:border-primary/20",
-        glass: "bg-black/5 backdrop-blur-sm border border-primary/30 text-foreground hover:bg-primary/10 hover:neon-glow-green",
-        neon: "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-black hover:neon-glow-green font-semibold",
+        hero: "bg-primary text-primary-foreground hover:scale-105 font-semibold neon-glow-green hover:brightness-110",
+        glass: "bg-background/10 backdrop-blur-sm border border-primary/30 text-primary hover:bg-primary/20 hover:neon-glow-green",
+        neon: "bg-transparent border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground hover:neon-glow-blue font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",

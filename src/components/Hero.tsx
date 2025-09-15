@@ -11,10 +11,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-subtle">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `url(${heroNetwork})`,
           backgroundSize: "cover",
@@ -25,10 +25,10 @@ const Hero = () => {
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center animate-fade-in">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-            AI-powered customer twins for{" "}
-            <span className="text-gradient">instant insights</span> and{" "}
-            <span className="text-gradient">faster decisions</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="text-neon-green">AI-powered customer twins</span>{" "}
+            <span className="text-foreground">for</span>{" "}
+            <span className="text-neon-blue">instant insights and faster decisions</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">

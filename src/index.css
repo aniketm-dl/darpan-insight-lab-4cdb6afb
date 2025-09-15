@@ -8,108 +8,111 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Dark theme as default to match PPT */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Exact neon green from PPT: #C1E329 */
+    --primary: 75 78% 53%;
+    --primary-foreground: 0 0% 8%;
+    --primary-hover: 75 85% 48%;
+
+    /* Exact neon blue from PPT: #3fb1f0 */
+    --secondary: 201 85% 59%;
+    --secondary-foreground: 0 0% 8%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 75 78% 53%;
+
+    --radius: 0.75rem;
+
+    /* PPT-exact neon colors */
+    --neon-green: 75 78% 53%;  /* #C1E329 */
+    --neon-blue: 201 85% 59%;  /* #3fb1f0 */
+    
+    /* Dark theme gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(75 78% 53%) 0%, hsl(201 85% 59%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 12%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 10%) 100%);
+    
+    /* Neon glow effects for dark theme */
+    --shadow-neon-green: 0 0 40px hsl(75 78% 53% / 0.4), 0 0 80px hsl(75 78% 53% / 0.2);
+    --shadow-neon-blue: 0 0 40px hsl(201 85% 59% / 0.4), 0 0 80px hsl(201 85% 59% / 0.2);
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.2), 0 0 0 1px hsl(0 0% 20%);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 75 78% 53%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 75 78% 53%;
+  }
+
+  .light {
+    /* Light theme for those who prefer it */
     --background: 0 0% 100%;
-    --foreground: 0 0% 5%;
+    --foreground: 0 0% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
+    --popover-foreground: 0 0% 8%;
 
     --primary: 75 78% 53%;
-    --primary-foreground: 0 0% 5%;
+    --primary-foreground: 0 0% 8%;
     --primary-hover: 75 85% 48%;
 
     --secondary: 201 85% 59%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 8%;
 
     --muted: 220 13% 96%;
     --muted-foreground: 220 9% 40%;
 
     --accent: 75 78% 95%;
-    --accent-foreground: 0 0% 5%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
     --border: 220 13% 88%;
     --input: 220 13% 91%;
     --ring: 75 78% 53%;
 
-    --radius: 0.75rem;
-
-    /* Enhanced neon colors for Darpan Labs */
-    --neon-green: 75 78% 53%;
-    --neon-blue: 201 85% 59%;
+    /* Light mode gradients */
     --gradient-primary: linear-gradient(135deg, hsl(75 78% 53%) 0%, hsl(201 85% 59%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(75 78% 53%) 0%, hsl(201 85% 59%) 50%, hsl(75 78% 53%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(75 78% 98%) 100%);
     --gradient-subtle: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(75 78% 98%) 100%);
-    --shadow-neon-green: 0 0 30px hsl(75 78% 53% / 0.3);
-    --shadow-neon-blue: 0 0 30px hsl(201 85% 59% / 0.3);
     --shadow-elegant: 0 10px 30px -10px hsl(75 78% 53% / 0.2);
     --shadow-card: 0 4px 20px -4px hsl(0 0% 5% / 0.08);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
+    
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 0 0% 9%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 11%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 11%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 75 78% 53%;
-    --primary-foreground: 0 0% 9%;
-    --primary-hover: 75 78% 48%;
-
-    --secondary: 201 85% 59%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 0% 18%;
-    --muted-foreground: 220 9% 65%;
-
-    --accent: 75 78% 18%;
-    --accent-foreground: 75 78% 98%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 75 78% 53%;
-
-    /* Dark mode custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(75 78% 53%), hsl(201 85% 59%));
-    --gradient-subtle: linear-gradient(135deg, hsl(0 0% 11%), hsl(0 0% 13%));
-    --shadow-elegant: 0 10px 30px -10px hsl(75 78% 53% / 0.25);
-    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.15);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }

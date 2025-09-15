@@ -42,12 +42,12 @@ const WhatWeDo = () => {
             return (
               <div 
                 key={index}
-                className="text-center p-8 rounded-2xl bg-card card-shadow hover:neon-glow-green transition-all duration-300 hover:-translate-y-2 group"
+                className="text-center p-8 rounded-2xl bg-card card-shadow hover:neon-glow-green transition-all duration-300 hover:-translate-y-2 group border border-border/20"
               >
-                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:neon-glow-green">
-                  <IconComponent className="w-8 h-8 text-black" />
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:neon-glow-green">
+                  <IconComponent className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-neon-green transition-colors">
+                <h3 className="text-xl font-bold text-neon-green mb-3 group-hover:brightness-110 transition-all">
                   {benefit.title}
                 </h3>
                 <p className="text-muted-foreground">
