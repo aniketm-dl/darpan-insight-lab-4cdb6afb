@@ -43,16 +43,16 @@ const Founders = () => {
           {founders.map((founder, index) => (
             <div 
               key={index}
-              className="bg-card rounded-3xl p-6 card-shadow hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 text-center"
+              className="bg-card rounded-3xl p-6 card-shadow hover:neon-glow-green transition-all duration-300 hover:-translate-y-2 text-center border-2 border-transparent hover:border-primary/20"
             >
               <div className="relative mb-6">
                 <img 
                   src={founder.image}
                   alt={founder.name}
-                  className="w-24 h-24 rounded-full mx-auto object-cover"
+                  className="w-24 h-24 rounded-full mx-auto object-cover border-2 border-primary/20"
                 />
-                <div className="absolute -bottom-2 -right-2 bg-primary rounded-full p-2">
-                  <div className="w-3 h-3 bg-white rounded-full" />
+                <div className="absolute -bottom-2 -right-2 bg-gradient-primary rounded-full p-2 neon-glow-green">
+                  <div className="w-3 h-3 bg-black rounded-full" />
                 </div>
               </div>
               
@@ -60,7 +60,7 @@ const Founders = () => {
                 {founder.name}
               </h3>
               
-              <p className="text-primary font-medium mb-3">
+              <p className="text-neon-green font-medium mb-3">
                 {founder.role}
               </p>
               
@@ -69,7 +69,7 @@ const Founders = () => {
               </p>
               
               <Button 
-                variant="outline" 
+                variant="neon" 
                 size="sm"
                 className="w-full"
               >

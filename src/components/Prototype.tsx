@@ -57,12 +57,12 @@ const Prototype = () => {
         </div>
 
         {/* Results Sample */}
-        <div className="mt-16 bg-card rounded-3xl p-8 card-shadow">
-          <h4 className="text-xl font-bold text-foreground mb-4">Sample Results</h4>
-          <div className="bg-accent/50 rounded-2xl p-6 border-l-4 border-primary">
+        <div className="mt-16 bg-card rounded-3xl p-8 card-shadow border-2 border-primary/10 hover:border-primary/30 hover:neon-glow-blue transition-all duration-300">
+          <h4 className="text-xl font-bold text-gradient mb-4">Sample Results</h4>
+          <div className="bg-gradient-primary/10 rounded-2xl p-6 border-l-4 border-primary">
             <p className="text-foreground font-medium mb-2">Profile Page Redesign Test</p>
             <p className="text-muted-foreground">
-              With the redesigned profile page, the model predicts that <span className="font-semibold text-primary">54% of users</span> will use at least one advanced feature — an improvement from the current 33%, representing a <span className="font-semibold text-primary">21% uplift</span> in adoption.
+              With the redesigned profile page, the model predicts that <span className="font-semibold text-neon-green">54% of users</span> will use at least one advanced feature — an improvement from the current 33%, representing a <span className="font-semibold text-neon-blue">21% uplift</span> in adoption.
             </p>
           </div>
         </div>

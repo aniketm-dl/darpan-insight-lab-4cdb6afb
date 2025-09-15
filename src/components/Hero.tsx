@@ -50,7 +50,7 @@ const Hero = () => {
             
             <Button 
               onClick={() => scrollToSection("prototype")}
-              variant="outline" 
+              variant="neon" 
               size="xl"
               className="min-w-[200px]"
             >
@@ -62,22 +62,22 @@ const Hero = () => {
           {/* Trust Indicators */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">85%</div>
+              <div className="text-3xl font-bold text-neon-green mb-2">85%</div>
               <div className="text-sm text-muted-foreground">Personality Match</div>
               <div className="text-xs text-muted-foreground">in 2 hours</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">90%+</div>
+              <div className="text-3xl font-bold text-neon-blue mb-2">90%+</div>
               <div className="text-sm text-muted-foreground">Survey Response</div>
               <div className="text-xs text-muted-foreground">decline rate</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">6 weeks</div>
+              <div className="text-3xl font-bold text-neon-green mb-2">6 weeks</div>
               <div className="text-sm text-muted-foreground">Traditional</div>
               <div className="text-xs text-muted-foreground">research time</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">$65K</div>
+              <div className="text-3xl font-bold text-neon-blue mb-2">$65K</div>
               <div className="text-sm text-muted-foreground">Average cost</div>
               <div className="text-xs text-muted-foreground">per study</div>
             </div>
