@@ -45,7 +45,7 @@ const WhatWeDo = () => {
                 className="text-center p-8 rounded-2xl bg-card card-shadow hover:shadow-elegant transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <IconComponent className="w-8 h-8 text-white" />
+                  <IconComponent className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">
                   {benefit.title}
