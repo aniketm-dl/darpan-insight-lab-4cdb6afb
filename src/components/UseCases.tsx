@@ -75,20 +75,6 @@ const UseCases = () => {
             );
           })}
         </div>
-
-          <div className="mt-16 text-center">
-            <div className="bg-card rounded-3xl p-8 card-shadow max-w-4xl mx-auto border-2 border-primary/10 hover:border-primary/30 hover:neon-glow-green transition-all duration-300">
-              <h3 className="text-2xl font-bold text-gradient mb-4">
-                Market Research Revolution
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                The market research industry is at a crossroad. We, at Darpan Labs, believe customer 
-                digital twins will form the heart of market research. Traditional methods are slow and 
-                costly, but with AI-powered synthetic twins, we can deliver instant, affordable insights 
-                that scale with your business needs.
-              </p>
-            </div>
-          </div>
       </div>
     </section>
   );
