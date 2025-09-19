@@ -7,9 +7,18 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Left - Tagline */}
           <div>
-            <h3 className="text-2xl font-bold text-gradient mb-2">
-              DARPAN LABS
-            </h3>
+            <div className="flex items-center space-x-3 mb-3">
+              {/* Icon/Symbol */}
+              <div className="w-8 h-8 bg-gradient-to-br from-neon-green to-neon-blue rounded-lg flex items-center justify-center">
+                <div className="w-4 h-4 bg-background rounded-sm"></div>
+              </div>
+              
+              {/* Brand Name */}
+              <div className="flex items-baseline">
+                <span className="text-xl font-bold text-white tracking-tight">DARPAN</span>
+                <span className="text-xl font-bold text-neon-green tracking-tight ml-0.5">LABS</span>
+              </div>
+            </div>
             <p className="text-muted-foreground">
               AI-powered customer twins for instant insights and faster decisions
             </p>
