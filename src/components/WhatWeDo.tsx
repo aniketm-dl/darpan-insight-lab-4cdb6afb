@@ -1,14 +1,6 @@
-import { Database, Users, FlaskConical, GitBranch, Share, Filter, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Database, Users, FlaskConical, GitBranch, Share, Filter } from "lucide-react";
 
 const WhatWeDo = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const capabilities = [
     {
       icon: Database,
@@ -94,27 +86,6 @@ const WhatWeDo = () => {
           })}
         </div>
 
-        {/* CTA Row */}
-        <div className="text-center space-y-4 scroll-reveal stagger-8">
-          <Button 
-            onClick={() => scrollToSection("book-demo")}
-            variant="outline" 
-            size="lg"
-            className="min-w-[220px] border-neon-green/30 text-neon-green hover:bg-neon-green/10"
-          >
-            See a Live Capability Walkthrough
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
-          
-          <div className="text-center">
-            <button 
-              onClick={() => scrollToSection("prototype")}
-              className="text-muted-foreground hover:text-neon-blue transition-colors underline underline-offset-4"
-            >
-              Open evidence example
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );
