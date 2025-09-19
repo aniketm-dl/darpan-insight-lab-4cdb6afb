@@ -22,7 +22,7 @@ const PrototypeShowcase = () => {
   };
 
   return (
-    <section id="prototype" className="py-4 md:py-6 bg-background">
+    <section id="prototype" className="py-0 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Dashboard Interface */}
         <div className="bg-card rounded-2xl card-shadow border border-border overflow-hidden animate-fade-in" style={{ backgroundColor: 'hsl(0 0% 8%)' }}>

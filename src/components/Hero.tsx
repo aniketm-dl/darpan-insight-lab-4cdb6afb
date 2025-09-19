@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
+    <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden bg-background">
       {/* Background Image */}
       <div 
         className="absolute inset-0 opacity-5"
@@ -31,7 +31,7 @@ const Hero = () => {
             <span className="text-neon-blue">Evidence</span>
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-white mb-12 max-w-5xl mx-auto leading-[1.5]">
+          <p className="text-lg md:text-xl lg:text-2xl text-white mb-8 max-w-5xl mx-auto leading-[1.5]">
             Simulate real customers to test product, UX, and campaigns before you go live.
             <br className="hidden md:block" />
             Evidence in hours, not weeks.
