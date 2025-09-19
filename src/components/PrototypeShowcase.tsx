@@ -22,10 +22,10 @@ const PrototypeShowcase = () => {
   };
 
   return (
-    <section id="prototype" className="py-0 bg-background">
+    <section id="prototype" className="py-0 bg-background scroll-reveal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Dashboard Interface */}
-        <div className="bg-card rounded-2xl card-shadow border border-border overflow-hidden animate-fade-in" style={{ backgroundColor: 'hsl(0 0% 8%)' }}>
+        <div className="bg-card rounded-2xl card-shadow border border-border overflow-hidden scroll-reveal-scale stagger-1" style={{ backgroundColor: 'hsl(0 0% 8%)' }}>
           {/* Browser Chrome */}
           <div className="flex items-center gap-2 px-4 py-3 bg-black/40 border-b border-border/50">
             <div className="flex gap-1.5">

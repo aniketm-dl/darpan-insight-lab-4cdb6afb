@@ -8,7 +8,11 @@ import Founders from "@/components/Founders";
 import BookDemo from "@/components/BookDemo";
 import Footer from "@/components/Footer";
 
+import { useScrollRevealMultiple } from "@/hooks/useScrollReveal";
+
 const Index = () => {
+  useScrollRevealMultiple();
+
   return (
     <div className="min-h-screen">
       <Header />

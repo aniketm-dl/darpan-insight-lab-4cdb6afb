@@ -37,10 +37,10 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section id="what-we-do" className="py-24 bg-background">
+    <section id="what-we-do" className="py-24 bg-background scroll-reveal">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title and Explainer */}
-        <div className="text-center mb-20 animate-fade-in">
+        <div className="text-center mb-20 scroll-reveal stagger-1">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
             What we do
           </h2>
@@ -56,15 +56,14 @@ const WhatWeDo = () => {
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
+            const animationClass = index === 0 ? 'scroll-reveal-left' : index === 2 ? 'scroll-reveal-right' : 'scroll-reveal';
+            const staggerClass = `stagger-${index + 2}`;
+            
             return (
               <div 
                 key={index}
                 onClick={() => scrollToSection(benefit.anchor)}
-                className="text-left p-8 rounded-2xl bg-card card-shadow transition-all duration-300 hover:-translate-y-1 hover:border-neon-green/50 group border border-border/20 cursor-pointer focus:outline-none focus:ring-2 focus:ring-neon-green/50 animate-fade-in"
-                style={{ 
-                  animationDelay: `${index * 80}ms`,
-                  animationFillMode: 'both'
-                }}
+                className={`text-left p-8 rounded-2xl bg-card card-shadow transition-all duration-300 hover:-translate-y-1 hover:border-neon-green/50 group border border-border/20 cursor-pointer focus:outline-none focus:ring-2 focus:ring-neon-green/50 ${animationClass} ${staggerClass}`}
               >
                 {/* Icon with background accent */}
                 <div className="w-12 h-12 bg-neon-green/10 rounded-xl flex items-center justify-center mb-6">
@@ -83,7 +82,7 @@ const WhatWeDo = () => {
         </div>
 
         {/* Proof Row */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 mb-8 scroll-reveal stagger-5">
           {proofStats.map((stat, index) => (
             <div 
               key={index}
@@ -95,7 +94,7 @@ const WhatWeDo = () => {
         </div>
 
         {/* Inline CTA */}
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-4 scroll-reveal stagger-6">
           <Button 
             onClick={() => scrollToSection("prototype")}
             variant="outline" 
