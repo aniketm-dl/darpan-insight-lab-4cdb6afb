@@ -51,9 +51,6 @@ const Founders = () => {
                   alt={founder.name}
                   className="w-24 h-24 rounded-full mx-auto object-cover border-2 border-primary/20"
                 />
-                <div className="absolute -bottom-2 -right-2 bg-gradient-primary rounded-full p-2 neon-glow-green">
-                  <div className="w-3 h-3 bg-black rounded-full" />
-                </div>
               </div>
               
               <h3 className="text-xl font-bold text-foreground mb-2">
