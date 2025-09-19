@@ -1,5 +1,8 @@
 import { Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import aniketGudadheImg from "@/assets/aniket-gudadhe.png";
+import aniketMishraImg from "@/assets/aniket-mishra.png";
+import manavJainImg from "@/assets/manav-jain.png";
 
 const Founders = () => {
   const founders = [
@@ -7,21 +10,21 @@ const Founders = () => {
       name: "Aniket Gudadhe",
       role: "Co-founder",
       bio: "Product & engineering. Ex-Oracle. IIT Guwahati. Built data-heavy SaaS and automation systems.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: aniketGudadheImg,
       linkedin: "#"
     },
     {
       name: "Aniket Niranjan Mishra", 
       role: "Co-founder",
       bio: "Data science & experimentation. Ex-American Express. IIT Kharagpur. Modeling, measurement, and analytics.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: aniketMishraImg,
       linkedin: "#"
     },
     {
       name: "Manav Jain",
       role: "Co-founder", 
       bio: "Platform & infra. Ex-Google SWE. BITS Pilani. Scalable backends and secure APIs.",
-      image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face",
+      image: manavJainImg,
       linkedin: "#"
     }
   ];
