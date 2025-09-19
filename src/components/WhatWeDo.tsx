@@ -65,11 +65,6 @@ const WhatWeDo = () => {
                 tabIndex={0}
                 role="button"
               >
-                {/* Optional eyebrow label */}
-                <div className="text-xs text-[#A7A7A7] mb-3 font-medium tracking-wide">
-                  CAPABILITY
-                </div>
-                
                 {/* Icon with subtle pill background */}
                 <div className="w-12 h-12 rounded-full bg-white/[0.03] flex items-center justify-center mb-3">
                   <IconComponent className="w-7 h-7 text-neon-green" />
