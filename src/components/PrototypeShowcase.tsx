@@ -25,55 +25,55 @@ const PrototypeShowcase = () => {
     <section id="prototype" className="py-8 md:py-12 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Dashboard Interface */}
-        <div className="bg-card rounded-2xl card-shadow border border-border overflow-hidden animate-fade-in">
+        <div className="bg-card rounded-2xl card-shadow border border-border overflow-hidden animate-fade-in" style={{ backgroundColor: 'hsl(0 0% 8%)' }}>
           {/* Browser Chrome */}
-          <div className="flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border">
+          <div className="flex items-center gap-2 px-4 py-3 bg-black/40 border-b border-border/50">
             <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-red-500/60"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500/60"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500/60"></div>
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
           </div>
 
           {/* Tab Navigation */}
-          <div className="flex items-center px-6 py-4 bg-card border-b border-border">
+          <div className="flex items-center px-6 py-4 bg-black/20 border-b border-border/30">
             <div className="flex gap-8">
               <button 
                 onClick={() => setActiveTab("journeys")}
-                className={`text-sm pb-2 border-b-2 transition-colors ${
+                className={`text-sm pb-3 border-b-2 transition-all duration-200 ${
                   activeTab === "journeys" 
-                    ? "text-primary border-primary font-medium" 
-                    : "text-muted-foreground border-transparent hover:text-foreground"
+                    ? "text-neon-green border-neon-green font-medium" 
+                    : "text-gray-400 border-transparent hover:text-white hover:border-gray-600"
                 }`}
               >
                 Journeys (24)
               </button>
               <button 
                 onClick={() => setActiveTab("screens")}
-                className={`text-sm pb-2 border-b-2 transition-colors ${
+                className={`text-sm pb-3 border-b-2 transition-all duration-200 ${
                   activeTab === "screens" 
-                    ? "text-primary border-primary font-medium" 
-                    : "text-muted-foreground border-transparent hover:text-foreground"
+                    ? "text-neon-green border-neon-green font-medium" 
+                    : "text-gray-400 border-transparent hover:text-white hover:border-gray-600"
                 }`}
               >
                 Screens (58)
               </button>
               <button 
                 onClick={() => setActiveTab("evidence")}
-                className={`text-sm pb-2 border-b-2 transition-colors ${
+                className={`text-sm pb-3 border-b-2 transition-all duration-200 ${
                   activeTab === "evidence" 
-                    ? "text-primary border-primary font-medium" 
-                    : "text-muted-foreground border-transparent hover:text-foreground"
+                    ? "text-neon-green border-neon-green font-medium" 
+                    : "text-gray-400 border-transparent hover:text-white hover:border-gray-600"
                 }`}
               >
                 Evidence (156)
               </button>
               <button 
                 onClick={() => setActiveTab("twins")}
-                className={`text-sm pb-2 border-b-2 transition-colors ${
+                className={`text-sm pb-3 border-b-2 transition-all duration-200 ${
                   activeTab === "twins" 
-                    ? "text-primary border-primary font-medium" 
-                    : "text-muted-foreground border-transparent hover:text-foreground"
+                    ? "text-neon-green border-neon-green font-medium" 
+                    : "text-gray-400 border-transparent hover:text-white hover:border-gray-600"
                 }`}
               >
                 All Twins
@@ -82,38 +82,38 @@ const PrototypeShowcase = () => {
           </div>
 
           {/* Main Dashboard Content */}
-          <div className="grid lg:grid-cols-12 gap-8 p-6">
+          <div className="grid lg:grid-cols-12 gap-8 p-6" style={{ backgroundColor: 'hsl(0 0% 8%)' }}>
             {/* Left Column - Main Analysis */}
             <div className="lg:col-span-8 space-y-6">
               {/* Title and Info */}
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-3">
+                <h2 className="text-2xl font-bold text-white mb-3">
                   Pain-Point Forecast: Checkout Flow
                 </h2>
-                <p className="text-primary text-sm">
+                <p className="text-neon-green text-sm font-medium">
                   Audience: Prosumer (US) • Device: Mobile • Data sources: Figma prototype, session replays
                 </p>
               </div>
 
               {/* Flow Visualization */}
-              <div className="mb-6">
-                <h3 className="text-sm font-medium text-foreground mb-4">Flow</h3>
-                <div className="flex items-center gap-4 flex-wrap">
-                  <div className="px-4 py-2 bg-muted rounded-lg text-sm text-foreground">Cart</div>
-                  <div className="w-4 h-0.5 bg-border"></div>
-                  <div className="px-4 py-2 bg-muted rounded-lg text-sm text-foreground">Address</div>
-                  <div className="w-4 h-0.5 bg-border"></div>
-                  <div className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium">Payment</div>
-                  <div className="w-4 h-0.5 bg-border"></div>
-                  <div className="px-4 py-2 bg-muted rounded-lg text-sm text-foreground">Review</div>
+              <div className="mb-8">
+                <h3 className="text-sm font-medium text-white mb-4">Flow</h3>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <div className="px-4 py-2.5 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-700">Cart</div>
+                  <div className="w-3 h-0.5 bg-gray-600"></div>
+                  <div className="px-4 py-2.5 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-700">Address</div>
+                  <div className="w-3 h-0.5 bg-gray-600"></div>
+                  <div className="px-4 py-2.5 bg-neon-green text-black rounded-lg text-sm font-semibold shadow-lg">Payment</div>
+                  <div className="w-3 h-0.5 bg-gray-600"></div>
+                  <div className="px-4 py-2.5 bg-gray-800 rounded-lg text-sm text-gray-300 border border-gray-700">Review</div>
                 </div>
               </div>
 
               {/* Risk Alert */}
-              <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-4 flex items-start gap-3">
-                <AlertTriangle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+              <div className="bg-red-900/20 border border-red-800/40 rounded-lg p-4 flex items-start gap-3 mb-8">
+                <AlertTriangle className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-destructive font-medium">
+                  <p className="text-red-300 font-medium">
                     Highest risk: Payment step — Predicted drop-off 35% (±6%); Severity High
                   </p>
                 </div>
@@ -121,40 +121,46 @@ const PrototypeShowcase = () => {
 
               {/* Pain Drivers & Evidence */}
               <div>
-                <h3 className="text-lg font-semibold text-foreground mb-4">Pain drivers & evidence</h3>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0">1</div>
-                    <p className="text-sm text-foreground">Payment form appears complex with too many required fields</p>
+                <h3 className="text-lg font-semibold text-white mb-6">Pain drivers & evidence</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-7 h-7 bg-neon-green text-black rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+                    <p className="text-sm text-gray-300 leading-relaxed">Payment form appears complex with too many required fields</p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0">2</div>
-                    <p className="text-sm text-foreground">Error messages lack clarity and recovery guidance</p>
+                  <div className="flex items-start gap-4">
+                    <div className="w-7 h-7 bg-neon-green text-black rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+                    <p className="text-sm text-gray-300 leading-relaxed">Error messages lack clarity and recovery guidance</p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0">3</div>
-                    <p className="text-sm text-foreground">Additional costs not transparent until final step</p>
+                  <div className="flex items-start gap-4">
+                    <div className="w-7 h-7 bg-neon-green text-black rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+                    <p className="text-sm text-gray-300 leading-relaxed">Additional costs not transparent until final step</p>
                   </div>
                 </div>
 
                 {/* User Quote */}
-                <div className="mt-6 pl-4 border-l-4 border-primary/30">
-                  <p className="text-foreground italic mb-1">"Too many fields to fill out, I gave up halfway."</p>
-                  <p className="text-xs text-muted-foreground">— New users mobile</p>
+                <div className="mt-8 pl-4 border-l-4 border-neon-green/40 bg-gray-900/50 p-4 rounded-r-lg">
+                  <p className="text-white italic mb-2 text-base">"Too many fields to fill out, I gave up halfway."</p>
+                  <p className="text-xs text-gray-400">— New users mobile</p>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-3 pt-4">
-                <Button className="bg-primary hover:bg-primary-hover text-primary-foreground">
+              <div className="flex gap-3 pt-8">
+                <Button className="bg-neon-green hover:bg-neon-green/90 text-black font-semibold px-6 py-2.5 shadow-lg">
                   <Plus className="w-4 h-4 mr-2" />
                   Create Jira Tasks
                 </Button>
-                <Button variant="outline">
+                <Button 
+                  variant="outline" 
+                  className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-6 py-2.5"
+                >
                   <Share2 className="w-4 h-4 mr-2" />
                   Share to Figma
                 </Button>
-                <Button variant="ghost">
+                <Button 
+                  variant="ghost" 
+                  className="text-gray-400 hover:text-white hover:bg-gray-800 px-6 py-2.5"
+                >
                   <Copy className="w-4 h-4 mr-2" />
                   Copy summary
                 </Button>
@@ -163,72 +169,72 @@ const PrototypeShowcase = () => {
 
             {/* Right Column - Summary */}
             <div className="lg:col-span-4 space-y-6">
-              <div className="bg-muted/30 rounded-xl p-4">
-                <h4 className="font-semibold text-foreground mb-4">Summary</h4>
+              <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
+                <h4 className="font-semibold text-white mb-6 text-lg">Summary</h4>
                 
-                <div className="space-y-3 mb-6">
-                  <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Baseline completion</span>
-                    <span className="text-sm font-medium text-foreground">58%</span>
+                <div className="space-y-4 mb-8">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-400">Baseline completion</span>
+                    <span className="text-lg font-bold text-white">58%</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Predicted after fixes</span>
-                    <span className="text-sm font-medium text-neon-green">66–70%</span>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-400">Predicted after fixes</span>
+                    <span className="text-lg font-bold text-neon-green">66–70%</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Severity</span>
-                    <span className="text-sm font-medium text-destructive">High</span>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <h5 className="font-medium text-foreground mb-3">At-risk segments</h5>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-sm text-foreground">New users mobile</span>
-                      <Badge variant="destructive" className="text-xs">High</Badge>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-foreground">SMB EU</span>
-                      <Badge variant="outline" className="text-xs border-yellow-500 text-yellow-600 dark:text-yellow-400">Medium</Badge>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-foreground">Enterprise US</span>
-                      <Badge variant="secondary" className="text-xs">Low</Badge>
-                    </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-400">Severity</span>
+                    <span className="text-sm font-semibold text-red-400 bg-red-900/30 px-2 py-1 rounded">High</span>
                   </div>
                 </div>
 
-                <div className="mb-6">
-                  <h5 className="font-medium text-foreground mb-3">Screens most at risk</h5>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-sm text-foreground">Payment step 3</span>
-                      <span className="text-sm font-medium text-destructive">Friction 0.82</span>
+                <div className="mb-8">
+                  <h5 className="font-medium text-white mb-4">At-risk segments</h5>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-300">New users mobile</span>
+                      <span className="text-xs font-semibold text-red-300 bg-red-900/40 px-2 py-1 rounded">High</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-foreground">Address step 2</span>
-                      <span className="text-sm font-medium text-yellow-500">0.57</span>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-300">SMB EU</span>
+                      <span className="text-xs font-semibold text-yellow-300 bg-yellow-900/40 px-2 py-1 rounded">Medium</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-300">Enterprise US</span>
+                      <span className="text-xs font-semibold text-blue-300 bg-blue-900/40 px-2 py-1 rounded">Low</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="mb-6">
-                  <h5 className="font-medium text-foreground mb-3">Design principles affected</h5>
-                  <p className="text-sm text-muted-foreground">Cost transparency, Error recovery, Form complexity</p>
+                <div className="mb-8">
+                  <h5 className="font-medium text-white mb-4">Screens most at risk</h5>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-300">Payment step 3</span>
+                      <span className="text-sm font-semibold text-red-400">Friction 0.82</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-300">Address step 2</span>
+                      <span className="text-sm font-semibold text-yellow-400">0.57</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <h5 className="font-medium text-white mb-4">Design principles affected</h5>
+                  <p className="text-sm text-gray-400 leading-relaxed">Cost transparency, Error recovery, Form complexity</p>
                 </div>
 
                 <div>
-                  <h5 className="font-medium text-foreground mb-3">Recommended actions</h5>
-                  <div className="space-y-2">
+                  <h5 className="font-medium text-white mb-4">Recommended actions</h5>
+                  <div className="space-y-3">
                     <button
                       onClick={() => scrollToSection("book-demo")}
-                      className="block text-sm text-primary hover:text-primary-hover transition-colors duration-200 hover:underline"
+                      className="block text-sm text-neon-green hover:text-neon-green/80 transition-colors duration-200 hover:underline font-medium"
                     >
                       Schedule live A/B
                     </button>
                     <button
-                      className="block text-sm text-primary hover:text-primary-hover transition-colors duration-200 hover:underline"
+                      className="block text-sm text-neon-green hover:text-neon-green/80 transition-colors duration-200 hover:underline font-medium"
                     >
                       Open evidence trace
                     </button>
