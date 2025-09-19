@@ -69,7 +69,7 @@ const WhatWeDo = () => {
                   <IconComponent className="w-7 h-7 text-neon-green transition-transform duration-200 group-hover:scale-110" />
                 </div>
                 
-                <h3 className="text-[21px] font-semibold text-[#EAFEEE] mb-2 tracking-[0.1px] leading-tight max-w-[36ch]">
+                <h3 className="text-[21px] font-semibold text-neon-green mb-2 tracking-[0.1px] leading-tight max-w-[36ch]">
                   {capability.title}
                 </h3>
                 <p className="text-base text-[#D6D6D6] leading-[1.65] max-w-[44ch]">
