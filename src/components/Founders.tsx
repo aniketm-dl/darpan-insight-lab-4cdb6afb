@@ -13,14 +13,14 @@ const Founders = () => {
     {
       name: "Aniket Niranjan Mishra", 
       role: "Co-founder",
-      bio: "BTech+MTech IIT Kharagpur; ex-AmEx Data Science; Markets intern @ Citi; CFA L2",
+      bio: "Data science & experimentation. Ex-American Express. IIT Kharagpur. Modeling, measurement, and analytics.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
       linkedin: "#"
     },
     {
       name: "Manav Jain",
       role: "Co-founder", 
-      bio: "B.E. CSE BITS Pilani; ex-Google SWE; Strategy intern @ WinZO; ACM ICPC regionalist",
+      bio: "Platform & infra. Ex-Google SWE. BITS Pilani. Scalable backends and secure APIs.",
       image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face",
       linkedin: "#"
     }
