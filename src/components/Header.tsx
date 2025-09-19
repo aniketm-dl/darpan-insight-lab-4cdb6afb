@@ -34,17 +34,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex items-center space-x-3">
-              {/* Icon/Symbol */}
-              <div className="w-8 h-8 bg-gradient-to-br from-neon-green to-neon-blue rounded-lg flex items-center justify-center">
-                <div className="w-4 h-4 bg-background rounded-sm"></div>
-              </div>
-              
-              {/* Brand Name */}
-              <div className="flex items-baseline">
-                <span className="text-xl font-bold text-white tracking-tight">DARPAN</span>
-                <span className="text-xl font-bold text-neon-green tracking-tight ml-0.5">LABS</span>
-              </div>
+            <div className="flex items-baseline">
+              <span className="text-xl font-bold text-white tracking-tight">DARPAN</span>
+              <span className="text-xl font-bold text-neon-green tracking-tight ml-0.5">LABS</span>
             </div>
           </div>
 
