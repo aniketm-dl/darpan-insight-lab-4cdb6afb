@@ -1,8 +1,26 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroNetwork from "@/assets/hero-network.jpg";
 
 const Hero = () => {
+  const [typedText, setTypedText] = useState("");
+  const fullText = "Evidence";
+  
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex < fullText.length) {
+        setTypedText(fullText.slice(0, currentIndex + 1));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 150); // 150ms delay between each character
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -28,7 +46,10 @@ const Hero = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             <span className="text-neon-green">From Hunches</span>{" "}
             <span className="text-foreground">to</span>{" "}
-            <span className="text-neon-blue">Evidence</span>
+            <span className="text-neon-blue">
+              {typedText}
+              <span className="animate-pulse">|</span>
+            </span>
           </h1>
           
           <p className="text-lg md:text-xl lg:text-2xl text-white mb-8 max-w-5xl mx-auto leading-[1.5]">
