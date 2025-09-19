@@ -26,9 +26,9 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center animate-fade-in">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-neon-green">AI-powered customer twins</span>{" "}
-            <span className="text-foreground">for</span>{" "}
-            <span className="text-neon-blue">instant insights and faster decisions</span>
+            <span className="text-neon-green">From Hunches</span>{" "}
+            <span className="text-foreground">to</span>{" "}
+            <span className="text-neon-blue">Evidence</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
