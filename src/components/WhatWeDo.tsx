@@ -13,32 +13,32 @@ const WhatWeDo = () => {
     {
       icon: Database,
       title: "Data Ingestion & Connectors",
-      description: "Product analytics, CRM, CX, surveys, public signals; CSV/Parquet upload."
+      description: "Plug in product analytics, CRM, CX, surveys, and public signals. CSV/Parquet supported."
     },
     {
       icon: Users,
       title: "Twin Building", 
-      description: "Create audience-true digital twins; control priors, traits, and sample sizes."
+      description: "Generate audience-true digital twins. Control priors, traits, and sample sizes."
     },
     {
       icon: FlaskConical,
       title: "Experimentation & Simulation",
-      description: "Test content, UX, pricing, and messaging; compare scenario outcomes."
+      description: "Test content, UX, pricing, and messaging. Compare scenarios before you ship."
     },
     {
       icon: GitBranch,
       title: "Journey & Screen Analysis",
-      description: "Predict friction, completion, and step-level risk across flows."
+      description: "Predict friction and completion, pinpoint high-risk steps across flows."
     },
     {
       icon: Share,
       title: "Actions & Handoffs", 
-      description: "Create Jira tasks, copy summaries, export to Figma/Slides/CSV."
+      description: "Create Jira tasks, one-click summaries, and export to Figma, Slides, or CSV."
     },
     {
       icon: Filter,
       title: "Segment & Cohort Targeting",
-      description: "Filter by geo, device, lifecycle, ICP; save reusable cohorts."
+      description: "Filter by geo, device, lifecycle, or ICP—and save reusable cohorts."
     }
   ];
 
@@ -65,7 +65,7 @@ const WhatWeDo = () => {
         </div>
 
         {/* Capability Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6 max-w-[1200px] mx-auto mb-12">
           {capabilities.map((capability, index) => {
             const IconComponent = capability.icon;
             const animationClass = index % 3 === 0 ? 'scroll-reveal-left' : index % 3 === 2 ? 'scroll-reveal-right' : 'scroll-reveal';
@@ -74,18 +74,24 @@ const WhatWeDo = () => {
             return (
               <div 
                 key={index}
-                className={`text-left p-8 rounded-2xl bg-card card-shadow transition-all duration-300 hover:-translate-y-1 hover:border-neon-green/50 group border border-border/20 focus:outline-none focus:ring-2 focus:ring-neon-green/50 ${animationClass} ${staggerClass}`}
+                className={`text-left p-6 md:p-7 bg-[#181A1B] rounded-[20px] border border-white/[0.06] hover:border-white/[0.14] shadow-[0_6px_18px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-0.5 group focus:outline-none focus:ring-2 focus:ring-[#9AE66E] focus:ring-offset-2 focus:ring-offset-background cursor-pointer ${animationClass} ${staggerClass}`}
                 tabIndex={0}
+                role="button"
               >
-                {/* Icon with background accent */}
-                <div className="w-7 h-7 mb-6">
+                {/* Optional eyebrow label */}
+                <div className="text-xs text-[#A7A7A7] mb-3 font-medium tracking-wide">
+                  CAPABILITY
+                </div>
+                
+                {/* Icon with subtle pill background */}
+                <div className="w-12 h-12 rounded-full bg-white/[0.03] flex items-center justify-center mb-3">
                   <IconComponent className="w-7 h-7 text-neon-green" />
                 </div>
                 
-                <h3 className="text-xl font-semibold text-neon-green mb-3 group-hover:brightness-110 transition-all">
+                <h3 className="text-[21px] font-semibold text-[#EAFEEE] mb-2 tracking-[0.1px] leading-tight max-w-[36ch]">
                   {capability.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-base text-[#D6D6D6] leading-[1.65] max-w-[44ch]">
                   {capability.description}
                 </p>
               </div>
