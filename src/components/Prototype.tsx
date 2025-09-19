@@ -3,7 +3,7 @@ import dashboardPrototype from "@/assets/dashboard-prototype.jpg";
 
 const Prototype = () => {
   return (
-    <section id="demo-gallery" className="pt-24 pb-12 bg-muted/30 scroll-reveal">
+    <section id="demo-gallery" className="pt-24 pb-6 bg-muted/30 scroll-reveal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 scroll-reveal stagger-1">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
