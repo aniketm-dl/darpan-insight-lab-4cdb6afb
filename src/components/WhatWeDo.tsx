@@ -1,4 +1,4 @@
-import { Clock, DollarSign, Target, ArrowRight } from "lucide-react";
+import { Database, Users, FlaskConical, GitBranch, Share, Filter, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WhatWeDo = () => {
@@ -9,24 +9,36 @@ const WhatWeDo = () => {
     }
   };
 
-  const benefits = [
+  const capabilities = [
     {
-      icon: Clock,
-      title: "Faster Decisions",
-      description: "Evidence in hours, not weeks.",
-      anchor: "prototype"
+      icon: Database,
+      title: "Data Ingestion & Connectors",
+      description: "Product analytics, CRM, CX, surveys, public signals; CSV/Parquet upload."
     },
     {
-      icon: DollarSign,
-      title: "Lower Cost",
-      description: "Replace repeat research and rework.",
-      anchor: "book-demo"
+      icon: Users,
+      title: "Twin Building", 
+      description: "Create audience-true digital twins; control priors, traits, and sample sizes."
     },
     {
-      icon: Target,
-      title: "Closer to Reality",
-      description: "Twins mirror your audience using your data.",
-      anchor: "prototype"
+      icon: FlaskConical,
+      title: "Experimentation & Simulation",
+      description: "Test content, UX, pricing, and messaging; compare scenario outcomes."
+    },
+    {
+      icon: GitBranch,
+      title: "Journey & Screen Analysis",
+      description: "Predict friction, completion, and step-level risk across flows."
+    },
+    {
+      icon: Share,
+      title: "Actions & Handoffs", 
+      description: "Create Jira tasks, copy summaries, export to Figma/Slides/CSV."
+    },
+    {
+      icon: Filter,
+      title: "Segment & Cohort Targeting",
+      description: "Filter by geo, device, lifecycle, ICP; save reusable cohorts."
     }
   ];
 
@@ -52,29 +64,29 @@ const WhatWeDo = () => {
           </div>
         </div>
 
-        {/* Benefit Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
-          {benefits.map((benefit, index) => {
-            const IconComponent = benefit.icon;
-            const animationClass = index === 0 ? 'scroll-reveal-left' : index === 2 ? 'scroll-reveal-right' : 'scroll-reveal';
+        {/* Capability Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+          {capabilities.map((capability, index) => {
+            const IconComponent = capability.icon;
+            const animationClass = index % 3 === 0 ? 'scroll-reveal-left' : index % 3 === 2 ? 'scroll-reveal-right' : 'scroll-reveal';
             const staggerClass = `stagger-${index + 2}`;
             
             return (
               <div 
                 key={index}
-                onClick={() => scrollToSection(benefit.anchor)}
-                className={`text-left p-8 rounded-2xl bg-card card-shadow transition-all duration-300 hover:-translate-y-1 hover:border-neon-green/50 group border border-border/20 cursor-pointer focus:outline-none focus:ring-2 focus:ring-neon-green/50 ${animationClass} ${staggerClass}`}
+                className={`text-left p-8 rounded-2xl bg-card card-shadow transition-all duration-300 hover:-translate-y-1 hover:border-neon-green/50 group border border-border/20 focus:outline-none focus:ring-2 focus:ring-neon-green/50 ${animationClass} ${staggerClass}`}
+                tabIndex={0}
               >
                 {/* Icon with background accent */}
-                <div className="w-12 h-12 bg-neon-green/10 rounded-xl flex items-center justify-center mb-6">
+                <div className="w-7 h-7 mb-6">
                   <IconComponent className="w-7 h-7 text-neon-green" />
                 </div>
                 
                 <h3 className="text-xl font-semibold text-neon-green mb-3 group-hover:brightness-110 transition-all">
-                  {benefit.title}
+                  {capability.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  {benefit.description}
+                  {capability.description}
                 </p>
               </div>
             );
@@ -93,24 +105,24 @@ const WhatWeDo = () => {
           ))}
         </div>
 
-        {/* Inline CTA */}
-        <div className="text-center space-y-4 scroll-reveal stagger-6">
+        {/* CTA Row */}
+        <div className="text-center space-y-4 scroll-reveal stagger-8">
           <Button 
-            onClick={() => scrollToSection("prototype")}
+            onClick={() => scrollToSection("book-demo")}
             variant="outline" 
             size="lg"
-            className="min-w-[180px] border-neon-green/30 text-neon-green hover:bg-neon-green/10"
+            className="min-w-[220px] border-neon-green/30 text-neon-green hover:bg-neon-green/10"
           >
-            See the Prototype
+            See a Live Capability Walkthrough
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
           
           <div className="text-center">
             <button 
-              onClick={() => scrollToSection("book-demo")}
+              onClick={() => scrollToSection("prototype")}
               className="text-muted-foreground hover:text-neon-blue transition-colors underline underline-offset-4"
             >
-              Book a Demo
+              Open evidence example
             </button>
           </div>
         </div>
