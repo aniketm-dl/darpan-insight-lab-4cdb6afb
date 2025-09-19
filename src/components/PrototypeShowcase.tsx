@@ -136,12 +136,6 @@ const PrototypeShowcase = () => {
                     <p className="text-sm text-gray-300 leading-relaxed">Additional costs not transparent until final step</p>
                   </div>
                 </div>
-
-                {/* User Quote */}
-                <div className="mt-8 pl-4 border-l-4 border-neon-green/40 bg-gray-900/50 p-4 rounded-r-lg">
-                  <p className="text-white italic mb-2 text-base">"Too many fields to fill out, I gave up halfway."</p>
-                  <p className="text-xs text-gray-400">— New users mobile</p>
-                </div>
               </div>
 
               {/* Action Buttons */}
