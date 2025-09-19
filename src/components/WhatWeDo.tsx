@@ -42,11 +42,6 @@ const WhatWeDo = () => {
     }
   ];
 
-  const proofStats = [
-    "Setup: under 1 hour",
-    "Pilot in 2 weeks", 
-    "Works with your data stack"
-  ];
 
   return (
     <section id="what-we-do" className="py-24 bg-background scroll-reveal">
@@ -97,18 +92,6 @@ const WhatWeDo = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Proof Row */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8 scroll-reveal stagger-5">
-          {proofStats.map((stat, index) => (
-            <div 
-              key={index}
-              className="px-4 py-2 bg-card/50 border border-border/30 rounded-full text-sm text-muted-foreground"
-            >
-              {stat}
-            </div>
-          ))}
         </div>
 
         {/* CTA Row */}
