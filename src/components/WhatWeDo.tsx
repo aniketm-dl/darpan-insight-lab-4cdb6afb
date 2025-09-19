@@ -46,7 +46,7 @@ const WhatWeDo = () => {
           
           <div className="max-w-4xl mx-auto mb-8">
             <p className="text-lg md:text-xl text-white leading-[1.5]">
-              We build AI customer twins from your data so teams can test ideas, campaigns, and UX in hours—and ship with confidence.
+              We build AI customer twins from your data so teams can test ideas, campaigns, and UX in hours and ship with confidence.
             </p>
           </div>
         </div>
