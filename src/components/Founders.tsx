@@ -85,21 +85,9 @@ const Founders = () => {
 
         {/* Advisors section */}
         <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold text-foreground mb-6">Advisors</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <div className="bg-card rounded-full px-4 py-2 card-shadow">
-              <span className="text-sm font-medium text-foreground">Dr. Priya Sharma</span>
-              <span className="text-xs text-muted-foreground ml-2">• AI Research, IIT Delhi</span>
-            </div>
-            <div className="bg-card rounded-full px-4 py-2 card-shadow">
-              <span className="text-sm font-medium text-foreground">Rajesh Kumar</span>
-              <span className="text-xs text-muted-foreground ml-2">• Ex-VP Product, Flipkart</span>
-            </div>
-            <div className="bg-card rounded-full px-4 py-2 card-shadow">
-              <span className="text-sm font-medium text-foreground">Sarah Chen</span>
-              <span className="text-xs text-muted-foreground ml-2">• Market Research Director, McKinsey</span>
-            </div>
-          </div>
+          <p className="text-muted-foreground">
+            Advised by experts in consumer psychology and applied AI.
+          </p>
         </div>
       </div>
     </section>
