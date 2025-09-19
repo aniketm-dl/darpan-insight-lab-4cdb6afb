@@ -172,21 +172,6 @@ const PrototypeShowcase = () => {
               <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
                 <h4 className="font-semibold text-white mb-6 text-lg">Summary</h4>
                 
-                <div className="space-y-4 mb-8">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-400">Baseline completion</span>
-                    <span className="text-lg font-bold text-white">58%</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-400">Predicted after fixes</span>
-                    <span className="text-lg font-bold text-neon-green">66–70%</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-400">Severity</span>
-                    <span className="text-sm font-semibold text-red-400 bg-red-900/30 px-2 py-1 rounded">High</span>
-                  </div>
-                </div>
-
                 <div className="mb-8">
                   <h5 className="font-medium text-white mb-4">At-risk segments</h5>
                   <div className="space-y-3">
