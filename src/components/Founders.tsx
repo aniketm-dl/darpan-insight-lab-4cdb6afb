@@ -6,7 +6,7 @@ const Founders = () => {
     {
       name: "Aniket Gudadhe",
       role: "Co-founder",
-      bio: "BTech IIT Guwahati; ex-Oracle Sr. SDE; PM intern @ Innovapptive",
+      bio: "Product & engineering. Ex-Oracle. IIT Guwahati. Built data-heavy SaaS and automation systems.",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
       linkedin: "#"
     },
