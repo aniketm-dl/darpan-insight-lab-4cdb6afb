@@ -195,7 +195,7 @@ const PrototypeShowcase = () => {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-300">Payment step 3</span>
-                      <span className="text-sm font-semibold text-red-400">Friction 0.82</span>
+                      <span className="text-sm font-semibold text-red-400">0.82</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-300">Address step 2</span>
