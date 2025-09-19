@@ -3,10 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
-import { Calendar, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const BookDemo = () => {
   const { toast } = useToast();
@@ -17,7 +16,6 @@ const BookDemo = () => {
     company: "",
     role: "",
     phone: "",
-    interest: "",
     message: "",
     consent: false
   });
@@ -146,36 +144,15 @@ const BookDemo = () => {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone (optional)</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                    className="h-12"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="interest">Primary Interest *</Label>
-                  <Select 
-                    value={formData.interest} 
-                    onValueChange={(value) => handleInputChange("interest", value)}
-                  >
-                    <SelectTrigger className="h-12">
-                      <SelectValue placeholder="Select your primary interest" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="campaigns">Campaigns</SelectItem>
-                      <SelectItem value="product-ux">Product/UX</SelectItem>
-                      <SelectItem value="pricing">Pricing</SelectItem>
-                      <SelectItem value="market-entry">Market Entry</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+              <div className="space-y-2">
+                <Label htmlFor="phone">Phone (optional)</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange("phone", e.target.value)}
+                  className="h-12"
+                />
               </div>
 
               <div className="space-y-2">
