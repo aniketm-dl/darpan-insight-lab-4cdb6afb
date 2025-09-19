@@ -59,10 +59,7 @@ const BookDemo = () => {
                 Thank you!
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                We'll reach out within one business day. You can also email us at{" "}
-                <a href="mailto:hello@darpanlabs.ai" className="text-primary hover:underline">
-                  hello@darpanlabs.ai
-                </a>
+                We'll reach out within one business day.
               </p>
               <Button 
                 onClick={() => setIsSubmitted(false)}
