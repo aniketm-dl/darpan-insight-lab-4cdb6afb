@@ -31,7 +31,7 @@ const Hero = () => {
             <span className="text-neon-blue">Evidence</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-white mb-12 max-w-5xl mx-auto leading-[1.5]">
             Simulate real customers to test product, UX, and campaigns before you go live.
             <br className="hidden md:block" />
             Evidence in hours, not weeks.
