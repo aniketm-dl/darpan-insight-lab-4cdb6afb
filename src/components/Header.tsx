@@ -49,6 +49,12 @@ const Header = () => {
               What We Do
             </button>
             <button 
+              onClick={() => scrollToSection("prototype")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Prototype
+            </button>
+            <button 
               onClick={() => scrollToSection("founders")}
               className="text-foreground hover:text-primary transition-colors"
             >
@@ -81,6 +87,12 @@ const Header = () => {
                 className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
               >
                 What We Do
+              </button>
+              <button 
+                onClick={() => scrollToSection("prototype")}
+                className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
+              >
+                Prototype
               </button>
               <button 
                 onClick={() => scrollToSection("founders")}
