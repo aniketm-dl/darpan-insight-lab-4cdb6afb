@@ -211,22 +211,6 @@ const BookDemo = () => {
                 Submit Demo Request
               </Button>
             </form>
-
-            {/* Calendly placeholder */}
-            <div className="mt-8 pt-8 border-t border-border">
-              <div className="bg-muted/50 rounded-2xl p-6 text-center">
-                <Calendar className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Prefer to schedule directly?
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Book a time slot that works for you
-                </p>
-                <Button variant="outline">
-                  Schedule Meeting
-                </Button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
