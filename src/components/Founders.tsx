@@ -37,8 +37,7 @@ const Founders = () => {
             Meet the founders
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            MBA students at IIM Ahmedabad, with undergrads from IITs/BITS, and prior work 
-            experience in tech, ML & product fields
+            Building the future of customer research with AI-powered customer twins
           </p>
         </div>
 
