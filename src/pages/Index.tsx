@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhatWeDo from "@/components/WhatWeDo";
 import PrototypeShowcase from "@/components/PrototypeShowcase";
-import Prototype from "@/components/Prototype";
 import UseCases from "@/components/UseCases";
 import Founders from "@/components/Founders";
 import BookDemo from "@/components/BookDemo";
@@ -19,7 +18,6 @@ const Index = () => {
       <Hero />
       <PrototypeShowcase />
       <WhatWeDo />
-      <Prototype />
       <UseCases />
       <Founders />
       <BookDemo />
