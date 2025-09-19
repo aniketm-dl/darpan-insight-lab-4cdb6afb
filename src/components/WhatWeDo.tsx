@@ -55,19 +55,18 @@ const WhatWeDo = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6 max-w-[1200px] mx-auto mb-12">
           {capabilities.map((capability, index) => {
             const IconComponent = capability.icon;
-            const animationClass = index % 3 === 0 ? 'scroll-reveal-left' : index % 3 === 2 ? 'scroll-reveal-right' : 'scroll-reveal';
-            const staggerClass = `stagger-${index + 2}`;
             
             return (
               <div 
                 key={index}
-                className={`text-left p-6 md:p-7 bg-[#181A1B] rounded-[20px] border border-white/[0.06] hover:border-white/[0.14] shadow-[0_6px_18px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-0.5 group focus:outline-none focus:ring-2 focus:ring-[#9AE66E] focus:ring-offset-2 focus:ring-offset-background cursor-pointer ${animationClass} ${staggerClass}`}
+                className="text-left p-6 md:p-7 bg-[#181A1B] rounded-[20px] border border-white/[0.06] hover:border-white/[0.14] shadow-[0_6px_18px_rgba(0,0,0,0.12)] transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] group focus:outline-none focus:ring-2 focus:ring-[#9AE66E] focus:ring-offset-2 focus:ring-offset-background cursor-pointer animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
                 tabIndex={0}
                 role="button"
               >
                 {/* Icon with subtle pill background */}
-                <div className="w-12 h-12 rounded-full bg-white/[0.03] flex items-center justify-center mb-3">
-                  <IconComponent className="w-7 h-7 text-neon-green" />
+                <div className="w-12 h-12 rounded-full bg-white/[0.03] flex items-center justify-center mb-3 transition-colors duration-200 group-hover:bg-white/[0.06]">
+                  <IconComponent className="w-7 h-7 text-neon-green transition-transform duration-200 group-hover:scale-110" />
                 </div>
                 
                 <h3 className="text-[21px] font-semibold text-[#EAFEEE] mb-2 tracking-[0.1px] leading-tight max-w-[36ch]">
