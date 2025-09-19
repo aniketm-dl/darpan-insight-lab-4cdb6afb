@@ -85,9 +85,6 @@ const Founders = () => {
         {/* Market Research Revolution section */}
         <div className="mt-16 max-w-4xl mx-auto">
           <div className="bg-card rounded-3xl p-8 card-shadow border-2 border-primary/20">
-            <h3 className="text-2xl font-bold text-neon-green text-center mb-6">
-              Market Research Revolution
-            </h3>
             <p className="text-muted-foreground text-center leading-relaxed">
               The market research industry is at a crossroad. We, at Darpan Labs, believe customer digital twins will form 
               the heart of market research. Traditional methods are slow and costly, but with AI-powered synthetic twins, 
