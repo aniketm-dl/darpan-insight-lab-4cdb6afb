@@ -79,9 +79,9 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl lg:text-2xl text-white mb-8 max-w-5xl mx-auto leading-[1.5]">
-            Simulate real customers to test product, UX, and campaigns before you go live.
+            Simulate real customers to test product, UX, and campaigns before you go live —
             <br className="hidden md:block" />
-            Evidence in hours, not weeks.
+            evidence in hours, not weeks.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
