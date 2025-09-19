@@ -9,16 +9,42 @@ const Hero = () => {
   
   useEffect(() => {
     let currentIndex = 0;
-    const typingInterval = setInterval(() => {
-      if (currentIndex < fullText.length) {
-        setTypedText(fullText.slice(0, currentIndex + 1));
-        currentIndex++;
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, 150); // 150ms delay between each character
-
-    return () => clearInterval(typingInterval);
+    let isTyping = true;
+    
+    const startTypingCycle = () => {
+      currentIndex = 0;
+      isTyping = true;
+      setTypedText("");
+      
+      const typingInterval = setInterval(() => {
+        if (isTyping && currentIndex < fullText.length) {
+          setTypedText(fullText.slice(0, currentIndex + 1));
+          currentIndex++;
+        } else if (isTyping) {
+          // Finished typing, wait a bit then start erasing
+          isTyping = false;
+          setTimeout(() => {
+            const erasingInterval = setInterval(() => {
+              if (currentIndex > 0) {
+                currentIndex--;
+                setTypedText(fullText.slice(0, currentIndex));
+              } else {
+                clearInterval(erasingInterval);
+                // Wait before starting next cycle
+                setTimeout(startTypingCycle, 1000);
+              }
+            }, 100);
+          }, 2000); // Wait 2 seconds after typing completes
+          clearInterval(typingInterval);
+        }
+      }, 150); // 150ms delay between each character
+    };
+    
+    startTypingCycle();
+    
+    return () => {
+      // Cleanup handled by intervals themselves
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
