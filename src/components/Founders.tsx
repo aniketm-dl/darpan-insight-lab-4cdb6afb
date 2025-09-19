@@ -11,21 +11,21 @@ const Founders = () => {
       role: "Co-founder",
       bio: "Product & engineering. Ex-Oracle. IIT Guwahati. Built data-heavy SaaS and automation systems.",
       image: aniketGudadheImg,
-      linkedin: "#"
+      linkedin: "https://www.linkedin.com/in/aniket-g-a19644113/"
     },
     {
       name: "Aniket Niranjan Mishra", 
       role: "Co-founder",
       bio: "Data science & experimentation. Ex-American Express. IIT Kharagpur. Modeling, measurement, and analytics.",
       image: aniketMishraImg,
-      linkedin: "#"
+      linkedin: "https://www.linkedin.com/in/aniket-niranjan-mishra-1203/"
     },
     {
       name: "Manav Jain",
       role: "Co-founder", 
       bio: "Platform & infra. Ex-Google SWE. BITS Pilani. Scalable backends and secure APIs.",
       image: manavJainImg,
-      linkedin: "#"
+      linkedin: "https://www.linkedin.com/in/manav-jain-784176173/"
     }
   ];
 
@@ -72,9 +72,12 @@ const Founders = () => {
                 variant="neon" 
                 size="sm"
                 className="w-full"
+                asChild
               >
-                <Linkedin className="w-4 h-4 mr-2" />
-                LinkedIn
+                <a href={founder.linkedin} target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-4 h-4 mr-2" />
+                  LinkedIn
+                </a>
               </Button>
             </div>
           ))}
