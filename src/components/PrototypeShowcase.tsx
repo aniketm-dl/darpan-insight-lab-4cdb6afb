@@ -114,7 +114,7 @@ const PrototypeShowcase = () => {
                 <AlertTriangle className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-red-300 font-medium">
-                    Highest risk: Payment step — Predicted drop-off 35% (±6%); Severity High
+                    Highest risk: Payment step — Predicted drop-off 35%; Severity High
                   </p>
                 </div>
               </div>
