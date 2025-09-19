@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, ExternalLink, Calendar } from "lucide-react";
+import { ExternalLink, Calendar, AlertTriangle, Share2, Copy, Plus } from "lucide-react";
 
 const PrototypeShowcase = () => {
-  const [isVideoMode, setIsVideoMode] = useState(false);
+  const [activeTab, setActiveTab] = useState("journeys");
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       if (sectionId === "book-demo") {
-        // Focus first form field after scrolling
         setTimeout(() => {
           const firstInput = element.querySelector('input, textarea');
           if (firstInput) {
@@ -25,151 +24,217 @@ const PrototypeShowcase = () => {
   return (
     <section id="prototype" className="py-8 md:py-12 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-8 animate-fade-in">
-          <div className="text-sm text-primary font-medium mb-2">Prototype</div>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Pain-Point Forecast: Checkout Flow
-          </h2>
-          <p className="text-muted-foreground">
-            Audience: Prosumer (US) • Device: Mobile • Data: Figma prototype + session replays
-          </p>
-        </div>
-
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* Left Column - Mockup (65%) */}
-          <div className="lg:col-span-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <div className="bg-card rounded-2xl card-shadow border border-border overflow-hidden hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
-              {/* Browser Chrome */}
-              <div className="flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500/60"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/60"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500/60"></div>
-                </div>
-                {/* Risk Pill */}
-                <div className="ml-auto">
-                  <Badge variant="destructive" className="text-xs">
-                    Highest risk: Payment step — Predicted drop-off 35% (±6%) • Severity High
-                  </Badge>
-                </div>
-              </div>
-
-              {/* Mockup Content */}
-              <div className="aspect-[16/10] relative bg-gradient-to-br from-violet-50 to-violet-100 dark:from-violet-950/20 dark:to-violet-900/20">
-                {!isVideoMode ? (
-                  <>
-                    {/* Placeholder for actual prototype image */}
-                    <div className="absolute inset-4 bg-white dark:bg-card rounded-lg shadow-sm border border-border/50 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 mx-auto mb-4 bg-gradient-primary rounded-2xl flex items-center justify-center">
-                          <Play className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-lg font-semibold text-foreground mb-2">
-                          Interactive Prototype
-                        </h3>
-                        <p className="text-sm text-muted-foreground max-w-xs">
-                          Click to see the checkout flow pain-point analysis in action
-                        </p>
-                      </div>
-                    </div>
-                    
-                    {/* Play Overlay */}
-                    <button 
-                      onClick={() => setIsVideoMode(true)}
-                      className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors duration-300 group"
-                      aria-label="Play prototype video"
-                    >
-                      <div className="w-16 h-16 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-                        <Play className="w-6 h-6 text-card ml-1" />
-                      </div>
-                    </button>
-                  </>
-                ) : (
-                  <div className="absolute inset-4 bg-white dark:bg-card rounded-lg shadow-sm border border-border/50 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-sm text-muted-foreground mb-4">Video player would load here</div>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => setIsVideoMode(false)}
-                      >
-                        Back to Image
-                      </Button>
-                    </div>
-                  </div>
-                )}
-              </div>
+        {/* Dashboard Interface */}
+        <div className="bg-card rounded-2xl card-shadow border border-border overflow-hidden animate-fade-in">
+          {/* Browser Chrome */}
+          <div className="flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border">
+            <div className="flex gap-1.5">
+              <div className="w-3 h-3 rounded-full bg-red-500/60"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500/60"></div>
             </div>
           </div>
 
-          {/* Right Column - Summary Cards (35%) */}
-          <div className="lg:col-span-4 space-y-4">
-            {/* Card 1 - Completion Forecast */}
-            <div className="bg-card rounded-xl card-shadow p-4 hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <h4 className="font-semibold text-foreground mb-2">Completion Forecast</h4>
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-xl font-bold text-muted-foreground">58%</span>
-                <span className="text-sm text-muted-foreground">→</span>
-                <span className="text-xl font-bold text-neon-green">66–70%</span>
-                <span className="text-sm text-muted-foreground">after fixes</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Predicted uplift with simplified payment & clearer errors.
-              </p>
-            </div>
-
-            {/* Card 2 - At-Risk Segments */}
-            <div className="bg-card rounded-xl card-shadow p-4 hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <h4 className="font-semibold text-foreground mb-3">At-Risk Segments</h4>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-foreground">New users (mobile)</span>
-                  <Badge variant="destructive" className="text-xs">High</Badge>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-foreground">SMB EU</span>
-                  <Badge variant="outline" className="text-xs border-yellow-500 text-yellow-600 dark:text-yellow-400">Medium</Badge>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 - Screens Most at Risk */}
-            <div className="bg-card rounded-xl card-shadow p-4 hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <h4 className="font-semibold text-foreground mb-3">Screens Most at Risk</h4>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-foreground">Payment step 3</span>
-                  <span className="text-sm font-medium text-destructive">Friction 0.82</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-foreground">Address step 2</span>
-                  <span className="text-sm font-medium text-yellow-500">0.57</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Action Links */}
-            <div className="pt-4 space-y-3 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-              <button
-                onClick={() => scrollToSection("book-demo")}
-                className="flex items-center gap-2 text-sm text-primary hover:text-primary-hover transition-colors duration-200 group"
+          {/* Tab Navigation */}
+          <div className="flex items-center px-6 py-4 bg-card border-b border-border">
+            <div className="flex gap-8">
+              <button 
+                onClick={() => setActiveTab("journeys")}
+                className={`text-sm pb-2 border-b-2 transition-colors ${
+                  activeTab === "journeys" 
+                    ? "text-primary border-primary font-medium" 
+                    : "text-muted-foreground border-transparent hover:text-foreground"
+                }`}
               >
-                <Calendar className="w-4 h-4" />
-                <span className="border-b border-transparent group-hover:border-primary-hover transition-colors duration-200">
-                  Schedule live A/B
-                </span>
+                Journeys (24)
               </button>
-              
-              <button
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 group"
+              <button 
+                onClick={() => setActiveTab("screens")}
+                className={`text-sm pb-2 border-b-2 transition-colors ${
+                  activeTab === "screens" 
+                    ? "text-primary border-primary font-medium" 
+                    : "text-muted-foreground border-transparent hover:text-foreground"
+                }`}
               >
-                <ExternalLink className="w-4 h-4" />
-                <span className="border-b border-transparent group-hover:border-foreground transition-colors duration-200">
-                  Open evidence trace
-                </span>
+                Screens (58)
               </button>
+              <button 
+                onClick={() => setActiveTab("evidence")}
+                className={`text-sm pb-2 border-b-2 transition-colors ${
+                  activeTab === "evidence" 
+                    ? "text-primary border-primary font-medium" 
+                    : "text-muted-foreground border-transparent hover:text-foreground"
+                }`}
+              >
+                Evidence (156)
+              </button>
+              <button 
+                onClick={() => setActiveTab("twins")}
+                className={`text-sm pb-2 border-b-2 transition-colors ${
+                  activeTab === "twins" 
+                    ? "text-primary border-primary font-medium" 
+                    : "text-muted-foreground border-transparent hover:text-foreground"
+                }`}
+              >
+                All Twins
+              </button>
+            </div>
+          </div>
+
+          {/* Main Dashboard Content */}
+          <div className="grid lg:grid-cols-12 gap-8 p-6">
+            {/* Left Column - Main Analysis */}
+            <div className="lg:col-span-8 space-y-6">
+              {/* Title and Info */}
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-3">
+                  Pain-Point Forecast: Checkout Flow
+                </h2>
+                <p className="text-primary text-sm">
+                  Audience: Prosumer (US) • Device: Mobile • Data sources: Figma prototype, session replays
+                </p>
+              </div>
+
+              {/* Flow Visualization */}
+              <div className="mb-6">
+                <h3 className="text-sm font-medium text-foreground mb-4">Flow</h3>
+                <div className="flex items-center gap-4 flex-wrap">
+                  <div className="px-4 py-2 bg-muted rounded-lg text-sm text-foreground">Cart</div>
+                  <div className="w-4 h-0.5 bg-border"></div>
+                  <div className="px-4 py-2 bg-muted rounded-lg text-sm text-foreground">Address</div>
+                  <div className="w-4 h-0.5 bg-border"></div>
+                  <div className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium">Payment</div>
+                  <div className="w-4 h-0.5 bg-border"></div>
+                  <div className="px-4 py-2 bg-muted rounded-lg text-sm text-foreground">Review</div>
+                </div>
+              </div>
+
+              {/* Risk Alert */}
+              <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-4 flex items-start gap-3">
+                <AlertTriangle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-destructive font-medium">
+                    Highest risk: Payment step — Predicted drop-off 35% (±6%); Severity High
+                  </p>
+                </div>
+              </div>
+
+              {/* Pain Drivers & Evidence */}
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-4">Pain drivers & evidence</h3>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0">1</div>
+                    <p className="text-sm text-foreground">Payment form appears complex with too many required fields</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0">2</div>
+                    <p className="text-sm text-foreground">Error messages lack clarity and recovery guidance</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0">3</div>
+                    <p className="text-sm text-foreground">Additional costs not transparent until final step</p>
+                  </div>
+                </div>
+
+                {/* User Quote */}
+                <div className="mt-6 pl-4 border-l-4 border-primary/30">
+                  <p className="text-foreground italic mb-1">"Too many fields to fill out, I gave up halfway."</p>
+                  <p className="text-xs text-muted-foreground">— New users mobile</p>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-3 pt-4">
+                <Button className="bg-primary hover:bg-primary-hover text-primary-foreground">
+                  <Plus className="w-4 h-4 mr-2" />
+                  Create Jira Tasks
+                </Button>
+                <Button variant="outline">
+                  <Share2 className="w-4 h-4 mr-2" />
+                  Share to Figma
+                </Button>
+                <Button variant="ghost">
+                  <Copy className="w-4 h-4 mr-2" />
+                  Copy summary
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Column - Summary */}
+            <div className="lg:col-span-4 space-y-6">
+              <div className="bg-muted/30 rounded-xl p-4">
+                <h4 className="font-semibold text-foreground mb-4">Summary</h4>
+                
+                <div className="space-y-3 mb-6">
+                  <div className="flex justify-between">
+                    <span className="text-sm text-muted-foreground">Baseline completion</span>
+                    <span className="text-sm font-medium text-foreground">58%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-muted-foreground">Predicted after fixes</span>
+                    <span className="text-sm font-medium text-neon-green">66–70%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm text-muted-foreground">Severity</span>
+                    <span className="text-sm font-medium text-destructive">High</span>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <h5 className="font-medium text-foreground mb-3">At-risk segments</h5>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm text-foreground">New users mobile</span>
+                      <Badge variant="destructive" className="text-xs">High</Badge>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm text-foreground">SMB EU</span>
+                      <Badge variant="outline" className="text-xs border-yellow-500 text-yellow-600 dark:text-yellow-400">Medium</Badge>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm text-foreground">Enterprise US</span>
+                      <Badge variant="secondary" className="text-xs">Low</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <h5 className="font-medium text-foreground mb-3">Screens most at risk</h5>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm text-foreground">Payment step 3</span>
+                      <span className="text-sm font-medium text-destructive">Friction 0.82</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm text-foreground">Address step 2</span>
+                      <span className="text-sm font-medium text-yellow-500">0.57</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <h5 className="font-medium text-foreground mb-3">Design principles affected</h5>
+                  <p className="text-sm text-muted-foreground">Cost transparency, Error recovery, Form complexity</p>
+                </div>
+
+                <div>
+                  <h5 className="font-medium text-foreground mb-3">Recommended actions</h5>
+                  <div className="space-y-2">
+                    <button
+                      onClick={() => scrollToSection("book-demo")}
+                      className="block text-sm text-primary hover:text-primary-hover transition-colors duration-200 hover:underline"
+                    >
+                      Schedule live A/B
+                    </button>
+                    <button
+                      className="block text-sm text-primary hover:text-primary-hover transition-colors duration-200 hover:underline"
+                    >
+                      Open evidence trace
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
