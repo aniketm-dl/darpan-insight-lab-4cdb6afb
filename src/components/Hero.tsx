@@ -31,10 +31,10 @@ const Hero = () => {
             <span className="text-neon-blue">Evidence</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-            Simulate real customers to test product, UX, and campaigns before you go live—
+          <p className="text-xl md:text-2xl text-white mb-12 max-w-4xl mx-auto leading-relaxed">
+            Simulate real customers to test product, UX, and campaigns before you go live.
             <br className="hidden md:block" />
-            evidence in hours, not weeks.
+            Evidence in hours, not weeks.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
