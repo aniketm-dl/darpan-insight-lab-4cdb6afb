@@ -51,7 +51,7 @@ const Founders = () => {
                 <img 
                   src={founder.image}
                   alt={founder.name}
-                  className="w-24 h-24 rounded-full mx-auto object-cover border-2 border-primary/20"
+                  className="w-32 h-32 rounded-full mx-auto object-cover border-2 border-primary/20"
                 />
               </div>
               
