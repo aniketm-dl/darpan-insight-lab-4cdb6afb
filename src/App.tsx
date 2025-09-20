@@ -9,6 +9,26 @@ import NotFound from "./pages/NotFound";
 // Import Space Grotesk font
 import '@fontsource/space-grotesk';
 
+// Import and set favicon
+import faviconUrl from "@/assets/favicon-dl.png";
+
+// Set favicon dynamically
+const setFavicon = () => {
+  const existingLink = document.querySelector("link[rel*='icon']") as HTMLLinkElement;
+  const link = existingLink || document.createElement('link') as HTMLLinkElement;
+  link.type = 'image/png';
+  link.rel = 'shortcut icon';
+  link.href = faviconUrl;
+  if (!existingLink) {
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }
+};
+
+// Set favicon on load
+if (typeof window !== 'undefined') {
+  setFavicon();
+}
+
 const queryClient = new QueryClient();
 
 const App = () => (
