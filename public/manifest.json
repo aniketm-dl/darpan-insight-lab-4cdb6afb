@@ -1,0 +1,17 @@
+{
+  "name": "Darpan Labs",
+  "short_name": "Darpan Labs",
+  "description": "AI-powered customer twins for instant insights and faster decisions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A1A1A",
+  "theme_color": "#C1E329",
+  "icons": [
+    {
+      "src": "/favicon-dl.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
