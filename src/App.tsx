@@ -10,7 +10,7 @@ import NotFound from "./pages/NotFound";
 import '@fontsource/space-grotesk';
 
 // Import and set favicon
-import faviconUrl from "@/assets/favicon-dl.png";
+import faviconUrl from "@/assets/favicon-dl-large.png";
 
 // Set favicon dynamically
 const setFavicon = () => {
