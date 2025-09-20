@@ -34,10 +34,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex items-baseline">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex items-baseline hover:opacity-80 transition-opacity"
+            >
               <span className="text-xl font-bold text-white tracking-tight">DARPAN</span>
               <span className="text-xl font-bold text-neon-green tracking-tight ml-0.5">LABS</span>
-            </div>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
