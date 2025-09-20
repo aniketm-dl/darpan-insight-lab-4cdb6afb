@@ -71,7 +71,7 @@ export default {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
