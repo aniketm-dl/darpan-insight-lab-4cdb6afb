@@ -37,7 +37,7 @@ const BookDemo = () => {
       setIsSubmitted(true);
       toast({
         title: "Demo Request Submitted!",
-        description: "We'll reach out within one business day.",
+        description: "We'll reach out shortly.",
       });
     }, 1000);
   };
@@ -59,7 +59,7 @@ const BookDemo = () => {
                 Thank you!
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                We'll reach out within one business day.
+                We'll reach out shortly.
               </p>
               <Button 
                 onClick={() => setIsSubmitted(false)}
