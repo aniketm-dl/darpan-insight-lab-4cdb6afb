@@ -55,10 +55,6 @@ const BookDemo = () => {
     }
 
     setIsSubmitted(true);
-    toast({
-      title: "Demo Request Submitted!",
-      description: "We'll reach out shortly.",
-    });
   };
 
   const handleInputChange = (field: string, value: string | boolean) => {
