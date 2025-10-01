@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { CheckCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const BookDemo = () => {
   const { toast } = useToast();
@@ -20,7 +21,7 @@ const BookDemo = () => {
     consent: false
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.consent) {
@@ -32,14 +33,32 @@ const BookDemo = () => {
       return;
     }
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitted(true);
-      toast({
-        title: "Demo Request Submitted!",
-        description: "We'll reach out shortly.",
+    // Save to database
+    const { error } = await supabase
+      .from('demo_submissions')
+      .insert({
+        name: formData.name,
+        email: formData.email,
+        company: formData.company,
+        role: formData.role,
+        phone: formData.phone || null,
+        message: formData.message || null,
       });
-    }, 1000);
+
+    if (error) {
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitted(true);
+    toast({
+      title: "Demo Request Submitted!",
+      description: "We'll reach out shortly.",
+    });
   };
 
   const handleInputChange = (field: string, value: string | boolean) => {
