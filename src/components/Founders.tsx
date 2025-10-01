@@ -67,17 +67,14 @@ const Founders = () => {
                 {founder.bio}
               </p>
               
-              <Button 
-                variant="neon" 
-                size="sm"
-                className="w-full"
-                asChild
+              <a 
+                href={founder.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary transition-all duration-300 hover:neon-glow-green"
               >
-                <a href={founder.linkedin} target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </a>
-              </Button>
+                <Linkedin className="w-5 h-5 text-primary" />
+              </a>
             </div>
           ))}
         </div>
