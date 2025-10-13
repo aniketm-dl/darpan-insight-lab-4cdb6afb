@@ -9,21 +9,30 @@ const Founders = () => {
     {
       name: "Aniket Gudadhe",
       role: "Co-founder",
-      bio: "Product & engineering. Ex-Oracle. IIT Guwahati. Built data-heavy SaaS and automation systems.",
+      experience: [
+        "Product & engineering. Ex-Oracle. IIT Guwahati.",
+        "Built data-heavy SaaS and automation systems."
+      ],
       image: aniketGudadheImg,
       linkedin: "https://www.linkedin.com/in/aniket-g-a19644113/"
     },
     {
       name: "Aniket Niranjan Mishra", 
       role: "Co-founder",
-      bio: "Data science & experimentation. Ex-American Express. IIT Kharagpur. Modeling, measurement, and analytics.",
+      experience: [
+        "Data science & experimentation. Ex-American Express. IIT Kharagpur.",
+        "Modeling, measurement, and analytics."
+      ],
       image: aniketMishraImg,
       linkedin: "https://www.linkedin.com/in/aniket-niranjan-mishra-1203/"
     },
     {
       name: "Manav Jain",
-      role: "Co-founder", 
-      bio: "Platform & infra. Ex-Google SWE. BITS Pilani. Scalable backends and secure APIs.",
+      role: "Co-founder",
+      experience: [
+        "Platform & infra. Ex-Google SWE. BITS Pilani.",
+        "Scalable backends and secure APIs."
+      ],
       image: manavJainImg,
       linkedin: "https://www.linkedin.com/in/manav-jain-784176173/"
     }
@@ -43,9 +52,12 @@ const Founders = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {founders.map((founder, index) => (
-            <div 
+            <a 
               key={index}
-              className="bg-card rounded-3xl p-6 card-shadow hover:neon-glow-green transition-all duration-300 hover:-translate-y-2 text-center border-2 border-transparent hover:border-primary/20"
+              href={founder.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-card rounded-3xl p-6 card-shadow hover:neon-glow-green transition-all duration-300 hover:-translate-y-2 text-center border-2 border-transparent hover:border-primary/20 block cursor-pointer"
             >
               <div className="relative mb-6">
                 <img 
@@ -59,23 +71,20 @@ const Founders = () => {
                 {founder.name}
               </h3>
               
-              <p className="text-neon-green font-medium mb-3">
+              <p className="text-neon-green font-medium mb-6">
                 {founder.role}
               </p>
               
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                {founder.bio}
-              </p>
+              <ul className="text-muted-foreground text-sm leading-relaxed mb-6 space-y-3">
+                {founder.experience.map((point, idx) => (
+                  <li key={idx}>{point}</li>
+                ))}
+              </ul>
               
-              <a 
-                href={founder.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary transition-all duration-300 hover:neon-glow-green"
-              >
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 border border-primary/30 transition-all duration-300">
                 <Linkedin className="w-5 h-5 text-primary" />
-              </a>
-            </div>
+              </div>
+            </a>
           ))}
         </div>
 
