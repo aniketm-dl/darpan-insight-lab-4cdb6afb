@@ -55,13 +55,82 @@ const questions = [
   "Long or uncertain delivery ETAs make me anxious.",
   "A few negative reviews can put me off completely.",
   "I second-guess my choice until the order arrives.",
-  "Placeholder question 21",
-  "Placeholder question 22",
-  "Placeholder question 23",
-  "Placeholder question 24",
 ];
 
-const options = [
+const scenarioQuestions = [
+  {
+    question: "Scenario-based question 1 placeholder",
+    scenarios: [
+      "Scenario A: [Placeholder scenario description for question 1]",
+      "Scenario B: [Placeholder scenario description for question 1]",
+    ],
+    options: [
+      "Option 1 for scenario question 1",
+      "Option 2 for scenario question 1",
+      "Option 3 for scenario question 1",
+      "Option 4 for scenario question 1",
+      "Option 5 for scenario question 1",
+    ],
+  },
+  {
+    question: "Scenario-based question 2 placeholder",
+    scenarios: [
+      "Scenario A: [Placeholder scenario description for question 2]",
+      "Scenario B: [Placeholder scenario description for question 2]",
+    ],
+    options: [
+      "Option 1 for scenario question 2",
+      "Option 2 for scenario question 2",
+      "Option 3 for scenario question 2",
+      "Option 4 for scenario question 2",
+      "Option 5 for scenario question 2",
+    ],
+  },
+  {
+    question: "Scenario-based question 3 placeholder",
+    scenarios: [
+      "Scenario A: [Placeholder scenario description for question 3]",
+      "Scenario B: [Placeholder scenario description for question 3]",
+    ],
+    options: [
+      "Option 1 for scenario question 3",
+      "Option 2 for scenario question 3",
+      "Option 3 for scenario question 3",
+      "Option 4 for scenario question 3",
+      "Option 5 for scenario question 3",
+    ],
+  },
+  {
+    question: "Scenario-based question 4 placeholder",
+    scenarios: [
+      "Scenario A: [Placeholder scenario description for question 4]",
+      "Scenario B: [Placeholder scenario description for question 4]",
+    ],
+    options: [
+      "Option 1 for scenario question 4",
+      "Option 2 for scenario question 4",
+      "Option 3 for scenario question 4",
+      "Option 4 for scenario question 4",
+      "Option 5 for scenario question 4",
+    ],
+  },
+  {
+    question: "Scenario-based question 5 placeholder",
+    scenarios: [
+      "Scenario A: [Placeholder scenario description for question 5]",
+      "Scenario B: [Placeholder scenario description for question 5]",
+    ],
+    options: [
+      "Option 1 for scenario question 5",
+      "Option 2 for scenario question 5",
+      "Option 3 for scenario question 5",
+      "Option 4 for scenario question 5",
+      "Option 5 for scenario question 5",
+    ],
+  },
+];
+
+const likertOptions = [
   "A) Strongly disagree",
   "B) Disagree",
   "C) Neither",
@@ -88,7 +157,8 @@ const Survey = () => {
   };
 
   const handleNext = () => {
-    if (currentQuestion < questions.length - 1) {
+    const totalQuestions = questions.length + scenarioQuestions.length;
+    if (currentQuestion < totalQuestions - 1) {
       setCurrentQuestion(prev => prev + 1);
     }
   };
@@ -163,7 +233,18 @@ const Survey = () => {
 
   const questionKey = `q${currentQuestion + 1}`;
   const currentAnswer = formData[questionKey as keyof typeof formData];
-  const isLastQuestion = currentQuestion === questions.length - 1;
+  const totalQuestions = questions.length + scenarioQuestions.length;
+  const isLastQuestion = currentQuestion === totalQuestions - 1;
+  const isScenarioQuestion = currentQuestion >= questions.length;
+  const scenarioIndex = currentQuestion - questions.length;
+  
+  const currentQuestionText = isScenarioQuestion 
+    ? scenarioQuestions[scenarioIndex].question 
+    : questions[currentQuestion];
+  
+  const currentOptions = isScenarioQuestion
+    ? scenarioQuestions[scenarioIndex].options
+    : likertOptions;
 
   return (
     <div className="min-h-screen bg-background">
@@ -178,20 +259,31 @@ const Survey = () => {
           </Button>
           <h1 className="text-4xl font-bold mb-2">Customer Survey</h1>
           <p className="text-muted-foreground">
-            Question {currentQuestion + 1} of {questions.length}
+            Question {currentQuestion + 1} of {totalQuestions}
           </p>
         </div>
 
         <div className="space-y-8">
           <div className="space-y-6 bg-card p-8 rounded-lg border">
             <Label className="text-xl font-semibold block">
-              {questions[currentQuestion]}
+              {currentQuestionText}
             </Label>
+            
+            {isScenarioQuestion && (
+              <div className="space-y-4 mb-6">
+                {scenarioQuestions[scenarioIndex].scenarios.map((scenario, idx) => (
+                  <div key={idx} className="p-4 bg-muted/30 rounded-lg">
+                    <p className="text-sm">{scenario}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+            
             <RadioGroup
               value={currentAnswer}
               onValueChange={handleAnswerChange}
             >
-              {options.map((option, optIndex) => (
+              {currentOptions.map((option, optIndex) => (
                 <div key={optIndex} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
                   <RadioGroupItem value={option} id={`option-${optIndex}`} />
                   <Label
