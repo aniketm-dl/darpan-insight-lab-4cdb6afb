@@ -43,10 +43,10 @@ const questions = [
   "I check multiple restaurants and narrow down with filters.",
   "I stick to my plan even if I see a tempting discount elsewhere.",
   "I read recent reviews to avoid unpleasant surprises.",
-  "\"Popular/500+ ordered\" signals attract me.",
+  '"Popular/500+ ordered" signals attract me.',
   "I prefer places that friends or influencers talk about.",
-  "I like lively, \"buzzing\" restaurants over quiet ones.",
-  "I'm excited by discovery feeds like \"For you\".",
+  'I like lively, "buzzing" restaurants over quiet ones.',
+  'I\'m excited by discovery feeds like "For you".',
   "I'm happy to go with whatever my group prefers.",
   "Friendly-service mentions in reviews matter to me.",
   "I tolerate minor delays if everything else looks good.",
@@ -59,84 +59,75 @@ const questions = [
 
 const scenarioQuestions = [
   {
-    question: "Scenario-based question 1 placeholder",
+    question: "Rating vs Popularity (quality vs social proof)",
     scenarios: [
-      "Scenario A: [Placeholder scenario description for question 1]",
-      "Scenario B: [Placeholder scenario description for question 1]",
+      "Scenario A: High rating (4.7). Suggested for you.",
+      "Scenario B: Moderate rating (4.1). Chosen by 500+ others today.",
     ],
     options: [
-      "Option 1 for scenario question 1",
-      "Option 2 for scenario question 1",
-      "Option 3 for scenario question 1",
-      "Option 4 for scenario question 1",
-      "Option 5 for scenario question 1",
+      "Click A — I trust high ratings/personal relevance.",
+      "Click B — Many people choosing it is a strong signal.",
+      "Click A — Quality cues matter more than crowd trends.",
+      "Click B — Popularity reduces my risk.",
+      "Neither — I’d keep browsing for more options.",
     ],
   },
   {
-    question: "Scenario-based question 2 placeholder",
+    question: "Discount vs No Discount (value vs perceived quality)",
     scenarios: [
-      "Scenario A: [Placeholder scenario description for question 2]",
-      "Scenario B: [Placeholder scenario description for question 2]",
+      "Scenario A: Rating 4.6, no discount. Similar cuisine and delivery time.",
+      "Scenario B: Rating 4.2, 30% OFF. Similar cuisine and delivery time.",
     ],
     options: [
-      "Option 1 for scenario question 2",
-      "Option 2 for scenario question 2",
-      "Option 3 for scenario question 2",
-      "Option 4 for scenario question 2",
-      "Option 5 for scenario question 2",
+      "Click A — Higher rating is worth paying more.",
+      "Click B — The discount matters most to me.",
+      "Click A — I avoid discounts if quality seems lower.",
+      "Click B — Same convenience, better value wins.",
+      "Neither — I’d compare more restaurants first.",
     ],
   },
   {
-    question: "Scenario-based question 3 placeholder",
+    question: "Speed vs Quality (convenience vs taste assurance)",
     scenarios: [
-      "Scenario A: [Placeholder scenario description for question 3]",
-      "Scenario B: [Placeholder scenario description for question 3]",
+      "Scenario A: Rating 4.7, delivery in 50–55 minutes.",
+      "Scenario B: Rating 4.3, delivery in 20–25 minutes.",
     ],
     options: [
-      "Option 1 for scenario question 3",
-      "Option 2 for scenario question 3",
-      "Option 3 for scenario question 3",
-      "Option 4 for scenario question 3",
-      "Option 5 for scenario question 3",
+      "Click A — I’m okay waiting for better quality.",
+      "Click B — Faster delivery fits my schedule.",
+      "Click A — High rating reduces regret even if slower.",
+      "Click B — Speed outweighs a small rating gap.",
+      "Neither — I’d look for a fast and high-rated option.",
     ],
   },
   {
-    question: "Scenario-based question 4 placeholder",
-    scenarios: [
-      "Scenario A: [Placeholder scenario description for question 4]",
-      "Scenario B: [Placeholder scenario description for question 4]",
-    ],
+    question: "Familiar vs New (routine vs exploration)",
+    scenarios: ["Scenario A: Your usual cuisine, rating 4.4.", "Scenario B: New/unfamiliar cuisine, rating 4.6."],
     options: [
-      "Option 1 for scenario question 4",
-      "Option 2 for scenario question 4",
-      "Option 3 for scenario question 4",
-      "Option 4 for scenario question 4",
-      "Option 5 for scenario question 4",
+      "Click A — I stick to what I know I like.",
+      "Click B — I enjoy trying something new.",
+      "Click A — Familiarity beats a small rating gap.",
+      "Click B — Higher rating plus novelty is appealing.",
+      "Neither — I’d check more options before deciding.",
     ],
   },
   {
-    question: "Scenario-based question 5 placeholder",
+    question: "Sponsored Label (trust cues)",
     scenarios: [
-      "Scenario A: [Placeholder scenario description for question 5]",
-      "Scenario B: [Placeholder scenario description for question 5]",
+      "Scenario A: Sponsored label shown. Similar rating and delivery time.",
+      "Scenario B: No sponsored label. Similar rating and delivery time.",
     ],
     options: [
-      "Option 1 for scenario question 5",
-      "Option 2 for scenario question 5",
-      "Option 3 for scenario question 5",
-      "Option 4 for scenario question 5",
-      "Option 5 for scenario question 5",
+      "Click A — Sponsorship doesn’t affect my choice.",
+      "Click B — I prefer organic results.",
+      "Click A — I assume sponsored picks are vetted.",
+      "Click B — I avoid ads on principle.",
+      "Neither — I need more information (e.g., reviews/photos).",
     ],
   },
 ];
 
-const likertOptions = [
-  "A) Strongly disagree",
-  "B) Disagree",
-  "C) Neither",
-  "D) Agree",
-  "E) Strongly agree",
-];
+const likertOptions = ["A) Strongly disagree", "B) Disagree", "C) Neither", "D) Agree", "E) Strongly agree"];
 
 const Survey = () => {
   const navigate = useNavigate();
@@ -144,28 +135,47 @@ const Survey = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [formData, setFormData] = useState({
-    q1: "", q2: "", q3: "", q4: "", q5: "",
-    q6: "", q7: "", q8: "", q9: "", q10: "",
-    q11: "", q12: "", q13: "", q14: "", q15: "",
-    q16: "", q17: "", q18: "", q19: "", q20: "",
-    q21: "", q22: "", q23: "", q24: "",
+    q1: "",
+    q2: "",
+    q3: "",
+    q4: "",
+    q5: "",
+    q6: "",
+    q7: "",
+    q8: "",
+    q9: "",
+    q10: "",
+    q11: "",
+    q12: "",
+    q13: "",
+    q14: "",
+    q15: "",
+    q16: "",
+    q17: "",
+    q18: "",
+    q19: "",
+    q20: "",
+    q21: "",
+    q22: "",
+    q23: "",
+    q24: "",
   });
 
   const handleAnswerChange = (value: string) => {
     const questionKey = `q${currentQuestion + 1}`;
-    setFormData(prev => ({ ...prev, [questionKey]: value }));
+    setFormData((prev) => ({ ...prev, [questionKey]: value }));
   };
 
   const handleNext = () => {
     const totalQuestions = questions.length + scenarioQuestions.length;
     if (currentQuestion < totalQuestions - 1) {
-      setCurrentQuestion(prev => prev + 1);
+      setCurrentQuestion((prev) => prev + 1);
     }
   };
 
   const handlePrevious = () => {
     if (currentQuestion > 0) {
-      setCurrentQuestion(prev => prev - 1);
+      setCurrentQuestion((prev) => prev - 1);
     }
   };
 
@@ -175,9 +185,8 @@ const Survey = () => {
     try {
       const validatedData = surveySchema.parse(formData);
 
-      const { error } = await supabase
-        .from("survey_responses")
-        .insert([{
+      const { error } = await supabase.from("survey_responses").insert([
+        {
           q1: validatedData.q1,
           q2: validatedData.q2,
           q3: validatedData.q3,
@@ -202,7 +211,8 @@ const Survey = () => {
           q22: validatedData.q22,
           q23: validatedData.q23,
           q24: validatedData.q24,
-        }]);
+        },
+      ]);
 
       if (error) throw error;
 
@@ -237,24 +247,18 @@ const Survey = () => {
   const isLastQuestion = currentQuestion === totalQuestions - 1;
   const isScenarioQuestion = currentQuestion >= questions.length;
   const scenarioIndex = currentQuestion - questions.length;
-  
-  const currentQuestionText = isScenarioQuestion 
-    ? scenarioQuestions[scenarioIndex].question 
+
+  const currentQuestionText = isScenarioQuestion
+    ? scenarioQuestions[scenarioIndex].question
     : questions[currentQuestion];
-  
-  const currentOptions = isScenarioQuestion
-    ? scenarioQuestions[scenarioIndex].options
-    : likertOptions;
+
+  const currentOptions = isScenarioQuestion ? scenarioQuestions[scenarioIndex].options : likertOptions;
 
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-3xl">
         <div className="mb-8">
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/")}
-            className="mb-4"
-          >
+          <Button variant="ghost" onClick={() => navigate("/")} className="mb-4">
             ← Back to Home
           </Button>
           <h1 className="text-4xl font-bold mb-2">Customer Survey</h1>
@@ -265,10 +269,8 @@ const Survey = () => {
 
         <div className="space-y-8">
           <div className="space-y-6 bg-card p-8 rounded-lg border">
-            <Label className="text-xl font-semibold block">
-              {currentQuestionText}
-            </Label>
-            
+            <Label className="text-xl font-semibold block">{currentQuestionText}</Label>
+
             {isScenarioQuestion && (
               <div className="space-y-4 mb-6">
                 {scenarioQuestions[scenarioIndex].scenarios.map((scenario, idx) => (
@@ -278,18 +280,15 @@ const Survey = () => {
                 ))}
               </div>
             )}
-            
-            <RadioGroup
-              value={currentAnswer}
-              onValueChange={handleAnswerChange}
-            >
+
+            <RadioGroup value={currentAnswer} onValueChange={handleAnswerChange}>
               {currentOptions.map((option, optIndex) => (
-                <div key={optIndex} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
+                <div
+                  key={optIndex}
+                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                >
                   <RadioGroupItem value={option} id={`option-${optIndex}`} />
-                  <Label
-                    htmlFor={`option-${optIndex}`}
-                    className="font-normal cursor-pointer flex-1"
-                  >
+                  <Label htmlFor={`option-${optIndex}`} className="font-normal cursor-pointer flex-1">
                     {option}
                   </Label>
                 </div>
@@ -308,21 +307,11 @@ const Survey = () => {
               Previous
             </Button>
             {!isLastQuestion ? (
-              <Button
-                type="button"
-                onClick={handleNext}
-                disabled={!currentAnswer}
-                className="flex-1"
-              >
+              <Button type="button" onClick={handleNext} disabled={!currentAnswer} className="flex-1">
                 Next
               </Button>
             ) : (
-              <Button
-                type="button"
-                onClick={handleSubmit}
-                disabled={!currentAnswer || isSubmitting}
-                className="flex-1"
-              >
+              <Button type="button" onClick={handleSubmit} disabled={!currentAnswer || isSubmitting} className="flex-1">
                 {isSubmitting ? "Submitting..." : "Submit Survey"}
               </Button>
             )}
