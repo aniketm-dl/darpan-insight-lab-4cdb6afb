@@ -50,9 +50,7 @@ export type Database = {
       survey_responses: {
         Row: {
           created_at: string
-          email: string | null
           id: string
-          name: string | null
           q1: string
           q10: string
           q11: string
@@ -70,7 +68,6 @@ export type Database = {
           q22: string
           q23: string
           q24: string
-          q25: string
           q3: string
           q4: string
           q5: string
@@ -81,9 +78,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
-          email?: string | null
           id?: string
-          name?: string | null
           q1: string
           q10: string
           q11: string
@@ -101,7 +96,6 @@ export type Database = {
           q22: string
           q23: string
           q24: string
-          q25: string
           q3: string
           q4: string
           q5: string
@@ -112,9 +106,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
-          email?: string | null
           id?: string
-          name?: string | null
           q1?: string
           q10?: string
           q11?: string
@@ -132,7 +124,6 @@ export type Database = {
           q22?: string
           q23?: string
           q24?: string
-          q25?: string
           q3?: string
           q4?: string
           q5?: string

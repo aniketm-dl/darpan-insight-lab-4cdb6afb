@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { supabase } from "@/integrations/supabase/client";
@@ -9,91 +8,98 @@ import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
 const surveySchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100),
-  email: z.string().trim().email("Invalid email").max(255).optional().or(z.literal("")),
-  q1: z.string().min(1, "Please answer question 1"),
-  q2: z.string().min(1, "Please answer question 2"),
-  q3: z.string().min(1, "Please answer question 3"),
-  q4: z.string().min(1, "Please answer question 4"),
-  q5: z.string().min(1, "Please answer question 5"),
-  q6: z.string().min(1, "Please answer question 6"),
-  q7: z.string().min(1, "Please answer question 7"),
-  q8: z.string().min(1, "Please answer question 8"),
-  q9: z.string().min(1, "Please answer question 9"),
-  q10: z.string().min(1, "Please answer question 10"),
-  q11: z.string().min(1, "Please answer question 11"),
-  q12: z.string().min(1, "Please answer question 12"),
-  q13: z.string().min(1, "Please answer question 13"),
-  q14: z.string().min(1, "Please answer question 14"),
-  q15: z.string().min(1, "Please answer question 15"),
-  q16: z.string().min(1, "Please answer question 16"),
-  q17: z.string().min(1, "Please answer question 17"),
-  q18: z.string().min(1, "Please answer question 18"),
-  q19: z.string().min(1, "Please answer question 19"),
-  q20: z.string().min(1, "Please answer question 20"),
-  q21: z.string().min(1, "Please answer question 21"),
-  q22: z.string().min(1, "Please answer question 22"),
-  q23: z.string().min(1, "Please answer question 23"),
-  q24: z.string().min(1, "Please answer question 24"),
-  q25: z.string().min(1, "Please answer question 25"),
+  q1: z.string().min(1, "Please answer this question"),
+  q2: z.string().min(1, "Please answer this question"),
+  q3: z.string().min(1, "Please answer this question"),
+  q4: z.string().min(1, "Please answer this question"),
+  q5: z.string().min(1, "Please answer this question"),
+  q6: z.string().min(1, "Please answer this question"),
+  q7: z.string().min(1, "Please answer this question"),
+  q8: z.string().min(1, "Please answer this question"),
+  q9: z.string().min(1, "Please answer this question"),
+  q10: z.string().min(1, "Please answer this question"),
+  q11: z.string().min(1, "Please answer this question"),
+  q12: z.string().min(1, "Please answer this question"),
+  q13: z.string().min(1, "Please answer this question"),
+  q14: z.string().min(1, "Please answer this question"),
+  q15: z.string().min(1, "Please answer this question"),
+  q16: z.string().min(1, "Please answer this question"),
+  q17: z.string().min(1, "Please answer this question"),
+  q18: z.string().min(1, "Please answer this question"),
+  q19: z.string().min(1, "Please answer this question"),
+  q20: z.string().min(1, "Please answer this question"),
+  q21: z.string().min(1, "Please answer this question"),
+  q22: z.string().min(1, "Please answer this question"),
+  q23: z.string().min(1, "Please answer this question"),
+  q24: z.string().min(1, "Please answer this question"),
 });
 
 const questions = [
-  "Question 1: How satisfied are you with our service?",
-  "Question 2: How likely are you to recommend us?",
-  "Question 3: How would you rate the product quality?",
-  "Question 4: How easy was it to use our platform?",
-  "Question 5: How responsive was our customer support?",
-  "Question 6: How clear was our communication?",
-  "Question 7: How valuable do you find our features?",
-  "Question 8: How satisfied are you with pricing?",
-  "Question 9: How well do we meet your needs?",
-  "Question 10: How professional is our team?",
-  "Question 11: How reliable is our service?",
-  "Question 12: How innovative are our solutions?",
-  "Question 13: How user-friendly is our interface?",
-  "Question 14: How timely are our deliveries?",
-  "Question 15: How comprehensive is our documentation?",
-  "Question 16: How secure do you feel using our platform?",
-  "Question 17: How satisfied are you with updates?",
-  "Question 18: How effective is our onboarding?",
-  "Question 19: How well do we handle feedback?",
-  "Question 20: How competitive are we in the market?",
-  "Question 21: How consistent is our service quality?",
-  "Question 22: How transparent are our processes?",
-  "Question 23: How accessible are our resources?",
-  "Question 24: How satisfied are you overall?",
-  "Question 25: How likely are you to continue using our service?",
+  "I enjoy trying completely new cuisines.",
+  "I like exploring unfamiliar menus instead of reordering the usual.",
+  "Photos of unique dishes make me more likely to pick that restaurant.",
+  "I follow food trends and limited-time specials.",
+  "I compare ratings and reviews carefully before choosing.",
+  "I check multiple restaurants and narrow down with filters.",
+  "I stick to my plan even if I see a tempting discount elsewhere.",
+  "I read recent reviews to avoid unpleasant surprises.",
+  "\"Popular/500+ ordered\" signals attract me.",
+  "I prefer places that friends or influencers talk about.",
+  "I like lively, \"buzzing\" restaurants over quiet ones.",
+  "I'm excited by discovery feeds like \"For you\".",
+  "I'm happy to go with whatever my group prefers.",
+  "Friendly-service mentions in reviews matter to me.",
+  "I tolerate minor delays if everything else looks good.",
+  "I'm flexible with cuisine if others want something else.",
+  "I worry I'll regret my restaurant choice.",
+  "Long or uncertain delivery ETAs make me anxious.",
+  "A few negative reviews can put me off completely.",
+  "I second-guess my choice until the order arrives.",
+  "Placeholder question 21",
+  "Placeholder question 22",
+  "Placeholder question 23",
+  "Placeholder question 24",
 ];
 
 const options = [
-  "Very Dissatisfied",
-  "Dissatisfied",
-  "Neutral",
-  "Satisfied",
-  "Very Satisfied",
+  "A) Strongly disagree",
+  "B) Disagree",
+  "C) Neither",
+  "D) Agree",
+  "E) Strongly agree",
 ];
 
 const Survey = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
     q1: "", q2: "", q3: "", q4: "", q5: "",
     q6: "", q7: "", q8: "", q9: "", q10: "",
     q11: "", q12: "", q13: "", q14: "", q15: "",
     q16: "", q17: "", q18: "", q19: "", q20: "",
-    q21: "", q22: "", q23: "", q24: "", q25: "",
+    q21: "", q22: "", q23: "", q24: "",
   });
 
-  const handleAnswerChange = (questionKey: string, value: string) => {
+  const handleAnswerChange = (value: string) => {
+    const questionKey = `q${currentQuestion + 1}`;
     setFormData(prev => ({ ...prev, [questionKey]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleNext = () => {
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(prev => prev + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(prev => prev - 1);
+    }
+  };
+
+  const handleSubmit = async () => {
     setIsSubmitting(true);
 
     try {
@@ -102,8 +108,6 @@ const Survey = () => {
       const { error } = await supabase
         .from("survey_responses")
         .insert([{
-          name: validatedData.name,
-          email: validatedData.email || null,
           q1: validatedData.q1,
           q2: validatedData.q2,
           q3: validatedData.q3,
@@ -128,7 +132,6 @@ const Survey = () => {
           q22: validatedData.q22,
           q23: validatedData.q23,
           q24: validatedData.q24,
-          q25: validatedData.q25,
         }]);
 
       if (error) throw error;
@@ -158,6 +161,10 @@ const Survey = () => {
     }
   };
 
+  const questionKey = `q${currentQuestion + 1}`;
+  const currentAnswer = formData[questionKey as keyof typeof formData];
+  const isLastQuestion = currentQuestion === questions.length - 1;
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-3xl">
@@ -171,77 +178,64 @@ const Survey = () => {
           </Button>
           <h1 className="text-4xl font-bold mb-2">Customer Survey</h1>
           <p className="text-muted-foreground">
-            Please take a few minutes to share your feedback with us.
+            Question {currentQuestion + 1} of {questions.length}
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-8">
-          <div className="space-y-4 bg-card p-6 rounded-lg border">
-            <div>
-              <Label htmlFor="name">Name *</Label>
-              <Input
-                id="name"
-                value={formData.name}
-                onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                placeholder="Your name"
-                required
-              />
-            </div>
-            <div>
-              <Label htmlFor="email">Email (optional)</Label>
-              <Input
-                id="email"
-                type="email"
-                value={formData.email}
-                onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                placeholder="your@email.com"
-              />
-            </div>
+        <div className="space-y-8">
+          <div className="space-y-6 bg-card p-8 rounded-lg border">
+            <Label className="text-xl font-semibold block">
+              {questions[currentQuestion]}
+            </Label>
+            <RadioGroup
+              value={currentAnswer}
+              onValueChange={handleAnswerChange}
+            >
+              {options.map((option, optIndex) => (
+                <div key={optIndex} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
+                  <RadioGroupItem value={option} id={`option-${optIndex}`} />
+                  <Label
+                    htmlFor={`option-${optIndex}`}
+                    className="font-normal cursor-pointer flex-1"
+                  >
+                    {option}
+                  </Label>
+                </div>
+              ))}
+            </RadioGroup>
           </div>
-
-          {questions.map((question, index) => {
-            const questionKey = `q${index + 1}`;
-            return (
-              <div key={questionKey} className="space-y-3 bg-card p-6 rounded-lg border">
-                <Label className="text-base font-semibold">{question}</Label>
-                <RadioGroup
-                  value={formData[questionKey as keyof typeof formData]}
-                  onValueChange={(value) => handleAnswerChange(questionKey, value)}
-                  required
-                >
-                  {options.map((option, optIndex) => (
-                    <div key={optIndex} className="flex items-center space-x-2">
-                      <RadioGroupItem value={option} id={`${questionKey}-${optIndex}`} />
-                      <Label
-                        htmlFor={`${questionKey}-${optIndex}`}
-                        className="font-normal cursor-pointer"
-                      >
-                        {option}
-                      </Label>
-                    </div>
-                  ))}
-                </RadioGroup>
-              </div>
-            );
-          })}
 
           <div className="flex gap-4">
             <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="flex-1"
-            >
-              {isSubmitting ? "Submitting..." : "Submit Survey"}
-            </Button>
-            <Button
               type="button"
               variant="outline"
-              onClick={() => navigate("/")}
+              onClick={handlePrevious}
+              disabled={currentQuestion === 0}
+              className="flex-1"
             >
-              Cancel
+              Previous
             </Button>
+            {!isLastQuestion ? (
+              <Button
+                type="button"
+                onClick={handleNext}
+                disabled={!currentAnswer}
+                className="flex-1"
+              >
+                Next
+              </Button>
+            ) : (
+              <Button
+                type="button"
+                onClick={handleSubmit}
+                disabled={!currentAnswer || isSubmitting}
+                className="flex-1"
+              >
+                {isSubmitting ? "Submitting..." : "Submit Survey"}
+              </Button>
+            )}
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );
