@@ -94,6 +94,14 @@ const Hero = () => {
               Book a Demo
               <ArrowRight className="ml-2" size={20} />
             </Button>
+            <Button 
+              onClick={() => window.location.href = "/survey"}
+              variant="glass" 
+              size="xl"
+              className="min-w-[200px]"
+            >
+              Take a Survey
+            </Button>
           </div>
         </div>
       </div>
