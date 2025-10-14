@@ -56,7 +56,7 @@ const Founders = () => {
                 />
               </div>
 
-              <h3 className="text-2xl font-bold text-foreground mb-4">{founder.name}</h3>
+              <h3 className="text-xl font-bold text-foreground mb-4">{founder.name}</h3>
 
               <ul className="text-muted-foreground text-base leading-relaxed space-y-2">
                 {founder.experience.map((point, idx) => (
