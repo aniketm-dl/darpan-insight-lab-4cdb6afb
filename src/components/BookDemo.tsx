@@ -7,6 +7,17 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { CheckCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const demoSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  company: z.string().trim().min(1, "Company is required").max(200, "Company must be less than 200 characters"),
+  role: z.string().trim().min(1, "Role is required").max(100, "Role must be less than 100 characters"),
+  phone: z.string().trim().max(50, "Phone must be less than 50 characters").optional().or(z.literal("")),
+  message: z.string().trim().max(2000, "Message must be less than 2000 characters").optional().or(z.literal("")),
+  consent: z.boolean().refine((val) => val === true, "You must agree to be contacted")
+});
 
 const BookDemo = () => {
   const { toast } = useToast();
@@ -24,25 +35,29 @@ const BookDemo = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.consent) {
+    // Validate form data
+    const result = demoSchema.safeParse(formData);
+    
+    if (!result.success) {
+      const firstError = result.error.errors[0];
       toast({
-        title: "Consent Required",
-        description: "Please agree to be contacted about your request.",
+        title: "Validation Error",
+        description: firstError.message,
         variant: "destructive",
       });
       return;
     }
 
-    // Save to database
+    // Save to database with validated data
     const { error } = await supabase
       .from('demo_submissions')
       .insert({
-        name: formData.name,
-        email: formData.email,
-        company: formData.company,
-        role: formData.role,
-        phone: formData.phone || null,
-        message: formData.message || null,
+        name: result.data.name,
+        email: result.data.email,
+        company: result.data.company,
+        role: result.data.role,
+        phone: result.data.phone || null,
+        message: result.data.message || null,
       });
 
     if (error) {
