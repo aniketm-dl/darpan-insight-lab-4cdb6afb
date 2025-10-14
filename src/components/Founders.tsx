@@ -48,27 +48,23 @@ const Founders = () => {
               rel="noopener noreferrer"
               className="bg-card rounded-3xl p-6 card-shadow hover:neon-glow-green transition-all duration-300 hover:-translate-y-2 text-center border-2 border-transparent hover:border-primary/20 block cursor-pointer"
             >
-              <div className="relative mb-6">
+              <div className="relative mb-4">
                 <img
                   src={founder.image}
                   alt={founder.name}
-                  className="w-32 h-32 rounded-full mx-auto object-cover border-2 border-primary/20"
+                  className="w-48 h-48 rounded-full mx-auto object-cover border-2 border-primary/20"
                 />
               </div>
 
-              <h3 className="text-xl font-bold text-foreground mb-2">{founder.name}</h3>
+              <h3 className="text-xl font-bold text-foreground mb-1">{founder.name}</h3>
 
-              <p className="text-neon-green font-medium mb-6">{founder.role}</p>
+              <p className="text-neon-green font-medium mb-3">{founder.role}</p>
 
-              <ul className="text-muted-foreground text-sm leading-relaxed mb-6 space-y-3">
+              <ul className="text-muted-foreground text-sm leading-relaxed space-y-1.5">
                 {founder.experience.map((point, idx) => (
                   <li key={idx}>{point}</li>
                 ))}
               </ul>
-
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 border border-primary/30 transition-all duration-300">
-                <Linkedin className="w-5 h-5 text-primary" />
-              </div>
             </a>
           ))}
         </div>
