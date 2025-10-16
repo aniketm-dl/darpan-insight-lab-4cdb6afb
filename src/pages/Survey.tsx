@@ -32,7 +32,6 @@ const surveySchema = z.object({
   q22: z.string().min(1, "Please answer this question"),
   q23: z.string().min(1, "Please answer this question"),
   q24: z.string().min(1, "Please answer this question"),
-  q25: z.string().min(1, "Please answer this question"),
 });
 
 const questions = [
@@ -160,7 +159,6 @@ const Survey = () => {
     q22: "",
     q23: "",
     q24: "",
-    q25: "",
   });
 
   const handleAnswerChange = (value: string) => {
@@ -213,7 +211,6 @@ const Survey = () => {
           q22: validatedData.q22,
           q23: validatedData.q23,
           q24: validatedData.q24,
-          q25: validatedData.q25,
         },
       ]);
 
