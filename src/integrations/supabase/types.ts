@@ -68,6 +68,7 @@ export type Database = {
           q22: string
           q23: string
           q24: string
+          q25: string
           q3: string
           q4: string
           q5: string
@@ -96,6 +97,7 @@ export type Database = {
           q22: string
           q23: string
           q24: string
+          q25?: string
           q3: string
           q4: string
           q5: string
@@ -124,6 +126,7 @@ export type Database = {
           q22?: string
           q23?: string
           q24?: string
+          q25?: string
           q3?: string
           q4?: string
           q5?: string
