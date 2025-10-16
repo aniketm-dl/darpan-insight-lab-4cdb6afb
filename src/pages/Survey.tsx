@@ -160,7 +160,7 @@ const Survey = () => {
     q22: "",
     q23: "",
     q24: "",
-    q25; "",
+    q25: "",
   });
 
   const handleAnswerChange = (value: string) => {
