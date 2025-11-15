@@ -30,6 +30,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      {!hasScrolled && <div className="h-screen" />}
       {hasScrolled && (
         <>
           <WhyWeBuild />
