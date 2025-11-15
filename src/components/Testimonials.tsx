@@ -11,25 +11,25 @@ import companyHealthtech from "@/assets/company-healthtech.png";
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "Director of Marketing",
-    company: "TechVision Inc.",
-    image: testimonialSarah,
-    content: "Darpan Labs transformed how we approach user research. The AI twins provided insights we never could have gotten from traditional methods. Our conversion rate improved by 40% after implementing their recommendations.",
-  },
-  {
-    name: "Michael Rodriguez",
+    name: "Riya Mehta",
     role: "Product Manager",
-    company: "ShopNow",
-    image: testimonialMichael,
-    content: "The speed and accuracy of Darpan's digital twins are incredible. We can now test dozens of design variations in days instead of months. It's like having an instant focus group available 24/7.",
+    company: "PlayBuddy",
+    image: testimonialSarah,
+    content: "We used to wait 2–3 weeks for survey results before every product tweak. With Darpan, I can test a new flow on AI twins overnight and know exactly where users would drop off. It's changed how we prioritize features.",
   },
   {
-    name: "Priya Sharma",
+    name: "Aarav Patel",
     role: "UX Research Lead",
-    company: "FinTech Solutions",
+    company: "NovaPay",
+    image: testimonialMichael,
+    content: "Traditional UX tests gave us what users *said*, not what they'd *do*. Darpan's simulations showed behavioral friction points we hadn't even spotted. Our checkout completion improved 18% after acting on those insights.",
+  },
+  {
+    name: "Emily Roy",
+    role: "Brand Strategy Lead",
+    company: "Glimmer Cosmetics",
     image: testimonialPriya,
-    content: "What impressed me most is how the AI twins capture nuanced user behaviors. The insights go beyond surface-level feedback to reveal underlying motivations and pain points. This has been a game-changer for our product strategy.",
+    content: "Before Darpan, we ran campaigns on gut feel. Now, we run them on evidence. Their AI twins gave us fast feedback on messaging that actually converts — it's like having a 24/7 focus group.",
   },
 ];
 
@@ -50,10 +50,10 @@ const Testimonials = () => {
             [ TESTIMONIALS ]
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
-            From Developers That Use Darpan Labs
+            From Teams That Rethink Research
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            See what developers are saying about their experience with Darpan Labs
+            See how teams replaced surveys with simulations — and turned hunches into evidence in hours.
           </p>
         </div>
 
