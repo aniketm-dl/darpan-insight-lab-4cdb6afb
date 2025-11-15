@@ -107,102 +107,117 @@ const BookDemo = () => {
   return (
     <section id="book-demo" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
-              [ GET STARTED ]
-            </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Book A Demo
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
-              Tell us a bit about you and we'll set up a tailored walk-through.
-            </p>
-          </div>
+        <div className="text-center mb-12">
+          <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
+            [ NEED CONVINCING? ]
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            Tell Your CTO About Darpan Labs
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Need to convince your company to get Darpan Labs? We can help.
+          </p>
+        </div>
 
-          <div className="bg-card rounded-3xl p-8 card-shadow">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
+          {/* Left side - Form */}
+          <div className="bg-muted/30 rounded-3xl p-8 lg:p-10">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Name *</Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => handleInputChange("name", e.target.value)}
-                    className="h-12"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="email">Work Email *</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="h-12"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="company">Company *</Label>
-                  <Input
-                    id="company"
-                    type="text"
-                    required
-                    value={formData.company}
-                    onChange={(e) => handleInputChange("company", e.target.value)}
-                    className="h-12"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="role">Role *</Label>
-                  <Input
-                    id="role"
-                    type="text"
-                    required
-                    value={formData.role}
-                    onChange={(e) => handleInputChange("role", e.target.value)}
-                    className="h-12"
-                  />
-                </div>
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-xs uppercase tracking-wider text-muted-foreground font-mono">
+                  Work Email:
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => handleInputChange("email", e.target.value)}
+                  placeholder="you@company.com"
+                  className="h-14 bg-background/50 border-border/50"
+                />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone (optional)</Label>
+                <Label htmlFor="name" className="text-xs uppercase tracking-wider text-muted-foreground font-mono">
+                  Your Name:
+                </Label>
+                <Input
+                  id="name"
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => handleInputChange("name", e.target.value)}
+                  placeholder="John Doe"
+                  className="h-14 bg-background/50 border-border/50"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="company" className="text-xs uppercase tracking-wider text-muted-foreground font-mono">
+                  Company:
+                </Label>
+                <Input
+                  id="company"
+                  type="text"
+                  required
+                  value={formData.company}
+                  onChange={(e) => handleInputChange("company", e.target.value)}
+                  placeholder="Acme Inc."
+                  className="h-14 bg-background/50 border-border/50"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="role" className="text-xs uppercase tracking-wider text-muted-foreground font-mono">
+                  Your Role:
+                </Label>
+                <Input
+                  id="role"
+                  type="text"
+                  required
+                  value={formData.role}
+                  onChange={(e) => handleInputChange("role", e.target.value)}
+                  placeholder="Product Manager"
+                  className="h-14 bg-background/50 border-border/50"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="text-xs uppercase tracking-wider text-muted-foreground font-mono">
+                  Phone (Optional):
+                </Label>
                 <Input
                   id="phone"
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
-                  className="h-12"
+                  placeholder="+1 (555) 000-0000"
+                  className="h-14 bg-background/50 border-border/50"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message" className="text-xs uppercase tracking-wider text-muted-foreground font-mono">
+                  Message:
+                </Label>
                 <Textarea
                   id="message"
-                  placeholder="Tell us about your specific needs or questions..."
+                  placeholder="Tell us about your specific needs..."
                   value={formData.message}
                   onChange={(e) => handleInputChange("message", e.target.value)}
-                  className="min-h-[120px]"
+                  className="min-h-[100px] bg-background/50 border-border/50"
                 />
               </div>
 
-              <div className="flex items-start space-x-2">
+              <div className="flex items-start space-x-3 pt-2">
                 <Checkbox
                   id="consent"
                   checked={formData.consent}
                   onCheckedChange={(checked) => handleInputChange("consent", !!checked)}
+                  className="mt-1"
                 />
-                <Label htmlFor="consent" className="text-sm leading-relaxed">
+                <Label htmlFor="consent" className="text-sm leading-relaxed text-muted-foreground font-light">
                   I agree to be contacted about my request and understand that Darpan Labs 
                   will process my information according to their privacy policy.
                 </Label>
@@ -210,14 +225,77 @@ const BookDemo = () => {
 
               <Button 
                 type="submit" 
-                variant="hero" 
-                size="xl"
-                className="w-full"
+                size="lg"
+                className="w-full h-14 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
                 disabled={!formData.consent}
               >
                 Submit Demo Request
               </Button>
+
+              <div className="relative my-6">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-border/50"></div>
+                </div>
+                <div className="relative flex justify-center text-sm">
+                  <span className="px-4 bg-muted/30 text-muted-foreground uppercase tracking-wider font-mono text-xs">
+                    or
+                  </span>
+                </div>
+              </div>
+
+              <Button 
+                type="button"
+                variant="outline"
+                size="lg"
+                className="w-full h-14 border-primary/50 text-primary hover:bg-primary/10 font-medium"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Explore More →
+              </Button>
+
+              <p className="text-center text-sm text-muted-foreground pt-2">
+                No credit card required · Quick setup
+              </p>
             </form>
+          </div>
+
+          {/* Right side - Visual Preview */}
+          <div className="hidden lg:block">
+            <div className="bg-muted/20 rounded-3xl p-8 border border-border/50 min-h-[600px] relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+              <div className="relative">
+                <div className="mb-6 flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
+                </div>
+                <div className="space-y-4 text-sm text-muted-foreground font-mono">
+                  <p className="text-foreground font-semibold">Dear [CTO],</p>
+                  <p className="leading-relaxed">
+                    I wanted to share an exciting tool that could significantly improve our customer research process.
+                  </p>
+                  <p className="leading-relaxed">
+                    <span className="text-primary font-medium">Darpan Labs</span> uses AI-powered customer twins to help teams understand their users better and build products that truly resonate.
+                  </p>
+                  <p className="leading-relaxed">
+                    With Darpan Labs, we can:
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Get instant insights from AI customer twins</li>
+                    <li>Validate ideas before building</li>
+                    <li>Reduce time spent on traditional research</li>
+                    <li>Make data-driven product decisions</li>
+                  </ul>
+                  <p className="leading-relaxed pt-4">
+                    I think this could be a game-changer for our team.
+                  </p>
+                  <p className="pt-4">
+                    Best regards,<br />
+                    <span className="text-foreground">[Your Name]</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
