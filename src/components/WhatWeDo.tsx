@@ -41,15 +41,15 @@ const WhatWeDo = () => {
         {/* Title and Explainer */}
         <div className="text-center mb-20 scroll-reveal stagger-1">
           <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
-            [ CAPABILITIES ]
+            [ WHAT WE DO ]
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8">
-            What We Do
+            Build, Test, and Ship with AI-Powered Customer Twins
           </h2>
           
           <div className="max-w-4xl mx-auto mb-8">
             <p className="text-lg md:text-xl text-white leading-[1.5]">
-              We build AI customer twins from your data so teams can test ideas, campaigns, and UX in hours and ship with confidence.
+              Simulate real customer behavior and validate your ideas before launch with digital twins built from your actual data.
             </p>
           </div>
         </div>
