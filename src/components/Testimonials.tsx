@@ -4,10 +4,10 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import testimonialSarah from "@/assets/testimonial-sarah.jpg";
 import testimonialMichael from "@/assets/testimonial-michael.jpg";
 import testimonialPriya from "@/assets/testimonial-priya.jpg";
-import companyTechcorp from "@/assets/company-techcorp.png";
-import companyShopnow from "@/assets/company-shopnow.png";
-import companyFintech from "@/assets/company-fintech.png";
-import companyHealthtech from "@/assets/company-healthtech.png";
+import companyGoogle from "@/assets/company-google.png";
+import companyUber from "@/assets/company-uber.png";
+import companyZomato from "@/assets/company-zomato.png";
+import companyWinzo from "@/assets/company-winzo.png";
 
 const testimonials = [
   {
@@ -34,10 +34,10 @@ const testimonials = [
 ];
 
 const companies = [
-  { name: "TechCorp", logo: companyTechcorp },
-  { name: "ShopNow", logo: companyShopnow },
-  { name: "FinTech Pro", logo: companyFintech },
-  { name: "HealthTech Plus", logo: companyHealthtech },
+  { name: "Google", logo: companyGoogle },
+  { name: "Uber", logo: companyUber },
+  { name: "Zomato", logo: companyZomato },
+  { name: "WinZO", logo: companyWinzo },
 ];
 
 const Testimonials = () => {
