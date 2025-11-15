@@ -40,8 +40,11 @@ const WhatWeDo = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title and Explainer */}
         <div className="text-center mb-20 scroll-reveal stagger-1">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-            What we do
+          <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
+            [ CAPABILITIES ]
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8">
+            What We Do
           </h2>
           
           <div className="max-w-4xl mx-auto mb-8">
