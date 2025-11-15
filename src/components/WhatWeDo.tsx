@@ -44,7 +44,7 @@ const WhatWeDo = () => {
             [ HOW IT WORKS ]
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            How It Works: From Data to Evidence
+            From Data to Evidence
           </h2>
           
           <p className="text-xs md:text-sm text-muted-foreground/70 mb-8 font-mono tracking-wide">
