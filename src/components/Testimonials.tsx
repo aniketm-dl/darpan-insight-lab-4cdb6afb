@@ -46,11 +46,14 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            From Our Users
+          <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
+            [ TESTIMONIALS ]
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
+            From Developers That Use Darpan Labs
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            See what industry leaders are saying about Darpan Labs
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            See what developers are saying about their experience with Darpan Labs
           </p>
         </div>
 
