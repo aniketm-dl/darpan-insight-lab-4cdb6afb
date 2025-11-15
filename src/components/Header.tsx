@@ -57,12 +57,6 @@ const Header = () => {
             >
               Founders
             </button>
-            <button 
-              onClick={() => scrollToSection("testimonials")}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Testimonials
-            </button>
             <Button 
               onClick={() => scrollToSection("book-demo")}
               variant="hero" 
@@ -96,12 +90,6 @@ const Header = () => {
                 className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
               >
                 Founders
-              </button>
-              <button 
-                onClick={() => scrollToSection("testimonials")}
-                className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
-              >
-                Testimonials
               </button>
               <Button 
                 onClick={() => scrollToSection("book-demo")}
