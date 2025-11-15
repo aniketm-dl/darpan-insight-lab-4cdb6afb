@@ -47,10 +47,6 @@ const WhatWeDo = () => {
             From Data to Evidence
           </h2>
           
-          <p className="text-xs md:text-sm text-muted-foreground/70 mb-8 font-mono tracking-wide">
-            Every step powered by our proprietary twin models and behavioral AI.
-          </p>
-          
           <div className="max-w-4xl mx-auto mb-12">
             <p className="text-lg md:text-xl text-white leading-[1.5]">
               Ingest your existing data, create AI customer twins, and run simulations to predict real customer reactions — before you go live.
