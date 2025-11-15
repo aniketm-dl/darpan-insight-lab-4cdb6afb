@@ -5,7 +5,7 @@ import heroNetwork from "@/assets/hero-network.jpg";
 
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
-  const fullText = "Evidence";
+  const fullText = "Confidence";
   
   useEffect(() => {
     let currentIndex = 0;
@@ -70,8 +70,9 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center animate-fade-in">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-neon-green">From Hunches</span>{" "}
-            <span className="text-foreground">to</span>{" "}
+            <span className="text-neon-green">Test Ideas with AI Customer Twins</span>
+            <br className="hidden md:block" />
+            <span className="text-foreground">Ship with</span>{" "}
             <span className="text-neon-blue">
               {typedText}
               <span className="animate-pulse">|</span>
@@ -79,9 +80,9 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl lg:text-2xl text-white mb-8 max-w-5xl mx-auto leading-[1.5]">
-            Simulate real customers to test product, UX, and campaigns before you go live —
+            Build digital twins from your real customer data. Validate products, features, and campaigns
             <br className="hidden md:block" />
-            evidence in hours, not weeks.
+            in hours—before writing a single line of code or spending a dollar on ads.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
