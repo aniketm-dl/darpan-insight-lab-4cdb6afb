@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhyWeBuild from "@/components/WhyWeBuild";
@@ -11,19 +12,35 @@ import Footer from "@/components/Footer";
 import { useScrollRevealMultiple } from "@/hooks/useScrollReveal";
 
 const Index = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
   useScrollRevealMultiple();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50 && !hasScrolled) {
+        setHasScrolled(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasScrolled]);
 
   return (
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <WhyWeBuild />
-      <PrototypeShowcase />
-      <WhatWeDo />
-      <Founders />
-      <Testimonials />
-      <BookDemo />
-      <Footer />
+      {hasScrolled && (
+        <>
+          <WhyWeBuild />
+          <PrototypeShowcase />
+          <WhatWeDo />
+          <Founders />
+          <Testimonials />
+          <BookDemo />
+          <Footer />
+        </>
+      )}
     </div>
   );
 };
