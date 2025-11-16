@@ -1,4 +1,5 @@
 import { Database, Bot, Zap, Route, Send, TrendingUp, ArrowRight } from "lucide-react";
+import PrototypeShowcase from "./PrototypeShowcase";
 
 const WhatWeDo = () => {
   const capabilities = [
@@ -41,7 +42,7 @@ const WhatWeDo = () => {
         {/* Title and Explainer */}
         <div className="text-center mb-20 scroll-reveal stagger-1">
           <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
-            [ HOW ]
+            [ WHAT ]
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             From Data to Evidence
@@ -94,6 +95,11 @@ const WhatWeDo = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Prototype Showcase Integration */}
+        <div className="mt-20">
+          <PrototypeShowcase />
         </div>
 
       </div>
