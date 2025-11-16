@@ -37,7 +37,7 @@ const WhatWeDo = () => {
 
 
   return (
-    <section id="what-we-do" className="py-24 bg-background scroll-reveal">
+    <section id="what" className="py-24 bg-background scroll-reveal">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title and Explainer */}
         <div className="text-center mb-20 scroll-reveal stagger-1">
