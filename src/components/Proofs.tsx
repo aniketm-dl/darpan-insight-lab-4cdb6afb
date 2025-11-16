@@ -43,7 +43,7 @@ const Proofs = () => {
         </div>
 
         {/* Charts Grid */}
-        <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 max-w-7xl mx-auto">
           {/* Time to Ship Chart */}
           <div
             className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm flex flex-col"
@@ -137,45 +137,6 @@ const Proofs = () => {
             <div className="mt-auto pt-4 border-t border-border">
               <p className="text-xs font-mono text-center" style={{ color: "#C6FF3E" }}>
                 95%+ correlation between simulated and real user behaviour after 6 weeks
-              </p>
-            </div>
-          </div>
-
-          {/* Cost Per Study Card */}
-          <div
-            className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm flex flex-col"
-            style={{ boxShadow: "0px 0px 15px rgba(198, 255, 62, 0.06)" }}
-          >
-            <div>
-              <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-                <span className="text-primary"></span>
-                Cost Per Study
-              </h3>
-              <div className="grid grid-cols-2 gap-6 mt-12">
-                <div className="text-center">
-                  <p className="text-sm mb-3" style={{ color: "#A0A0A0" }}>
-                    Traditional Research
-                  </p>
-                  <p className="text-3xl font-bold" style={{ color: "#4A90E2" }}>
-                    $30–65K
-                  </p>
-                </div>
-                <div className="text-center">
-                  <p className="text-sm mb-3" style={{ color: "#A0A0A0" }}>
-                    Darpan Labs
-                  </p>
-                  <p className="text-3xl font-bold" style={{ color: "#C6FF3E" }}>
-                    $5K
-                  </p>
-                </div>
-              </div>
-              <p className="text-xs text-center mt-6" style={{ color: "#6B6B6B" }}>
-                *Approximate figures
-              </p>
-            </div>
-            <div className="mt-auto pt-4 border-t border-border">
-              <p className="text-xs font-mono text-center" style={{ color: "#C6FF3E" }}>
-                6–13× more cost-effective
               </p>
             </div>
           </div>
