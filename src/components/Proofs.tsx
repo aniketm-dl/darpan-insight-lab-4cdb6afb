@@ -98,13 +98,13 @@ const Proofs = () => {
               A/B Test Response Accuracy
             </h3>
             <ResponsiveContainer width="100%" height={280}>
-              <LineChart data={abTestData}>
+              <LineChart data={abTestData} margin={{ left: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(198, 255, 62, 0.08)" strokeOpacity={0.3} />
                 <XAxis dataKey="week" stroke="#A0A0A0" tick={{ fill: "#A0A0A0", fontSize: 12 }} />
                 <YAxis
                   stroke="#A0A0A0"
                   tick={{ fill: "#A0A0A0" }}
-                  label={{ value: "Accuracy %", angle: -90, position: "center", fill: "#A0A0A0", offset: 10 }}
+                  label={{ value: "Behavioral Match (%)", angle: -90, position: "insideLeft", fill: "#A0A0A0", style: { textAnchor: 'middle' } }}
                 />
                 <Tooltip
                   contentStyle={{
