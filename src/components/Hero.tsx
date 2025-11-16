@@ -70,7 +70,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden bg-background pb-20">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background py-20">
       {/* Background Image */}
       <div
         className="absolute inset-0 opacity-5"
