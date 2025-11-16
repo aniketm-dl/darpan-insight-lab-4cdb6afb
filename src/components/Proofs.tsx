@@ -35,25 +35,25 @@ const Proofs = () => {
         </div>
 
         {/* Charts Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {/* Time to Ship Chart */}
-          <div className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm">
+          <div className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm flex flex-col" style={{ boxShadow: '0px 0px 15px rgba(198, 255, 62, 0.06)' }}>
             <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
               <span className="text-primary">⚡</span>
               Time to Ship New Features
             </h3>
             <ResponsiveContainer width="100%" height={280}>
               <BarChart data={timeToShipData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(198, 255, 62, 0.08)" strokeOpacity={0.3} />
                 <XAxis 
                   dataKey="name" 
-                  stroke="hsl(var(--muted-foreground))"
-                  tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }}
+                  stroke="#A0A0A0"
+                  tick={{ fill: '#A0A0A0', fontSize: 12 }}
                 />
                 <YAxis 
-                  stroke="hsl(var(--muted-foreground))"
-                  tick={{ fill: 'hsl(var(--muted-foreground))' }}
-                  label={{ value: 'Days', angle: -90, position: 'insideLeft', fill: 'hsl(var(--muted-foreground))' }}
+                  stroke="#A0A0A0"
+                  tick={{ fill: '#A0A0A0' }}
+                  label={{ value: 'Days', angle: -90, position: 'insideLeft', fill: '#A0A0A0' }}
                 />
                 <Tooltip 
                   contentStyle={{ 
@@ -71,39 +71,39 @@ const Proofs = () => {
                   {timeToShipData.map((entry, index) => (
                     <rect 
                       key={`bar-${index}`}
-                      fill={entry.name === 'Darpan Labs' ? 'hsl(var(--primary))' : 'hsl(var(--muted))'}
-                      stroke={entry.name === 'Darpan Labs' ? 'hsl(var(--primary))' : 'transparent'}
+                      fill={entry.name === 'Darpan Labs' ? '#C6FF3E' : '#3A3A3A'}
+                      stroke={entry.name === 'Darpan Labs' ? '#C6FF3E' : 'transparent'}
                       strokeWidth={entry.name === 'Darpan Labs' ? 2 : 0}
                     />
                   ))}
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
-            <div className="mt-4 pt-4 border-t border-border">
-              <p className="text-xs text-primary font-mono text-center">
+            <div className="mt-auto pt-4 border-t border-border">
+              <p className="text-xs font-mono text-center" style={{ color: '#C6FF3E' }}>
                 7× faster feature validation
               </p>
             </div>
           </div>
 
           {/* A/B Test Response Chart */}
-          <div className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm">
+          <div className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm flex flex-col" style={{ boxShadow: '0px 0px 15px rgba(198, 255, 62, 0.06)' }}>
             <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
               <span className="text-primary">📊</span>
               A/B Test Response Accuracy
             </h3>
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={abTestData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(198, 255, 62, 0.08)" strokeOpacity={0.3} />
                 <XAxis 
                   dataKey="week" 
-                  stroke="hsl(var(--muted-foreground))"
-                  tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }}
+                  stroke="#A0A0A0"
+                  tick={{ fill: '#A0A0A0', fontSize: 12 }}
                 />
                 <YAxis 
-                  stroke="hsl(var(--muted-foreground))"
-                  tick={{ fill: 'hsl(var(--muted-foreground))' }}
-                  label={{ value: 'Accuracy %', angle: -90, position: 'insideLeft', fill: 'hsl(var(--muted-foreground))' }}
+                  stroke="#A0A0A0"
+                  tick={{ fill: '#A0A0A0' }}
+                  label={{ value: 'Accuracy %', angle: -90, position: 'insideLeft', fill: '#A0A0A0' }}
                 />
                 <Tooltip 
                   contentStyle={{ 
@@ -114,35 +114,35 @@ const Proofs = () => {
                   }}
                 />
                 <Legend 
-                  wrapperStyle={{ color: 'hsl(var(--foreground))', fontSize: 12 }}
+                  wrapperStyle={{ color: '#A0A0A0', fontSize: 12 }}
                 />
                 <Line 
                   type="monotone" 
                   dataKey="simulated" 
-                  stroke="hsl(var(--primary))" 
+                  stroke="#C6FF3E" 
                   strokeWidth={3}
-                  dot={{ fill: 'hsl(var(--primary))', r: 5, strokeWidth: 2, stroke: 'hsl(var(--primary))' }}
+                  dot={{ fill: '#C6FF3E', r: 6, strokeWidth: 0 }}
                   name="Simulated"
                 />
                 <Line 
                   type="monotone" 
                   dataKey="actual" 
-                  stroke="hsl(var(--muted))" 
+                  stroke="#A0A0A0" 
                   strokeWidth={2}
-                  dot={{ fill: 'hsl(var(--muted))', r: 4 }}
+                  dot={{ fill: '#A0A0A0', r: 5, strokeWidth: 0 }}
                   name="Actual"
                 />
               </LineChart>
             </ResponsiveContainer>
-            <div className="mt-4 pt-4 border-t border-border">
-              <p className="text-xs text-primary font-mono text-center">
+            <div className="mt-auto pt-4 border-t border-border">
+              <p className="text-xs font-mono text-center" style={{ color: '#C6FF3E' }}>
                 95%+ correlation between simulated and real user behaviour after 6 weeks
               </p>
             </div>
           </div>
 
           {/* Cost Per Insight Card */}
-          <div className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm flex flex-col justify-between">
+          <div className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm flex flex-col" style={{ boxShadow: '0px 0px 15px rgba(198, 255, 62, 0.06)' }}>
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
                 <span className="text-primary">💰</span>
@@ -150,17 +150,17 @@ const Proofs = () => {
               </h3>
               <div className="space-y-8 mt-12">
                 <div>
-                  <p className="text-sm text-muted-foreground mb-2">Darpan Labs</p>
-                  <p className="text-4xl font-bold text-primary">~$5K</p>
+                  <p className="text-sm mb-2" style={{ color: '#A0A0A0' }}>Darpan Labs</p>
+                  <p className="text-4xl font-bold" style={{ color: '#C6FF3E' }}>~$5K</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-2">Traditional Research</p>
-                  <p className="text-4xl font-bold text-muted">~$30–65K</p>
+                  <p className="text-sm mb-2" style={{ color: '#A0A0A0' }}>Traditional Research</p>
+                  <p className="text-4xl font-bold" style={{ color: '#3A3A3A' }}>~$30–65K</p>
                 </div>
               </div>
             </div>
-            <div className="mt-8 pt-4 border-t border-border">
-              <p className="text-xs text-primary font-mono text-center">
+            <div className="mt-auto pt-4 border-t border-border">
+              <p className="text-xs font-mono text-center" style={{ color: '#C6FF3E' }}>
                 6–13× more cost-effective
               </p>
             </div>

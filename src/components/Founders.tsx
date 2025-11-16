@@ -9,6 +9,7 @@ const Founders = () => {
     {
       name: "Aniket Gudadhe",
       role: "Co-founder",
+      roleType: "Engineering",
       experience: ["Oracle, Amazon", "IIM Ahmedabad, IIT Guwahati"],
       image: aniketGudadheImg,
       linkedin: "https://www.linkedin.com/in/aniket-g-a19644113/",
@@ -16,6 +17,7 @@ const Founders = () => {
     {
       name: "Aniket Niranjan Mishra",
       role: "Co-founder",
+      roleType: "AI & Behaviour Science",
       experience: ["American Express, Citi Bank", "IIM Ahmedabad, IIT Kharagpur"],
       image: aniketMishraImg,
       linkedin: "https://www.linkedin.com/in/aniket-niranjan-mishra-1203/",
@@ -23,6 +25,7 @@ const Founders = () => {
     {
       name: "Manav Jain",
       role: "Co-founder",
+      roleType: "Product & GTM",
       experience: ["Google, WinZO Games, Rupifi", "IIM Ahmedabad, BITS Pilani"],
       image: manavJainImg,
       linkedin: "https://www.linkedin.com/in/manav-jain-784176173/",
@@ -44,26 +47,32 @@ const Founders = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
           {founders.map((founder, index) => (
             <a
               key={index}
               href={founder.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-card rounded-3xl p-6 card-shadow hover:neon-glow-green transition-all duration-300 hover:-translate-y-2 text-center border-2 border-transparent hover:border-primary/20 block cursor-pointer"
+              className="bg-card rounded-3xl p-6 card-shadow hover:neon-glow-green transition-all duration-300 hover:-translate-y-2 text-center border-2 border-transparent hover:border-primary/20 block cursor-pointer flex flex-col"
+              style={{ boxShadow: '0px 0px 15px rgba(198, 255, 62, 0.06)' }}
             >
               <div className="relative mb-4">
                 <img
                   src={founder.image}
                   alt={founder.name}
-                  className="w-48 h-48 rounded-full mx-auto object-cover border-2 border-primary/20"
+                  className="w-48 h-48 rounded-full mx-auto object-cover border-2"
+                  style={{ 
+                    borderColor: '#C6FF3E',
+                    boxShadow: '0 0 20px rgba(198, 255, 62, 0.3)'
+                  }}
                 />
               </div>
 
-              <h3 className="text-xl font-bold text-foreground mb-4">{founder.name}</h3>
+              <h3 className="text-xl font-bold text-foreground mb-1">{founder.name}</h3>
+              <p className="text-sm mb-4" style={{ color: '#C6FF3E' }}>{founder.roleType}</p>
 
-              <ul className="text-muted-foreground text-base leading-relaxed space-y-2">
+              <ul className="text-base leading-relaxed space-y-2" style={{ color: '#A0A0A0' }}>
                 {founder.experience.map((point, idx) => (
                   <li key={idx}>{point}</li>
                 ))}
@@ -74,7 +83,7 @@ const Founders = () => {
 
         {/* Advisors section */}
         <div className="mt-16 text-center">
-          <p className="text-muted-foreground">Advised by experts in consumer psychology and applied AI.</p>
+          <p style={{ color: '#A0A0A0' }}>Advised by experts in consumer psychology and applied AI.</p>
         </div>
       </div>
     </section>
