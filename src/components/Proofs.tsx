@@ -104,7 +104,7 @@ const Proofs = () => {
                 <YAxis
                   stroke="#A0A0A0"
                   tick={{ fill: "#A0A0A0" }}
-                  label={{ value: "Accuracy %", angle: -90, position: "insideLeft", fill: "#A0A0A0" }}
+                  label={{ value: "Accuracy %", angle: -90, position: "center", fill: "#A0A0A0" }}
                 />
                 <Tooltip
                   contentStyle={{
