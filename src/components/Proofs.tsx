@@ -13,8 +13,8 @@ import {
 } from "recharts";
 
 const timeToShipData = [
-  { name: "Darpan Labs", days: 3 },
   { name: "Traditional Research", days: 21 },
+  { name: "Darpan Labs", days: 3 },
 ];
 
 const abTestData = [
@@ -154,18 +154,18 @@ const Proofs = () => {
               <div className="space-y-8 mt-12">
                 <div>
                   <p className="text-sm mb-2" style={{ color: "#A0A0A0" }}>
-                    Darpan Labs
-                  </p>
-                  <p className="text-4xl font-bold" style={{ color: "#C6FF3E" }}>
-                    ~$5K
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm mb-2" style={{ color: "#A0A0A0" }}>
                     Traditional Research
                   </p>
                   <p className="text-4xl font-bold" style={{ color: "#4A90E2" }}>
                     ~$30–65K
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm mb-2" style={{ color: "#A0A0A0" }}>
+                    Darpan Labs
+                  </p>
+                  <p className="text-4xl font-bold" style={{ color: "#C6FF3E" }}>
+                    ~$5K
                   </p>
                 </div>
               </div>
