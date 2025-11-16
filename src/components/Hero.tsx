@@ -2,6 +2,21 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroNetwork from "@/assets/hero-network.jpg";
+import companyAirtel from "@/assets/company-airtel.png";
+import companyGoogle from "@/assets/company-google.png";
+import companyAsus from "@/assets/company-asus.png";
+import companyIntel from "@/assets/company-intel.png";
+import companyPepsi from "@/assets/company-pepsi.png";
+import companyApple from "@/assets/company-apple.png";
+
+const companies = [
+  { name: "Airtel", logo: companyAirtel },
+  { name: "Google", logo: companyGoogle },
+  { name: "ASUS", logo: companyAsus },
+  { name: "Intel", logo: companyIntel },
+  { name: "Pepsi", logo: companyPepsi },
+  { name: "Apple", logo: companyApple },
+];
 
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
@@ -55,7 +70,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden bg-background">
+    <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden bg-background pb-20">
       {/* Background Image */}
       <div
         className="absolute inset-0 opacity-5"
@@ -83,7 +98,7 @@ const Hero = () => {
             Evidence in hours, not opinions.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up mb-16">
             <Button onClick={() => scrollToSection("book-demo")} variant="hero" size="xl" className="min-w-[200px]">
               Book a Demo
               <ArrowRight className="ml-2" size={20} />
@@ -96,6 +111,27 @@ const Hero = () => {
             >
               Take a Survey
             </Button>
+          </div>
+
+          {/* Trusted By Section */}
+          <div className="mt-16 animate-fade-in">
+            <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
+              Trusted by
+            </h3>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
+              {companies.map((company, index) => (
+                <div
+                  key={index}
+                  className="transition-all duration-300 hover:scale-110"
+                >
+                  <img
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    className="h-10 md:h-12 lg:h-14 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
