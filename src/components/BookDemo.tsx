@@ -112,7 +112,7 @@ const BookDemo = () => {
             [ NEED CONVINCING? ]
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Tell Your CTO About Darpan Labs
+            Let's have a chat
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Need to convince your company to get Darpan Labs? We can help.
@@ -270,7 +270,7 @@ const BookDemo = () => {
                   <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
                 </div>
                 <div className="space-y-4 text-sm text-muted-foreground font-mono">
-                  <p className="text-foreground font-semibold">Dear [CTO],</p>
+                  <p className="text-foreground font-semibold">Dear [manager],</p>
                   <p className="leading-relaxed">
                     I wanted to share an exciting tool that could significantly improve our customer research process.
                   </p>
