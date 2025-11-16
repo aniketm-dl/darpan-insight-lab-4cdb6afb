@@ -35,10 +35,10 @@ const Index = () => {
       {!hasScrolled && <div className="h-screen" />}
       {hasScrolled && (
         <>
-          <Proofs />
           <TrustedBy />
           <WhyWeBuild />
           <WhatWeDo />
+          <Proofs />
           <Testimonials />
           <Insights />
           <Founders />
