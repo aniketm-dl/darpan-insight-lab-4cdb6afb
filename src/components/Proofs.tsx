@@ -19,7 +19,7 @@ const Proofs = () => {
     <section className="py-24 bg-background relative scroll-reveal" id="proofs">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
             [ PROOFS ]
           </p>
@@ -29,7 +29,7 @@ const Proofs = () => {
           <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light mb-4">
             Evidence from early teams using AI twins — faster validation, higher predictive accuracy.
           </p>
-          <p className="text-primary text-sm md:text-base max-w-2xl mx-auto italic">
+          <p className="text-primary text-sm md:text-base max-w-2xl mx-auto italic leading-tight">
             When behaviour is simulated, decisions get validated — not delayed.
           </p>
         </div>
@@ -37,14 +37,13 @@ const Proofs = () => {
         {/* Charts Grid */}
         <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {/* Time to Ship Chart */}
-          <div className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm flex flex-col" style={{ boxShadow: '0px 0px 15px rgba(198, 255, 62, 0.06)' }}>
-            <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-              <span className="text-primary">⚡</span>
+          <div className="bg-card border border-border rounded-lg backdrop-blur-sm flex flex-col" style={{ padding: '24px', boxShadow: '0px 0px 15px rgba(198, 255, 62, 0.06)' }}>
+            <h3 className="text-xl font-semibold text-foreground mb-8">
               Time to Ship New Features
             </h3>
             <ResponsiveContainer width="100%" height={280}>
-              <BarChart data={timeToShipData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(198, 255, 62, 0.08)" strokeOpacity={0.3} />
+              <BarChart data={timeToShipData} margin={{ top: 10, right: 10, left: 0, bottom: 10 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#2C2C2C" />
                 <XAxis 
                   dataKey="name" 
                   stroke="#A0A0A0"
@@ -52,7 +51,7 @@ const Proofs = () => {
                 />
                 <YAxis 
                   stroke="#A0A0A0"
-                  tick={{ fill: '#A0A0A0' }}
+                  tick={{ fill: '#A0A0A0', fontSize: 12 }}
                   label={{ value: 'Days', angle: -90, position: 'insideLeft', fill: '#A0A0A0' }}
                 />
                 <Tooltip 
@@ -79,7 +78,7 @@ const Proofs = () => {
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
-            <div className="mt-auto pt-4 border-t border-border">
+            <div className="mt-auto pt-6 border-t border-border">
               <p className="text-xs font-mono text-center" style={{ color: '#C6FF3E' }}>
                 7× faster feature validation
               </p>
@@ -87,23 +86,23 @@ const Proofs = () => {
           </div>
 
           {/* A/B Test Response Chart */}
-          <div className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm flex flex-col" style={{ boxShadow: '0px 0px 15px rgba(198, 255, 62, 0.06)' }}>
-            <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-              <span className="text-primary">📊</span>
+          <div className="bg-card border border-border rounded-lg backdrop-blur-sm flex flex-col" style={{ padding: '24px', boxShadow: '0px 0px 15px rgba(198, 255, 62, 0.06)' }}>
+            <h3 className="text-xl font-semibold text-foreground mb-8">
               A/B Test Response Accuracy
             </h3>
             <ResponsiveContainer width="100%" height={280}>
-              <LineChart data={abTestData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(198, 255, 62, 0.08)" strokeOpacity={0.3} />
+              <LineChart data={abTestData} margin={{ top: 10, right: 10, left: 0, bottom: 10 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#2C2C2C" />
                 <XAxis 
                   dataKey="week" 
                   stroke="#A0A0A0"
                   tick={{ fill: '#A0A0A0', fontSize: 12 }}
+                  label={{ value: 'Time Since Launch (Weeks)', position: 'insideBottom', offset: -5, fill: '#A0A0A0', fontSize: 11 }}
                 />
                 <YAxis 
                   stroke="#A0A0A0"
-                  tick={{ fill: '#A0A0A0' }}
-                  label={{ value: 'Accuracy %', angle: -90, position: 'insideLeft', fill: '#A0A0A0' }}
+                  tick={{ fill: '#A0A0A0', fontSize: 12 }}
+                  label={{ value: 'Behaviour Match (%)', angle: -90, position: 'insideLeft', fill: '#A0A0A0' }}
                 />
                 <Tooltip 
                   contentStyle={{ 
@@ -134,7 +133,7 @@ const Proofs = () => {
                 />
               </LineChart>
             </ResponsiveContainer>
-            <div className="mt-auto pt-4 border-t border-border">
+            <div className="mt-auto pt-6 border-t border-border">
               <p className="text-xs font-mono text-center" style={{ color: '#C6FF3E' }}>
                 95%+ correlation between simulated and real user behaviour after 6 weeks
               </p>
@@ -142,10 +141,9 @@ const Proofs = () => {
           </div>
 
           {/* Cost Per Insight Card */}
-          <div className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm flex flex-col" style={{ boxShadow: '0px 0px 15px rgba(198, 255, 62, 0.06)' }}>
+          <div className="bg-card border border-border rounded-lg backdrop-blur-sm flex flex-col" style={{ padding: '24px', boxShadow: '0px 0px 15px rgba(198, 255, 62, 0.06)' }}>
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-                <span className="text-primary">💰</span>
+              <h3 className="text-xl font-semibold text-foreground mb-8">
                 Cost Per Insight
               </h3>
               <div className="space-y-8 mt-12">
@@ -159,7 +157,7 @@ const Proofs = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-auto pt-4 border-t border-border">
+            <div className="mt-auto pt-6 border-t border-border">
               <p className="text-xs font-mono text-center" style={{ color: '#C6FF3E' }}>
                 6–13× more cost-effective
               </p>
