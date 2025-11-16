@@ -11,6 +11,7 @@ import companyGoogle from "@/assets/company-google.svg";
 import companyLinkedin from "@/assets/company-linkedin.svg";
 import companyTinder from "@/assets/company-tinder.svg";
 import companyApple from "@/assets/company-apple.svg";
+import companyOla from "@/assets/company-ola.svg";
 
 const companies = [
   { name: "Strava", logo: companyStrava },
@@ -22,6 +23,7 @@ const companies = [
   { name: "LinkedIn", logo: companyLinkedin },
   { name: "Tinder", logo: companyTinder },
   { name: "Apple", logo: companyApple },
+  { name: "Ola", logo: companyOla },
 ];
 
 const Hero = () => {
