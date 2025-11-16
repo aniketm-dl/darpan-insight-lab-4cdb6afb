@@ -6,7 +6,7 @@ import companyMeta from "@/assets/company-meta.png";
 import companyUber from "@/assets/company-uber.png";
 import companyGoogle from "@/assets/company-google.svg";
 import companyLinkedin from "@/assets/company-linkedin.svg";
-import companyApple from "@/assets/company-apple.svg";
+import companyApple from "@/assets/company-apple-colored.png";
 
 const companies = [
   { name: "Meta", logo: companyMeta },
