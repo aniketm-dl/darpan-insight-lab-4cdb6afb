@@ -7,7 +7,7 @@ import companyMeta from "@/assets/company-meta.png";
 import companyUber from "@/assets/company-uber.png";
 import companyDiscord from "@/assets/company-discord.png";
 import companyPeo from "@/assets/company-peo.png";
-import companyGoogle from "@/assets/company-google.png";
+import companyGoogle from "@/assets/company-google.svg";
 
 const companies = [
   { name: "Strava", logo: companyStrava },
