@@ -2,28 +2,18 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroNetwork from "@/assets/hero-network.jpg";
-import companyStrava from "@/assets/company-strava.png";
 import companyMeta from "@/assets/company-meta.png";
 import companyUber from "@/assets/company-uber.png";
-import companyDiscord from "@/assets/company-discord.png";
-import companyPeo from "@/assets/company-peo.png";
 import companyGoogle from "@/assets/company-google.svg";
 import companyLinkedin from "@/assets/company-linkedin.svg";
-import companyTinder from "@/assets/company-tinder.svg";
 import companyApple from "@/assets/company-apple.svg";
-import companyOla from "@/assets/company-ola.svg";
 
 const companies = [
-  { name: "Strava", logo: companyStrava },
   { name: "Meta", logo: companyMeta },
-  { name: "Uber", logo: companyUber },
-  { name: "Discord", logo: companyDiscord },
-  { name: "PEO", logo: companyPeo },
   { name: "Google", logo: companyGoogle },
-  { name: "LinkedIn", logo: companyLinkedin },
-  { name: "Tinder", logo: companyTinder },
   { name: "Apple", logo: companyApple },
-  { name: "Ola", logo: companyOla },
+  { name: "LinkedIn", logo: companyLinkedin },
+  { name: "Uber", logo: companyUber },
 ];
 
 const Hero = () => {
