@@ -1,6 +1,6 @@
 const WhyWeBuild = () => {
   return (
-    <section className="py-20 px-4 bg-background">
+    <section id="why" className="py-20 px-4 bg-background">
       <div className="container max-w-4xl mx-auto text-center">
         <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
           [ WHY ]
