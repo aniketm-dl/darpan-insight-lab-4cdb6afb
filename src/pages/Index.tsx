@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Proofs from "@/components/Proofs";
+import TrustedBy from "@/components/TrustedBy";
 import WhyWeBuild from "@/components/WhyWeBuild";
 import WhatWeDo from "@/components/WhatWeDo";
-import Proofs from "@/components/Proofs";
-import Founders from "@/components/Founders";
 import Testimonials from "@/components/Testimonials";
 import Insights from "@/components/Insights";
+import Founders from "@/components/Founders";
 import BookDemo from "@/components/BookDemo";
 import Footer from "@/components/Footer";
 
@@ -34,12 +35,13 @@ const Index = () => {
       {!hasScrolled && <div className="h-screen" />}
       {hasScrolled && (
         <>
+          <Proofs />
+          <TrustedBy />
           <WhyWeBuild />
           <WhatWeDo />
-          <Proofs />
-          <Founders />
           <Testimonials />
           <Insights />
+          <Founders />
           <BookDemo />
           <Footer />
         </>
