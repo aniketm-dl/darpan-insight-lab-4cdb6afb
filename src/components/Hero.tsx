@@ -117,74 +117,23 @@ const Hero = () => {
           </div>
 
           {/* Trusted By Section */}
-          <div className="mt-16 animate-fade-in overflow-hidden">
+          <div className="mt-16 animate-fade-in">
             <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center">
               Trusted by
             </h3>
-            <div className="relative space-y-6">
-              {/* First row - scrolling left to right */}
-              <div className="relative">
-                <div className="flex animate-scroll">
-                  {/* First set of logos */}
-                  {companies.map((company, index) => (
-                    <div
-                      key={`first-${index}`}
-                      className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16"
-                    >
-                      <img
-                        src={company.logo}
-                        alt={`${company.name} logo`}
-                        className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-70"
-                      />
-                    </div>
-                  ))}
-                  {/* Duplicate set for seamless loop */}
-                  {companies.map((company, index) => (
-                    <div
-                      key={`second-${index}`}
-                      className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16"
-                    >
-                      <img
-                        src={company.logo}
-                        alt={`${company.name} logo`}
-                        className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-70"
-                      />
-                    </div>
-                  ))}
+            <div className="flex justify-center items-center gap-8 md:gap-12 lg:gap-16 flex-wrap">
+              {companies.map((company, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0"
+                >
+                  <img
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-70"
+                  />
                 </div>
-              </div>
-              
-              {/* Second row - scrolling right to left */}
-              <div className="relative">
-                <div className="flex animate-scroll-reverse">
-                  {/* First set of logos */}
-                  {companiesReversed.map((company, index) => (
-                    <div
-                      key={`rev-first-${index}`}
-                      className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16"
-                    >
-                      <img
-                        src={company.logo}
-                        alt={`${company.name} logo`}
-                        className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-70"
-                      />
-                    </div>
-                  ))}
-                  {/* Duplicate set for seamless loop */}
-                  {companiesReversed.map((company, index) => (
-                    <div
-                      key={`rev-second-${index}`}
-                      className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16"
-                    >
-                      <img
-                        src={company.logo}
-                        alt={`${company.name} logo`}
-                        className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-70"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
