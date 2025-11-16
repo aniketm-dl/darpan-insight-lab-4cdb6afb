@@ -8,6 +8,8 @@ import companyUber from "@/assets/company-uber.png";
 import companyDiscord from "@/assets/company-discord.png";
 import companyPeo from "@/assets/company-peo.png";
 import companyGoogle from "@/assets/company-google.svg";
+import companyLinkedin from "@/assets/company-linkedin.svg";
+import companyTinder from "@/assets/company-tinder.svg";
 
 const companies = [
   { name: "Strava", logo: companyStrava },
@@ -16,6 +18,8 @@ const companies = [
   { name: "Discord", logo: companyDiscord },
   { name: "PEO", logo: companyPeo },
   { name: "Google", logo: companyGoogle },
+  { name: "LinkedIn", logo: companyLinkedin },
+  { name: "Tinder", logo: companyTinder },
 ];
 
 const Hero = () => {
