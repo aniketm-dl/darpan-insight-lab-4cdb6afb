@@ -20,13 +20,13 @@ const Proofs = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block text-accent font-mono text-sm mb-4 tracking-wider">
+          <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
             [ PROOFS ]
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             What does data say?
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
             Real metrics from teams using digital twin research vs traditional methods
           </p>
         </div>
