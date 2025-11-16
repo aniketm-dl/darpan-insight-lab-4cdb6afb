@@ -6,12 +6,14 @@ import logoGoogle from "@/assets/logo-google.svg";
 import logoApple from "@/assets/logo-apple.svg";
 import logoTinder from "@/assets/logo-tinder.svg";
 import logoLyft from "@/assets/logo-lyft.svg";
+import logoUber from "@/assets/logo-uber.svg";
 
 const companies = [
   { name: "Google", logo: logoGoogle },
   { name: "Apple", logo: logoApple },
   { name: "Tinder", logo: logoTinder },
   { name: "Lyft", logo: logoLyft },
+  { name: "Uber", logo: logoUber },
 ];
 
 const Hero = () => {
