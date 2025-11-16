@@ -32,10 +32,10 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <TrustedBy />
       {!hasScrolled && <div className="h-screen" />}
       {hasScrolled && (
         <>
-          <TrustedBy />
           <WhyWeBuild />
           <WhatWeDo />
           <Proofs />
