@@ -16,7 +16,7 @@ const companies = [
 
 const TrustedBy = () => {
   return (
-    <section className="py-20 px-4 md:px-6 lg:px-8 bg-background" id="trusted-by">
+    <section className="pb-20 pt-8 px-4 md:px-6 lg:px-8 bg-background" id="trusted-by">
       <div className="max-w-7xl mx-auto">
         <div className="scroll-reveal bg-card/30 backdrop-blur-sm rounded-2xl py-16 px-8">
           <div className="text-center mb-12">
