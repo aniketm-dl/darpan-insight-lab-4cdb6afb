@@ -9,6 +9,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  Cell,
 } from "recharts";
 
 const timeToShipData = [
@@ -69,10 +70,10 @@ const Proofs = () => {
                     color: "hsl(var(--foreground))",
                   }}
                 />
-                <Bar dataKey="days" radius={[8, 8, 0, 0]} fill="hsl(var(--muted))">
+                <Bar dataKey="days" radius={[8, 8, 0, 0]}>
                   {timeToShipData.map((entry, index) => (
-                    <rect
-                      key={`bar-${index}`}
+                    <Cell
+                      key={`cell-${index}`}
                       fill={entry.name === "Darpan Labs" ? "#C6FF3E" : "#4A90E2"}
                       stroke={entry.name === "Darpan Labs" ? "#C6FF3E" : "#4A90E2"}
                       strokeWidth={2}
