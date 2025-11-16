@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
 import Survey from "./pages/Survey";
+import InsightsPage from "./pages/InsightsPage";
+import BlogPost from "./pages/BlogPost";
 
 // Import Space Grotesk font
 import '@fontsource/space-grotesk';
@@ -45,6 +47,8 @@ const App = () => (
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/survey" element={<Survey />} />
+          <Route path="/insights" element={<InsightsPage />} />
+          <Route path="/insights/why-research-fails" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
