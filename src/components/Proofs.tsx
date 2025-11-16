@@ -141,7 +141,7 @@ const Proofs = () => {
             </div>
           </div>
 
-          {/* Cost Per Insight Card */}
+          {/* Cost Per Study Card */}
           <div
             className="bg-card border border-border rounded-lg p-6 backdrop-blur-sm flex flex-col"
             style={{ boxShadow: "0px 0px 15px rgba(198, 255, 62, 0.06)" }}
@@ -149,26 +149,29 @@ const Proofs = () => {
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
                 <span className="text-primary"></span>
-                Cost Per Insight
+                Cost Per Study
               </h3>
-              <div className="space-y-8 mt-12">
-                <div>
-                  <p className="text-sm mb-2" style={{ color: "#A0A0A0" }}>
+              <div className="grid grid-cols-2 gap-6 mt-12">
+                <div className="text-center">
+                  <p className="text-sm mb-3" style={{ color: "#A0A0A0" }}>
                     Traditional Research
                   </p>
-                  <p className="text-4xl font-bold" style={{ color: "#4A90E2" }}>
-                    ~$30–65K
+                  <p className="text-3xl font-bold" style={{ color: "#4A90E2" }}>
+                    $30–65K
                   </p>
                 </div>
-                <div>
-                  <p className="text-sm mb-2" style={{ color: "#A0A0A0" }}>
+                <div className="text-center">
+                  <p className="text-sm mb-3" style={{ color: "#A0A0A0" }}>
                     Darpan Labs
                   </p>
-                  <p className="text-4xl font-bold" style={{ color: "#C6FF3E" }}>
-                    ~$5K
+                  <p className="text-3xl font-bold" style={{ color: "#C6FF3E" }}>
+                    $5K
                   </p>
                 </div>
               </div>
+              <p className="text-xs text-center mt-6" style={{ color: "#6B6B6B" }}>
+                *Approximate figures
+              </p>
             </div>
             <div className="mt-auto pt-4 border-t border-border">
               <p className="text-xs font-mono text-center" style={{ color: "#C6FF3E" }}>
