@@ -267,7 +267,7 @@ All colors MUST be HSL.
   }
 
   .animate-scroll {
-    animation: scroll 12s linear infinite;
+    animation: scroll 8s linear infinite;
   }
 
   .animate-scroll:hover {
@@ -275,7 +275,7 @@ All colors MUST be HSL.
   }
 
   .animate-scroll-reverse {
-    animation: scroll-reverse 15s linear infinite;
+    animation: scroll-reverse 10s linear infinite;
   }
 
   .animate-scroll-reverse:hover {
