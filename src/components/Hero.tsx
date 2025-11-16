@@ -4,15 +4,15 @@ import { ArrowRight } from "lucide-react";
 import heroNetwork from "@/assets/hero-network.jpg";
 import companyMeta from "@/assets/company-meta.png";
 import companyUber from "@/assets/company-uber.png";
-import companyGoogle from "@/assets/company-google.svg";
-import companyLinkedin from "@/assets/company-linkedin.svg";
-import companyApple from "@/assets/company-apple-colored.png";
+import companyGoogle from "@/assets/company-google.png";
+import companyApple from "@/assets/company-apple.png";
+import companyZomato from "@/assets/company-zomato.png";
 
 const companies = [
   { name: "Meta", logo: companyMeta },
   { name: "Google", logo: companyGoogle },
   { name: "Apple", logo: companyApple },
-  { name: "LinkedIn", logo: companyLinkedin },
+  { name: "Zomato", logo: companyZomato },
   { name: "Uber", logo: companyUber },
 ];
 
