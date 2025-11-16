@@ -73,9 +73,9 @@ const Proofs = () => {
                   {timeToShipData.map((entry, index) => (
                     <rect
                       key={`bar-${index}`}
-                      fill={entry.name === "Darpan Labs" ? "#C6FF3E" : "#3A3A3A"}
-                      stroke={entry.name === "Darpan Labs" ? "#C6FF3E" : "transparent"}
-                      strokeWidth={entry.name === "Darpan Labs" ? 2 : 0}
+                      fill={entry.name === "Darpan Labs" ? "#C6FF3E" : "#4A90E2"}
+                      stroke={entry.name === "Darpan Labs" ? "#C6FF3E" : "#4A90E2"}
+                      strokeWidth={2}
                     />
                   ))}
                 </Bar>
@@ -126,9 +126,9 @@ const Proofs = () => {
                 <Line
                   type="monotone"
                   dataKey="actual"
-                  stroke="#A0A0A0"
+                  stroke="#4A90E2"
                   strokeWidth={2}
-                  dot={{ fill: "#A0A0A0", r: 5, strokeWidth: 0 }}
+                  dot={{ fill: "#4A90E2", r: 5, strokeWidth: 0 }}
                   name="Actual"
                 />
               </LineChart>
@@ -163,7 +163,7 @@ const Proofs = () => {
                   <p className="text-sm mb-2" style={{ color: "#A0A0A0" }}>
                     Traditional Research
                   </p>
-                  <p className="text-4xl font-bold" style={{ color: "#3A3A3A" }}>
+                  <p className="text-4xl font-bold" style={{ color: "#4A90E2" }}>
                     ~$30–65K
                   </p>
                 </div>
