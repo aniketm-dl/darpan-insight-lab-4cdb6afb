@@ -34,10 +34,10 @@ const Founders = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
-            [ TEAM ]
+            [ WHO ]
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Meet The Founders
+            The People Behind the Twins
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Building the future of customer research with AI-powered customer twins
