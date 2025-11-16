@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhyWeBuild from "@/components/WhyWeBuild";
 import WhatWeDo from "@/components/WhatWeDo";
+import Proofs from "@/components/Proofs";
 import Founders from "@/components/Founders";
 import Testimonials from "@/components/Testimonials";
 import Insights from "@/components/Insights";
@@ -35,6 +36,7 @@ const Index = () => {
         <>
           <WhyWeBuild />
           <WhatWeDo />
+          <Proofs />
           <Founders />
           <Testimonials />
           <Insights />
