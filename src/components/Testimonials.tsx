@@ -11,21 +11,24 @@ const testimonials = [
     role: "Product Manager",
     company: "PlayBuddy",
     image: testimonialSarah,
-    content: "We used to wait 2–3 weeks for survey results before every product tweak. With Darpan, I can test a new flow on AI twins overnight and know exactly where users would drop off. It's changed how we prioritize features.",
+    content:
+      "We used to wait 2–3 weeks for survey results before every product tweak. With Darpan, I can test a new flow on AI twins overnight and know exactly where users would drop off. It's changed how we prioritize features.",
   },
   {
     name: "Aarav Patel",
     role: "UX Research Lead",
     company: "NovaPay",
     image: testimonialMichael,
-    content: "Traditional UX tests gave us what users *said*, not what they'd *do*. Darpan's simulations showed behavioral friction points we hadn't even spotted. Our checkout completion improved 18% after acting on those insights.",
+    content:
+      "Traditional UX tests gave us what users said, not what they'd do. Darpan's simulations showed behavioral friction points we hadn't even spotted. Our checkout completion improved 18% after acting on those insights.",
   },
   {
     name: "Emily Roy",
     role: "Brand Strategy Lead",
     company: "Glimmer Cosmetics",
     image: testimonialPriya,
-    content: "Before Darpan, we ran campaigns on gut feel. Now, we run them on evidence. Their AI twins gave us fast feedback on messaging that actually converts — it's like having a 24/7 focus group.",
+    content:
+      "Before Darpan, we ran campaigns on gut feel. Now, we run them on evidence. Their AI twins gave us fast feedback on messaging that actually converts — it's like having a 24/7 focus group.",
   },
 ];
 
@@ -35,9 +38,7 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 scroll-reveal">
-          <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
-            [ TESTIMONIALS ]
-          </p>
+          <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">[ TESTIMONIALS ]</p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
             From Teams That Rethink Research
           </h2>
@@ -56,14 +57,15 @@ const Testimonials = () => {
             >
               <CardContent className="p-6">
                 <Quote className="w-10 h-10 text-primary mb-4 opacity-50" />
-                <p className="text-foreground/90 mb-6 leading-relaxed">
-                  "{testimonial.content}"
-                </p>
+                <p className="text-foreground/90 mb-6 leading-relaxed">"{testimonial.content}"</p>
                 <div className="flex items-center gap-4">
                   <Avatar className="h-12 w-12 ring-2 ring-primary/20">
                     <AvatarImage src={testimonial.image} alt={testimonial.name} />
                     <AvatarFallback className="bg-primary/10 text-primary">
-                      {testimonial.name.split(" ").map(n => n[0]).join("")}
+                      {testimonial.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
                     </AvatarFallback>
                   </Avatar>
                   <div>
