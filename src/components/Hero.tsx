@@ -2,8 +2,17 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroNetwork from "@/assets/hero-network.jpg";
+import logoGoogle from "@/assets/logo-google.svg";
+import logoApple from "@/assets/logo-apple.svg";
+import logoTinder from "@/assets/logo-tinder.svg";
+import logoLyft from "@/assets/logo-lyft.svg";
 
-const companies: { name: string; logo: string }[] = [];
+const companies = [
+  { name: "Google", logo: logoGoogle },
+  { name: "Apple", logo: logoApple },
+  { name: "Tinder", logo: logoTinder },
+  { name: "Lyft", logo: logoLyft },
+];
 
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
