@@ -112,23 +112,39 @@ const Hero = () => {
           </div>
 
           {/* Trusted By Section */}
-          <div className="mt-16 animate-fade-in">
-            <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
+          <div className="mt-16 animate-fade-in overflow-hidden">
+            <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center">
               Trusted by
             </h3>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
-              {companies.map((company, index) => (
-                <div
-                  key={index}
-                  className="transition-all duration-300 hover:scale-110"
-                >
-                  <img
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    className="h-10 md:h-12 lg:h-14 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100"
-                  />
-                </div>
-              ))}
+            <div className="relative">
+              <div className="flex animate-scroll">
+                {/* First set of logos */}
+                {companies.map((company, index) => (
+                  <div
+                    key={`first-${index}`}
+                    className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16"
+                  >
+                    <img
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-70"
+                    />
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {companies.map((company, index) => (
+                  <div
+                    key={`second-${index}`}
+                    className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16"
+                  >
+                    <img
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      className="h-12 md:h-14 lg:h-16 w-auto object-contain opacity-70"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
