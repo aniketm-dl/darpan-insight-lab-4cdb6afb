@@ -1,70 +1,53 @@
-import { Database, Bot, Zap, Route, Send, TrendingUp, ArrowRight } from "lucide-react";
-import PrototypeShowcase from "./PrototypeShowcase";
+import { Database, Users, FlaskConical, GitBranch, Share, Filter } from "lucide-react";
 
 const WhatWeDo = () => {
   const capabilities = [
     {
       icon: Database,
-      title: "Connect Your Data",
-      description: "Plug in analytics, CRM, or survey data — no setup headaches. Darpan automatically aligns signals across sources."
+      title: "Data Ingestion & Connectors",
+      description: "Plug in product analytics, CRM, CX, surveys, and public signals. CSV/Parquet supported."
     },
     {
-      icon: Bot,
-      title: "Build AI Customer Twins", 
-      description: "Generate data-driven personas that think and act like your real users — fully controllable by traits and context."
+      icon: Users,
+      title: "Twin Building", 
+      description: "Generate audience-true digital twins. Control priors, traits, and sample sizes."
     },
     {
-      icon: Zap,
-      title: "Run Instant Simulations",
-      description: "Test campaigns, flows, or pricing in hours — not weeks. See which ideas drive engagement, conversion, and sentiment."
+      icon: FlaskConical,
+      title: "Experimentation & Simulation",
+      description: "Test content, UX, pricing, and messaging. Compare scenarios before you ship."
     },
     {
-      icon: Route,
-      title: "Analyze User Journeys",
-      description: "Identify friction, predict drop-offs, and uncover evidence behind every customer decision."
+      icon: GitBranch,
+      title: "Journey & Screen Analysis",
+      description: "Predict friction and completion, pinpoint high-risk steps across flows."
     },
     {
-      icon: Send,
-      title: "Take Action Effortlessly", 
-      description: "Turn insights into tasks — one-click export to Jira, Figma, or CSV summaries."
+      icon: Share,
+      title: "Actions & Handoffs", 
+      description: "Create Jira tasks, one-click summaries, and export to Figma, Slides, or CSV."
     },
     {
-      icon: TrendingUp,
-      title: "Scale Your Insights",
-      description: "Save and reuse cohorts by geography, device, or lifecycle to compare audiences and improve decisions over time."
+      icon: Filter,
+      title: "Segment & Cohort Targeting",
+      description: "Filter by geo, device, lifecycle, or ICP—and save reusable cohorts."
     }
   ];
 
 
   return (
-    <section id="what" className="py-24 bg-background scroll-reveal">
+    <section id="what-we-do" className="py-24 bg-background scroll-reveal">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title and Explainer */}
         <div className="text-center mb-20 scroll-reveal stagger-1">
-          <p className="text-primary text-sm md:text-base font-mono mb-4 tracking-wider">
-            [ WHAT ]
-          </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            From Data to Evidence
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+            What we do
           </h2>
           
-          <div className="max-w-4xl mx-auto mb-12">
+          <div className="max-w-4xl mx-auto mb-8">
             <p className="text-lg md:text-xl text-white leading-[1.5]">
-              Ingest your existing data, create AI customer twins, and run simulations to predict real customer reactions — before you go live.
+              We build AI customer twins from your data so teams can test ideas, campaigns, and UX in hours and ship with confidence.
             </p>
-          </div>
-
-          {/* Flow Visual */}
-          <div className="flex items-center justify-center gap-2 md:gap-4 text-sm md:text-base font-mono text-primary/80 mb-4 flex-wrap">
-            <span>Data</span>
-            <ArrowRight className="w-4 h-4" />
-            <span>Twins</span>
-            <ArrowRight className="w-4 h-4" />
-            <span>Simulation</span>
-            <ArrowRight className="w-4 h-4" />
-            <span>Evidence</span>
-            <ArrowRight className="w-4 h-4" />
-            <span>Action</span>
           </div>
         </div>
 
@@ -95,11 +78,6 @@ const WhatWeDo = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Prototype Showcase Integration */}
-        <div className="mt-20">
-          <PrototypeShowcase />
         </div>
 
       </div>

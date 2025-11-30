@@ -46,34 +46,16 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection("why")}
+              onClick={() => scrollToSection("what-we-do")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Why
+              What We Do
             </button>
             <button 
-              onClick={() => scrollToSection("what")}
+              onClick={() => scrollToSection("founders")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              What
-            </button>
-            <button 
-              onClick={() => scrollToSection("proofs")}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Proofs
-            </button>
-            <button 
-              onClick={() => scrollToSection("insights")}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Insights
-            </button>
-            <button 
-              onClick={() => scrollToSection("who")}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Who
+              Founders
             </button>
             <Button 
               onClick={() => scrollToSection("book-demo")}
@@ -98,34 +80,16 @@ const Header = () => {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border">
             <div className="px-4 py-6 space-y-4">
               <button 
-                onClick={() => scrollToSection("why")}
+                onClick={() => scrollToSection("what-we-do")}
                 className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
               >
-                Why
+                What We Do
               </button>
               <button 
-                onClick={() => scrollToSection("what")}
+                onClick={() => scrollToSection("founders")}
                 className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
               >
-                What
-              </button>
-              <button 
-                onClick={() => scrollToSection("proofs")}
-                className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
-              >
-                Proofs
-              </button>
-              <button 
-                onClick={() => scrollToSection("insights")}
-                className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
-              >
-                Insights
-              </button>
-              <button 
-                onClick={() => scrollToSection("who")}
-                className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
-              >
-                Who
+                Founders
               </button>
               <Button 
                 onClick={() => scrollToSection("book-demo")}
