@@ -16,7 +16,7 @@ const Founders = () => {
     {
       name: "Aniket Niranjan Mishra",
       role: "Co-founder",
-      experience: ["American Express, Citi Bank", "IIM Ahmedabad, IIT Kharagpur"],
+      experience: ["American Express, Citi Bank, MyShubhLife", "IIM Ahmedabad, IIT Kharagpur"],
       image: aniketMishraImg,
       linkedin: "https://www.linkedin.com/in/aniket-niranjan-mishra-1203/",
     },
