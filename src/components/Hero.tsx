@@ -1,11 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroNetwork from "@/assets/hero-network.jpg";
 
+const words = ["Evidence", "Insights", "Actions", "Results"];
+
+const getRandomWord = (currentWord: string): string => {
+  const availableWords = words.filter(word => word !== currentWord);
+  return availableWords[Math.floor(Math.random() * availableWords.length)];
+};
+
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
-  const fullText = "Evidence";
+  const currentWordRef = useRef(words[0]);
   
   useEffect(() => {
     let currentIndex = 0;
@@ -15,10 +22,11 @@ const Hero = () => {
       currentIndex = 0;
       isTyping = true;
       setTypedText("");
+      const currentWord = currentWordRef.current;
       
       const typingInterval = setInterval(() => {
-        if (isTyping && currentIndex < fullText.length) {
-          setTypedText(fullText.slice(0, currentIndex + 1));
+        if (isTyping && currentIndex < currentWord.length) {
+          setTypedText(currentWord.slice(0, currentIndex + 1));
           currentIndex++;
         } else if (isTyping) {
           // Finished typing, wait a bit then start erasing
@@ -27,9 +35,11 @@ const Hero = () => {
             const erasingInterval = setInterval(() => {
               if (currentIndex > 0) {
                 currentIndex--;
-                setTypedText(fullText.slice(0, currentIndex));
+                setTypedText(currentWord.slice(0, currentIndex));
               } else {
                 clearInterval(erasingInterval);
+                // Pick a new random word different from current
+                currentWordRef.current = getRandomWord(currentWord);
                 // Wait before starting next cycle
                 setTimeout(startTypingCycle, 1000);
               }
