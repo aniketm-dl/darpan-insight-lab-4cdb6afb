@@ -90,7 +90,7 @@ const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
             <span className="text-primary">From Hunches</span>{" "}
             <span className="text-foreground">to</span>{" "}
-            <span className="text-secondary">
+            <span className="text-secondary inline-block min-w-[140px] md:min-w-[180px] lg:min-w-[220px] text-left">
               {typedText}
               <span className="animate-pulse opacity-60">|</span>
             </span>
