@@ -20,29 +20,30 @@ const WhatWeEnable = () => {
   ];
 
   return (
-    <section id="what-we-enable" className="py-24 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <section id="what-we-enable" className="section-padding bg-background">
+      <div className="section-container">
+        <div className="text-center mb-12">
+          <p className="eyebrow">Capabilities</p>
+          <h2 className="section-heading">
             What Darpan Labs enables
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {cards.map((card, index) => {
             const IconComponent = card.icon;
             return (
               <div
                 key={index}
-                className="bg-card rounded-2xl p-8 border border-border hover:border-primary/30 transition-all duration-300"
+                className="premium-card"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <IconComponent className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
+                  <IconComponent className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-lg font-semibold text-foreground mb-2">
                   {card.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   {card.description}
                 </p>
               </div>

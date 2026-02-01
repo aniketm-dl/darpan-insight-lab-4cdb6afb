@@ -35,7 +35,6 @@ const BookDemo = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate form data
     const result = demoSchema.safeParse(formData);
     
     if (!result.success) {
@@ -48,7 +47,6 @@ const BookDemo = () => {
       return;
     }
 
-    // Save to database with validated data
     const { error } = await supabase
       .from('demo_submissions')
       .insert({
@@ -78,22 +76,23 @@ const BookDemo = () => {
 
   if (isSubmitted) {
     return (
-      <section id="book-demo" className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-card rounded-3xl p-12 card-shadow">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-10 h-10 text-green-600" />
+      <section id="book-demo" className="section-padding bg-background">
+        <div className="section-container">
+          <div className="max-w-lg mx-auto text-center">
+            <div className="premium-card p-10">
+              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                <CheckCircle className="w-7 h-7 text-primary" />
               </div>
-              <h2 className="text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl font-bold text-foreground mb-3">
                 Thank you!
               </h2>
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-muted-foreground text-sm mb-5">
                 We'll reach out shortly.
               </p>
               <Button 
                 onClick={() => setIsSubmitted(false)}
                 variant="outline"
+                size="sm"
               >
                 Submit Another Request
               </Button>
@@ -105,91 +104,92 @@ const BookDemo = () => {
   }
 
   return (
-    <section id="book-demo" className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+    <section id="book-demo" className="section-padding bg-background">
+      <div className="section-container">
+        <div className="max-w-lg mx-auto">
+          <div className="text-center mb-10">
+            <p className="eyebrow">Get started</p>
+            <h2 className="section-heading mb-3">
               Book a Demo
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               Tell us a bit about you and we'll set up a tailored walk-through.
             </p>
           </div>
 
-          <div className="bg-card rounded-3xl p-8 card-shadow">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+          <div className="premium-card">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Name *</Label>
+                  <Label htmlFor="name" className="text-sm">Name *</Label>
                   <Input
                     id="name"
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
-                    className="h-12"
+                    className="h-10"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="email">Work Email *</Label>
+                  <Label htmlFor="email" className="text-sm">Work Email *</Label>
                   <Input
                     id="email"
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="h-12"
+                    className="h-10"
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="company">Company *</Label>
+                  <Label htmlFor="company" className="text-sm">Company *</Label>
                   <Input
                     id="company"
                     type="text"
                     required
                     value={formData.company}
                     onChange={(e) => handleInputChange("company", e.target.value)}
-                    className="h-12"
+                    className="h-10"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="role">Role *</Label>
+                  <Label htmlFor="role" className="text-sm">Role *</Label>
                   <Input
                     id="role"
                     type="text"
                     required
                     value={formData.role}
                     onChange={(e) => handleInputChange("role", e.target.value)}
-                    className="h-12"
+                    className="h-10"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone (optional)</Label>
+                <Label htmlFor="phone" className="text-sm">Phone (optional)</Label>
                 <Input
                   id="phone"
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
-                  className="h-12"
+                  className="h-10"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message" className="text-sm">Message</Label>
                 <Textarea
                   id="message"
                   placeholder="Tell us about your specific needs or questions..."
                   value={formData.message}
                   onChange={(e) => handleInputChange("message", e.target.value)}
-                  className="min-h-[120px]"
+                  className="min-h-[100px]"
                 />
               </div>
 
@@ -199,7 +199,7 @@ const BookDemo = () => {
                   checked={formData.consent}
                   onCheckedChange={(checked) => handleInputChange("consent", !!checked)}
                 />
-                <Label htmlFor="consent" className="text-sm leading-relaxed">
+                <Label htmlFor="consent" className="text-xs text-muted-foreground leading-relaxed">
                   I agree to be contacted about my request and understand that Darpan Labs 
                   will process my information according to their privacy policy.
                 </Label>
@@ -207,8 +207,7 @@ const BookDemo = () => {
 
               <Button 
                 type="submit" 
-                variant="hero" 
-                size="xl"
+                size="lg"
                 className="w-full"
                 disabled={!formData.consent}
               >

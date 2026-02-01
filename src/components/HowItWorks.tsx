@@ -29,28 +29,28 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 bg-muted/20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <section id="how-it-works" className="section-padding bg-muted/30">
+      <div className="section-container">
+        <div className="text-center mb-12">
+          <p className="eyebrow">Process</p>
+          <h2 className="section-heading">
             How it works
           </h2>
         </div>
 
-        {/* Stepper */}
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-4 gap-4">
           {steps.map((item, index) => {
             const IconComponent = item.icon;
             return (
               <div key={index} className="relative">
-                <div className="bg-card rounded-2xl p-6 border border-border text-center h-full">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 border-2 border-primary/30">
-                    <IconComponent className="w-7 h-7 text-primary" />
+                <div className="premium-card text-center h-full">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <IconComponent className="w-5 h-5 text-primary" />
                   </div>
-                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
+                  <div className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3">
                     {item.step}
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                  <h3 className="text-base font-semibold text-foreground mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">

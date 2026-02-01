@@ -1,12 +1,12 @@
-import { ExternalLink } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { analytics } from "@/lib/analytics";
 
-const PLAYGROUND_URL = "https://frontend-production-128f.up.railway.app";
-
 const Footer = () => {
+  const navigate = useNavigate();
+
   const handleOpenPlayground = () => {
     analytics.playgroundOpenClick("footer");
-    window.open(PLAYGROUND_URL, "_blank", "noopener,noreferrer");
+    navigate("/playground");
   };
 
   const handleBookDemo = () => {
@@ -19,43 +19,42 @@ const Footer = () => {
 
   return (
     <footer className="bg-card border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="section-container py-10">
         <div className="grid md:grid-cols-3 gap-8 items-start">
           {/* Left - Logo and Tagline */}
           <div>
-            <div className="flex items-baseline mb-3">
-              <span className="text-xl font-bold text-foreground tracking-tight">DARPAN</span>
-              <span className="text-xl font-bold text-primary tracking-tight ml-0.5">LABS</span>
+            <div className="flex items-baseline mb-2">
+              <span className="text-lg font-bold text-foreground tracking-tight">DARPAN</span>
+              <span className="text-lg font-bold text-primary tracking-tight ml-0.5">LABS</span>
             </div>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground text-xs">
               AI-powered customer twins for instant insights and faster decisions
             </p>
           </div>
 
           {/* Center - Links */}
-          <div className="flex flex-col space-y-3">
+          <div className="flex flex-col space-y-2">
             <button 
               onClick={handleOpenPlayground}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm text-left flex items-center gap-2"
+              className="text-muted-foreground hover:text-foreground transition-colors text-xs text-left"
             >
               Playground
-              <ExternalLink className="w-3 h-3" />
             </button>
             <button 
               onClick={handleBookDemo}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm text-left"
+              className="text-muted-foreground hover:text-foreground transition-colors text-xs text-left"
             >
               Book a Demo
             </button>
             <a 
               href="#" 
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+              className="text-muted-foreground hover:text-foreground transition-colors text-xs"
             >
               Privacy Policy
             </a>
             <a 
               href="#" 
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+              className="text-muted-foreground hover:text-foreground transition-colors text-xs"
             >
               Terms
             </a>
@@ -63,18 +62,18 @@ const Footer = () => {
 
           {/* Right - Contact */}
           <div className="md:text-right">
-            <p className="text-muted-foreground text-sm mb-2">Contact</p>
+            <p className="text-muted-foreground text-xs mb-1">Contact</p>
             <a 
               href="mailto:hello@darpanlabs.ai" 
-              className="text-foreground hover:text-primary transition-colors text-sm"
+              className="text-foreground hover:text-primary transition-colors text-xs"
             >
               hello@darpanlabs.ai
             </a>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border text-center">
-          <p className="text-muted-foreground text-sm">
+        <div className="mt-8 pt-6 border-t border-border text-center">
+          <p className="text-muted-foreground text-xs">
             © {new Date().getFullYear()} Darpan Labs. All rights reserved.
           </p>
         </div>
