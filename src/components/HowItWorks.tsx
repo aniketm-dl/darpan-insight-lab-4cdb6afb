@@ -44,16 +44,11 @@ const HowItWorks = () => {
             const IconComponent = item.icon;
             return (
               <div key={index} className="relative">
-                {/* Connector line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-[calc(50%+32px)] right-[-calc(50%-32px)] h-[2px] bg-border" />
-                )}
-                
-                <div className="bg-card rounded-2xl p-6 border border-border text-center relative z-10">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
+                <div className="bg-card rounded-2xl p-6 border border-border text-center h-full">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 border-2 border-primary/30">
                     <IconComponent className="w-7 h-7 text-primary" />
                   </div>
-                  <div className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
+                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
                     {item.step}
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">
