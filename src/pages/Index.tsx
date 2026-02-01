@@ -1,22 +1,38 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import WhatWeDo from "@/components/WhatWeDo";
-import Playground from "@/components/Playground";
+import WhatWeEnable from "@/components/WhatWeEnable";
+import HowItWorks from "@/components/HowItWorks";
+import PlaygroundSection from "@/components/PlaygroundSection";
+import UseCasesByRole from "@/components/UseCasesByRole";
+import Outputs from "@/components/Outputs";
+import TrustSection from "@/components/TrustSection";
+import FAQ from "@/components/FAQ";
 import Founders from "@/components/Founders";
 import BookDemo from "@/components/BookDemo";
 import Footer from "@/components/Footer";
 
 import { useScrollRevealMultiple } from "@/hooks/useScrollReveal";
+import { initAnalytics } from "@/lib/analytics";
 
 const Index = () => {
   useScrollRevealMultiple();
+
+  useEffect(() => {
+    initAnalytics();
+  }, []);
 
   return (
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <Playground />
-      <WhatWeDo />
+      <WhatWeEnable />
+      <HowItWorks />
+      <PlaygroundSection />
+      <UseCasesByRole />
+      <Outputs />
+      <TrustSection />
+      <FAQ />
       <Founders />
       <BookDemo />
       <Footer />

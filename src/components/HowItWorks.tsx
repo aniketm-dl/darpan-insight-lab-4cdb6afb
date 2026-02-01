@@ -1,0 +1,77 @@
+import { Database, Users, FlaskConical, FileOutput } from "lucide-react";
+import CTARow from "./CTARow";
+
+const HowItWorks = () => {
+  const steps = [
+    {
+      icon: Database,
+      step: "1",
+      title: "Connect data",
+      description: "Import CSV/Parquet or connect sources.",
+    },
+    {
+      icon: Users,
+      step: "2",
+      title: "Build customer twins",
+      description: "Generate segment-aware AI twins based on your data + constraints.",
+    },
+    {
+      icon: FlaskConical,
+      step: "3",
+      title: "Run experiments",
+      description: "Test messaging, UX variations, pricing hypotheses, and scenario questions.",
+    },
+    {
+      icon: FileOutput,
+      step: "4",
+      title: "Get decision outputs",
+      description: "Evidence trace, confidence signals, and recommended actions.",
+    },
+  ];
+
+  return (
+    <section id="how-it-works" className="py-24 bg-muted/20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            How it works
+          </h2>
+        </div>
+
+        {/* Stepper */}
+        <div className="grid md:grid-cols-4 gap-6 mb-16">
+          {steps.map((item, index) => {
+            const IconComponent = item.icon;
+            return (
+              <div key={index} className="relative">
+                {/* Connector line */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-8 left-[calc(50%+32px)] right-[-calc(50%-32px)] h-[2px] bg-border" />
+                )}
+                
+                <div className="bg-card rounded-2xl p-6 border border-border text-center relative z-10">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
+                    <IconComponent className="w-7 h-7 text-primary" />
+                  </div>
+                  <div className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <CTARow sectionName="how-it-works" />
+      </div>
+    </section>
+  );
+};
+
+export default HowItWorks;
