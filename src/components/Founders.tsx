@@ -1,5 +1,3 @@
-import { Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import aniketGudadheImg from "@/assets/aniket-gudadhe.png";
 import aniketMishraImg from "@/assets/aniket-mishra.png";
 import manavJainImg from "@/assets/manav-jain.png";
@@ -30,35 +28,36 @@ const Founders = () => {
   ];
 
   return (
-    <section id="founders" className="py-24 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Meet the founders</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+    <section id="founders" className="section-padding bg-muted/30">
+      <div className="section-container">
+        <div className="text-center mb-12">
+          <p className="eyebrow">Leadership</p>
+          <h2 className="section-heading mb-4">Meet the founders</h2>
+          <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
             Building the future of customer research with AI-powered customer twins
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {founders.map((founder, index) => (
             <a
               key={index}
               href={founder.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-card rounded-3xl p-6 card-shadow hover:neon-glow-green transition-all duration-300 hover:-translate-y-2 text-center border-2 border-transparent hover:border-primary/20 block cursor-pointer"
+              className="premium-card text-center hover:border-primary/20 cursor-pointer"
             >
               <div className="relative mb-4">
                 <img
                   src={founder.image}
                   alt={founder.name}
-                  className="w-48 h-48 rounded-full mx-auto object-cover border-2 border-primary/20"
+                  className="w-32 h-32 rounded-full mx-auto object-cover border border-border"
                 />
               </div>
 
-              <h3 className="text-xl font-bold text-foreground mb-4">{founder.name}</h3>
+              <h3 className="text-base font-semibold text-foreground mb-3">{founder.name}</h3>
 
-              <ul className="text-muted-foreground text-base leading-relaxed space-y-2">
+              <ul className="text-muted-foreground text-sm leading-relaxed space-y-1">
                 {founder.experience.map((point, idx) => (
                   <li key={idx}>{point}</li>
                 ))}
@@ -67,9 +66,8 @@ const Founders = () => {
           ))}
         </div>
 
-        {/* Advisors section */}
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground">Advised by experts in consumer psychology and applied AI.</p>
+        <div className="mt-10 text-center">
+          <p className="text-muted-foreground text-sm">Advised by experts in consumer psychology and applied AI.</p>
         </div>
       </div>
     </section>

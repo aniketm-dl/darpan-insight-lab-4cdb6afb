@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroNetwork from "@/assets/hero-network.jpg";
 import { analytics } from "@/lib/analytics";
 
 const words = ["Evidence", "Insights", "Actions", "Results"];
-const PLAYGROUND_URL = "https://frontend-production-128f.up.railway.app";
 
 const getRandomWord = (currentWord: string): string => {
   const availableWords = words.filter(word => word !== currentWord);
@@ -15,6 +15,7 @@ const getRandomWord = (currentWord: string): string => {
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
   const currentWordRef = useRef(words[0]);
+  const navigate = useNavigate();
   
   useEffect(() => {
     let currentIndex = 0;
@@ -40,13 +41,13 @@ const Hero = () => {
               } else {
                 clearInterval(erasingInterval);
                 currentWordRef.current = getRandomWord(currentWord);
-                setTimeout(startTypingCycle, 1000);
+                setTimeout(startTypingCycle, 800);
               }
-            }, 100);
-          }, 2000);
+            }, 80);
+          }, 1800);
           clearInterval(typingInterval);
         }
-      }, 150);
+      }, 120);
     };
     
     startTypingCycle();
@@ -56,7 +57,7 @@ const Hero = () => {
 
   const handleOpenPlayground = () => {
     analytics.playgroundOpenClick("hero");
-    window.open(PLAYGROUND_URL, "_blank", "noopener,noreferrer");
+    navigate("/playground");
   };
 
   const handleBookDemo = () => {
@@ -68,10 +69,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden bg-background">
-      {/* Background Image */}
+    <section className="min-h-[85vh] flex items-center justify-center relative overflow-hidden bg-background pt-16">
+      {/* Subtle background */}
       <div 
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `url(${heroNetwork})`,
           backgroundSize: "cover",
@@ -80,41 +81,39 @@ const Hero = () => {
       />
       
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="section-container relative z-10">
         <div className="text-center animate-fade-in">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
             <span className="text-primary">From Hunches</span>{" "}
             <span className="text-foreground">to</span>{" "}
             <span className="text-secondary">
               {typedText}
-              <span className="animate-pulse">|</span>
+              <span className="animate-pulse opacity-60">|</span>
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-foreground mb-8 max-w-5xl mx-auto leading-[1.5]">
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
             Simulate real customers to test product, UX, and campaigns before you go live —
             <br className="hidden md:block" />
             evidence in hours, not weeks.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center animate-slide-up">
             <Button 
               onClick={handleOpenPlayground}
-              variant="hero" 
-              size="xl"
-              className="min-w-[200px]"
+              size="lg"
+              className="min-w-[180px] font-medium"
             >
               Open Playground
-              <ExternalLink className="ml-2" size={20} />
             </Button>
             <Button 
               onClick={handleBookDemo}
               variant="outline" 
-              size="xl"
-              className="min-w-[200px]"
+              size="lg"
+              className="min-w-[180px] font-medium"
             >
               Book a Demo
-              <ArrowRight className="ml-2" size={20} />
+              <ArrowRight className="ml-2" size={16} />
             </Button>
           </div>
         </div>

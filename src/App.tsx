@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
 import Survey from "./pages/Survey";
+import Playground from "./pages/Playground";
 
 // Import Space Grotesk font
 import '@fontsource/space-grotesk';
@@ -42,6 +43,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/playground" element={<Playground />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/survey" element={<Survey />} />
