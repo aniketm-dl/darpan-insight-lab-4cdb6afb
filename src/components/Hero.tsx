@@ -96,10 +96,8 @@ const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-            Simulate real customers to test product, UX, and campaigns before you go live —
-            <br className="hidden md:block" />
-            evidence in hours, not weeks.
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            Simulate real customers to test product, UX, and campaigns before you go live — evidence in hours, not weeks.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center animate-slide-up">
