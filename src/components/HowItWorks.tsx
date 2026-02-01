@@ -1,5 +1,4 @@
 import { Database, Users, FlaskConical, FileOutput } from "lucide-react";
-import CTARow from "./CTARow";
 
 const HowItWorks = () => {
   const steps = [
@@ -39,7 +38,7 @@ const HowItWorks = () => {
         </div>
 
         {/* Stepper */}
-        <div className="grid md:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-4 gap-6">
           {steps.map((item, index) => {
             const IconComponent = item.icon;
             return (
@@ -62,8 +61,6 @@ const HowItWorks = () => {
             );
           })}
         </div>
-
-        <CTARow sectionName="how-it-works" />
       </div>
     </section>
   );

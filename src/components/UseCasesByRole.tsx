@@ -1,5 +1,4 @@
 import { Box, TrendingUp, Search } from "lucide-react";
-import CTARow from "./CTARow";
 
 const UseCasesByRole = () => {
   const roles = [
@@ -29,7 +28,7 @@ const UseCasesByRole = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8">
           {roles.map((item, index) => {
             const IconComponent = item.icon;
             return (
@@ -50,8 +49,6 @@ const UseCasesByRole = () => {
             );
           })}
         </div>
-
-        <CTARow sectionName="use-cases" />
       </div>
     </section>
   );
