@@ -28,9 +28,9 @@ const Index = () => {
       <HowItWorks />
       <PlaygroundSection />
       <UseCasesByRole />
-      <FAQ />
       <Founders />
       <BookDemo />
+      <FAQ />
       <Footer />
     </div>
   );
