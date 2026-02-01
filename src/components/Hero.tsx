@@ -18,41 +18,45 @@ const Hero = () => {
   const navigate = useNavigate();
   
   useEffect(() => {
-    let currentIndex = 0;
-    let isTyping = true;
+    let isMounted = true;
+    let typingTimeout: NodeJS.Timeout;
+    let erasingTimeout: NodeJS.Timeout;
+    let nextCycleTimeout: NodeJS.Timeout;
     
-    const startTypingCycle = () => {
-      currentIndex = 0;
-      isTyping = true;
-      setTypedText("");
-      const currentWord = currentWordRef.current;
+    const typeWord = (word: string, index: number) => {
+      if (!isMounted) return;
       
-      const typingInterval = setInterval(() => {
-        if (isTyping && currentIndex < currentWord.length) {
-          setTypedText(currentWord.slice(0, currentIndex + 1));
-          currentIndex++;
-        } else if (isTyping) {
-          isTyping = false;
-          setTimeout(() => {
-            const erasingInterval = setInterval(() => {
-              if (currentIndex > 0) {
-                currentIndex--;
-                setTypedText(currentWord.slice(0, currentIndex));
-              } else {
-                clearInterval(erasingInterval);
-                currentWordRef.current = getRandomWord(currentWord);
-                setTimeout(startTypingCycle, 800);
-              }
-            }, 80);
-          }, 1800);
-          clearInterval(typingInterval);
-        }
-      }, 120);
+      if (index <= word.length) {
+        setTypedText(word.slice(0, index));
+        typingTimeout = setTimeout(() => typeWord(word, index + 1), 120);
+      } else {
+        // Pause then start erasing
+        erasingTimeout = setTimeout(() => eraseWord(word, word.length), 1800);
+      }
     };
     
-    startTypingCycle();
+    const eraseWord = (word: string, index: number) => {
+      if (!isMounted) return;
+      
+      if (index >= 0) {
+        setTypedText(word.slice(0, index));
+        typingTimeout = setTimeout(() => eraseWord(word, index - 1), 80);
+      } else {
+        // Pick next word and start typing
+        currentWordRef.current = getRandomWord(word);
+        nextCycleTimeout = setTimeout(() => typeWord(currentWordRef.current, 0), 800);
+      }
+    };
     
-    return () => {};
+    // Start the cycle
+    typeWord(currentWordRef.current, 0);
+    
+    return () => {
+      isMounted = false;
+      clearTimeout(typingTimeout);
+      clearTimeout(erasingTimeout);
+      clearTimeout(nextCycleTimeout);
+    };
   }, []);
 
   const handleOpenPlayground = () => {
