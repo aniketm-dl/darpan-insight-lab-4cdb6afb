@@ -1,5 +1,4 @@
 import { Zap, FileCheck, TrendingUp } from "lucide-react";
-import CTARow from "./CTARow";
 
 const WhatWeEnable = () => {
   const cards = [
@@ -29,7 +28,7 @@ const WhatWeEnable = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8">
           {cards.map((card, index) => {
             const IconComponent = card.icon;
             return (
@@ -50,8 +49,6 @@ const WhatWeEnable = () => {
             );
           })}
         </div>
-
-        <CTARow sectionName="what-we-enable" />
       </div>
     </section>
   );
