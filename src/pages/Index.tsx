@@ -6,7 +6,6 @@ import HowItWorks from "@/components/HowItWorks";
 import PlaygroundSection from "@/components/PlaygroundSection";
 import UseCasesByRole from "@/components/UseCasesByRole";
 import Outputs from "@/components/Outputs";
-import TrustSection from "@/components/TrustSection";
 import FAQ from "@/components/FAQ";
 import Founders from "@/components/Founders";
 import BookDemo from "@/components/BookDemo";
@@ -31,7 +30,6 @@ const Index = () => {
       <PlaygroundSection />
       <UseCasesByRole />
       <Outputs />
-      <TrustSection />
       <FAQ />
       <Founders />
       <BookDemo />
