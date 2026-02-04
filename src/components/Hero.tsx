@@ -91,8 +91,8 @@ const Hero = () => {
       
       {/* Content */}
       <div className="section-container relative z-10">
-        <div className="text-center animate-fade-in">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
+        <div className="text-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight scroll-reveal">
             <span className="text-primary">From Hunches</span>{" "}
             <span className="text-foreground">to</span>
             <br className="sm:hidden" />
@@ -103,11 +103,11 @@ const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed scroll-reveal stagger-1">
             Simulate real customers to test product, UX, and campaigns before you go live — evidence in hours, not weeks.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center scroll-reveal stagger-2">
             <Button 
               onClick={handleOpenPlayground}
               size="lg"
@@ -127,7 +127,7 @@ const Hero = () => {
           </div>
 
           {/* Survey nudge */}
-          <div className="mt-10 pt-8 border-t border-border/30 max-w-md mx-auto">
+          <div className="mt-10 pt-8 border-t border-border/30 max-w-md mx-auto scroll-reveal stagger-3">
             <p className="text-sm text-muted-foreground mb-3">
               Help us build better products for you
             </p>
