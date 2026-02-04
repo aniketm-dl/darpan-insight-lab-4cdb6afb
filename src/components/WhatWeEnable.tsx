@@ -44,7 +44,7 @@ const WhatWeEnable = () => {
     <section id="what-we-enable" className="section-padding bg-background">
       <div className="section-container">
         <div className="text-center mb-10 scroll-reveal">
-          <p className="eyebrow">Outcomes</p>
+          <p className="eyebrow">Why Teams Use Darpan Labs</p>
           <h2 className="section-heading">
             Decide with evidence, not debates
           </h2>
