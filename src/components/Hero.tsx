@@ -97,7 +97,7 @@ const Hero = () => {
             <span className="text-foreground">to</span>
             <br className="sm:hidden" />
             <span className="hidden sm:inline">&nbsp;</span>
-            <span className="text-secondary inline-flex justify-center w-[200px] md:w-[260px] lg:w-[320px]">
+            <span className="text-secondary inline-flex justify-start w-[200px] md:w-[260px] lg:w-[320px]">
               {typedText}
               <span className="animate-pulse opacity-60">|</span>
             </span>
