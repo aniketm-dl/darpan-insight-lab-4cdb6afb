@@ -16,7 +16,7 @@ const FAQ = () => {
     },
     {
       question: "Is the Playground a real product environment?",
-      answer: "Yes. The Playground is connected to our production backend. You can run actual experiments and see real outputs — it's not a demo or mockup.",
+      answer: "Yes. The Playground is connected to our production backend. You can run actual experiments and see real outputs.",
     },
     {
       question: "What do you mean by evidence trace?",
