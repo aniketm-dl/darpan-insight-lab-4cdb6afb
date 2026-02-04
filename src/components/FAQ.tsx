@@ -1,11 +1,10 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   const faqs = [
     {
       question: "What is a customer twin?",
@@ -33,32 +32,61 @@ const FAQ = () => {
     },
   ];
 
-  return (
-    <section id="faq" className="section-padding bg-background">
-      <div className="section-container max-w-2xl">
-        <div className="text-center mb-12">
-          <p className="eyebrow">Questions</p>
-          <h2 className="section-heading">
-            FAQ
-          </h2>
-        </div>
+  const toggleFaq = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
-        <Accordion type="single" collapsible className="space-y-3">
-          {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`faq-${index}`}
-              className="premium-card px-5 data-[state=open]:border-primary/20"
-            >
-              <AccordionTrigger className="text-left text-foreground text-sm font-medium py-4 hover:no-underline">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-4 text-sm leading-relaxed">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+  return (
+    <section id="faq" className="section-padding bg-muted/30">
+      <div className="section-container">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Left column - Header */}
+          <div className="lg:col-span-4">
+            <p className="eyebrow">Support</p>
+            <h2 className="section-heading mb-4">
+              Frequently asked questions
+            </h2>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Everything you need to know about customer twins and running experiments.
+            </p>
+          </div>
+
+          {/* Right column - Accordion */}
+          <div className="lg:col-span-8">
+            <div className="divide-y divide-border/50">
+              {faqs.map((faq, index) => (
+                <div key={index} className="group">
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full flex items-start justify-between gap-4 py-5 text-left transition-colors hover:text-primary"
+                  >
+                    <span className="text-foreground font-medium text-[15px] leading-snug pr-4">
+                      {faq.question}
+                    </span>
+                    <ChevronDown 
+                      className={cn(
+                        "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 mt-1",
+                        openIndex === index && "rotate-180 text-primary"
+                      )} 
+                    />
+                  </button>
+                  <div
+                    className={cn(
+                      "grid transition-all duration-200 ease-out",
+                      openIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    )}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="text-muted-foreground text-sm leading-relaxed pb-5 pr-8">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
