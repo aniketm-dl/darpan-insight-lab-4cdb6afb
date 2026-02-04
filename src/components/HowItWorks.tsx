@@ -46,11 +46,11 @@ const HowItWorks = () => {
         </div>
 
         {/* Timeline layout */}
-        <div className="relative">
+        <div className="relative mt-8">
           {/* Connecting line - desktop only */}
-          <div className="hidden lg:block absolute top-[60px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent scroll-reveal-fade" />
+          <div className="hidden lg:block absolute top-[80px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent scroll-reveal-fade" />
           
-          <div className="grid lg:grid-cols-4 gap-6 lg:gap-5">
+          <div className="grid lg:grid-cols-4 gap-8 lg:gap-6">
             {steps.map((item, index) => {
               const IconComponent = item.icon;
               const isLast = index === steps.length - 1;
@@ -58,32 +58,32 @@ const HowItWorks = () => {
               return (
                 <div key={index} className={`relative group scroll-reveal stagger-${index + 1}`}>
                   {/* Step number - floating */}
-                  <div className="flex items-center gap-4 lg:flex-col lg:items-center mb-5">
+                  <div className="flex items-center gap-5 lg:flex-col lg:items-center mb-6">
                     <div className="relative">
-                      <div className="w-[100px] h-[100px] rounded-2xl bg-gradient-to-br from-muted/80 to-muted/40 border border-border/50 flex items-center justify-center group-hover:border-primary/30 transition-colors duration-300">
-                        <IconComponent className="w-8 h-8 text-primary/80 group-hover:text-primary transition-colors duration-300" />
+                      <div className="w-[140px] h-[140px] rounded-2xl bg-gradient-to-br from-muted/80 to-muted/40 border border-border/50 flex items-center justify-center group-hover:border-primary/30 transition-colors duration-300">
+                        <IconComponent className="w-12 h-12 text-primary/80 group-hover:text-primary transition-colors duration-300" />
                       </div>
                       {/* Step badge */}
-                      <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shadow-lg shadow-primary/20">
+                      <div className="absolute -top-2 -right-2 w-9 h-9 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center shadow-lg shadow-primary/20">
                         {item.step}
                       </div>
                     </div>
                     
                     {/* Arrow connector - mobile */}
                     {!isLast && (
-                      <ArrowRight className="lg:hidden w-5 h-5 text-muted-foreground/50" />
+                      <ArrowRight className="lg:hidden w-6 h-6 text-muted-foreground/50" />
                     )}
                   </div>
                   
                   {/* Content */}
                   <div className="lg:text-center">
-                    <h3 className="text-base font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-1">
+                    <p className="text-base text-muted-foreground leading-relaxed mb-2">
                       {item.description}
                     </p>
-                    <p className="text-xs text-muted-foreground/60 italic">
+                    <p className="text-sm text-muted-foreground/60 italic">
                       {item.detail}
                     </p>
                   </div>
