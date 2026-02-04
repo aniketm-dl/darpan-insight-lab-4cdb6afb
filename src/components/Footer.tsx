@@ -64,10 +64,10 @@ const Footer = () => {
           <div className="md:text-right">
             <p className="text-muted-foreground text-xs mb-1">Contact</p>
             <a 
-              href="mailto:hello@darpanlabs.ai" 
+              href="mailto:aniketm@darpanlabs.ai" 
               className="text-foreground hover:text-primary transition-colors text-xs"
             >
-              hello@darpanlabs.ai
+              aniketm@darpanlabs.ai
             </a>
           </div>
         </div>
