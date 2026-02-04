@@ -40,7 +40,7 @@ const PlaygroundSection = () => {
           {/* Left Column - Text */}
           <div>
             <p className="text-base text-foreground mb-3 leading-relaxed">
-              Try a live environment connected to our backend. No mock screens.
+              Try a live environment.
             </p>
             <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
               Use it to explore how AI customer twins answer questions and produce evidence-backed outputs.
