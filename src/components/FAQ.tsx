@@ -27,6 +27,10 @@ const FAQ = () => {
       answer: "Yes. Common use cases include testing onboarding flows, validating messaging angles, comparing UX variations, and exploring pricing sensitivity — all before building or launching.",
     },
     {
+      question: "How is this different from traditional focus groups?",
+      answer: "10x faster, 10x cheaper. No recruitment delays, no panel bias. Get directional insights in hours to de-risk decisions before investing in full-scale research.",
+    },
+    {
       question: "How do you handle data privacy?",
       answer: "We follow data minimization principles, collecting only what's needed for experiments. You retain control over your data, including the ability to delete it. We do not share your data with third parties.",
     },
