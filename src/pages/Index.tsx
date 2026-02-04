@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import WhatWeEnable from "@/components/WhatWeEnable";
 import HowItWorks from "@/components/HowItWorks";
 import PlaygroundSection from "@/components/PlaygroundSection";
-import UseCasesByRole from "@/components/UseCasesByRole";
+
 import FAQ from "@/components/FAQ";
 import Founders from "@/components/Founders";
 import BookDemo from "@/components/BookDemo";
@@ -27,7 +27,7 @@ const Index = () => {
       <WhatWeEnable />
       <HowItWorks />
       <PlaygroundSection />
-      <UseCasesByRole />
+      
       <Founders />
       <BookDemo />
       <FAQ />
