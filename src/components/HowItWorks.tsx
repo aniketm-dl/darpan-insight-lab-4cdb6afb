@@ -38,7 +38,7 @@ const HowItWorks = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       
       <div className="section-container relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 scroll-reveal">
           <p className="eyebrow">Process</p>
           <h2 className="section-heading">
             How it works
@@ -48,23 +48,23 @@ const HowItWorks = () => {
         {/* Timeline layout */}
         <div className="relative">
           {/* Connecting line - desktop only */}
-          <div className="hidden lg:block absolute top-[60px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          <div className="hidden lg:block absolute top-[60px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent scroll-reveal-fade" />
           
-          <div className="grid lg:grid-cols-4 gap-8 lg:gap-6">
+          <div className="grid lg:grid-cols-4 gap-6 lg:gap-5">
             {steps.map((item, index) => {
               const IconComponent = item.icon;
               const isLast = index === steps.length - 1;
               
               return (
-                <div key={index} className="relative group">
+                <div key={index} className={`relative group scroll-reveal stagger-${index + 1}`}>
                   {/* Step number - floating */}
-                  <div className="flex items-center gap-4 lg:flex-col lg:items-center mb-6">
+                  <div className="flex items-center gap-4 lg:flex-col lg:items-center mb-5">
                     <div className="relative">
-                      <div className="w-[120px] h-[120px] rounded-2xl bg-gradient-to-br from-muted/80 to-muted/40 border border-border/50 flex items-center justify-center group-hover:border-primary/30 transition-colors duration-300">
-                        <IconComponent className="w-10 h-10 text-primary/80 group-hover:text-primary transition-colors duration-300" />
+                      <div className="w-[100px] h-[100px] rounded-2xl bg-gradient-to-br from-muted/80 to-muted/40 border border-border/50 flex items-center justify-center group-hover:border-primary/30 transition-colors duration-300">
+                        <IconComponent className="w-8 h-8 text-primary/80 group-hover:text-primary transition-colors duration-300" />
                       </div>
                       {/* Step badge */}
-                      <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shadow-lg shadow-primary/20">
+                      <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shadow-lg shadow-primary/20">
                         {item.step}
                       </div>
                     </div>
@@ -77,10 +77,10 @@ const HowItWorks = () => {
                   
                   {/* Content */}
                   <div className="lg:text-center">
-                    <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-base font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-1">
                       {item.description}
                     </p>
                     <p className="text-xs text-muted-foreground/60 italic">

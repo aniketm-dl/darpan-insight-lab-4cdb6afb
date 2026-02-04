@@ -29,20 +29,20 @@ const PlaygroundSection = () => {
   return (
     <section id="playground" className="section-padding bg-background">
       <div className="section-container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 scroll-reveal">
           <p className="eyebrow">Try it now</p>
           <h2 className="section-heading">
             Playground
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Column - Text */}
-          <div>
+          <div className="scroll-reveal-left stagger-1">
             <p className="text-base text-foreground mb-3 leading-relaxed">
               Try a live environment.
             </p>
-            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+            <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
               Use it to explore how AI customer twins answer questions and produce evidence-backed outputs.
             </p>
 
@@ -65,11 +65,11 @@ const PlaygroundSection = () => {
           </div>
 
           {/* Right Column - What you can test */}
-          <div className="premium-card">
-            <h3 className="text-sm font-semibold text-foreground mb-5 uppercase tracking-wide">
+          <div className="premium-card scroll-reveal-right stagger-2">
+            <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">
               What you can test
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {testItems.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
