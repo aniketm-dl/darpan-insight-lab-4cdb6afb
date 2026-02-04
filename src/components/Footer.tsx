@@ -22,7 +22,7 @@ const Footer = () => {
       <div className="section-container py-10">
         <div className="grid md:grid-cols-3 gap-8 items-start">
           {/* Left - Logo and Tagline */}
-          <div>
+          <div className="scroll-reveal">
             <div className="flex items-baseline mb-2">
               <span className="text-lg font-bold text-foreground tracking-tight">DARPAN</span>
               <span className="text-lg font-bold text-primary tracking-tight ml-0.5">LABS</span>
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           {/* Center - Links */}
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2 scroll-reveal stagger-1">
             <button 
               onClick={handleOpenPlayground}
               className="text-muted-foreground hover:text-foreground transition-colors text-xs text-left"
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
 
           {/* Right - Contact */}
-          <div className="md:text-right">
+          <div className="md:text-right scroll-reveal stagger-2">
             <p className="text-muted-foreground text-xs mb-1">Contact</p>
             <a 
               href="mailto:aniketm@darpanlabs.ai" 
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-border text-center">
+        <div className="mt-8 pt-6 border-t border-border text-center scroll-reveal-fade stagger-3">
           <p className="text-muted-foreground text-xs">
             © {new Date().getFullYear()} Darpan Labs. All rights reserved.
           </p>
