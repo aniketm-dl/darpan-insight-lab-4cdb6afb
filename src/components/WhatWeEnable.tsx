@@ -43,7 +43,7 @@ const WhatWeEnable = () => {
   return (
     <section id="what-we-enable" className="section-padding bg-background">
       <div className="section-container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 scroll-reveal">
           <p className="eyebrow">Outcomes</p>
           <h2 className="section-heading">
             Decide with evidence, not debates
@@ -53,13 +53,13 @@ const WhatWeEnable = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5">
           {outcomes.map((outcome, index) => {
             const IconComponent = outcome.icon;
             return (
               <div
                 key={index}
-                className="premium-card group"
+                className={`premium-card group scroll-reveal stagger-${index + 1}`}
               >
                 <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <IconComponent className="w-4 h-4 text-primary" />
@@ -83,7 +83,7 @@ const WhatWeEnable = () => {
           })}
         </div>
 
-        <div className="text-center mt-10">
+        <div className="text-center mt-8 scroll-reveal stagger-4">
           <button
             onClick={handlePlaygroundClick}
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 text-sm font-medium transition-colors"

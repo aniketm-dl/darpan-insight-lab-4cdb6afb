@@ -78,15 +78,15 @@ const BookDemo = () => {
     return (
       <section id="book-demo" className="section-padding bg-background">
         <div className="section-container">
-          <div className="max-w-lg mx-auto text-center">
-            <div className="premium-card p-10">
-              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-5">
-                <CheckCircle className="w-7 h-7 text-primary" />
+          <div className="max-w-lg mx-auto text-center scroll-reveal">
+            <div className="premium-card p-8">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-6 h-6 text-primary" />
               </div>
-              <h2 className="text-2xl font-bold text-foreground mb-3">
+              <h2 className="text-xl font-bold text-foreground mb-2">
                 Thank you!
               </h2>
-              <p className="text-muted-foreground text-sm mb-5">
+              <p className="text-muted-foreground text-sm mb-4">
                 We'll reach out shortly.
               </p>
               <Button 
@@ -107,9 +107,9 @@ const BookDemo = () => {
     <section id="book-demo" className="section-padding bg-background">
       <div className="section-container">
         <div className="max-w-lg mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-8 scroll-reveal">
             <p className="eyebrow">Get started</p>
-            <h2 className="section-heading mb-3">
+            <h2 className="section-heading mb-2">
               Book a Demo
             </h2>
             <p className="text-muted-foreground text-sm">
@@ -117,8 +117,8 @@ const BookDemo = () => {
             </p>
           </div>
 
-          <div className="premium-card">
-            <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="premium-card scroll-reveal stagger-1">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-sm">Name *</Label>

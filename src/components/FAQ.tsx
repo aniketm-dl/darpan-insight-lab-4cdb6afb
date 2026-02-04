@@ -39,11 +39,11 @@ const FAQ = () => {
   return (
     <section id="faq" className="section-padding bg-muted/30">
       <div className="section-container">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Left column - Header */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 scroll-reveal-left">
             <p className="eyebrow">Support</p>
-            <h2 className="section-heading mb-4">
+            <h2 className="section-heading mb-3">
               Frequently asked questions
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -52,13 +52,13 @@ const FAQ = () => {
           </div>
 
           {/* Right column - Accordion */}
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-8 scroll-reveal-right stagger-1">
             <div className="divide-y divide-border/50">
               {faqs.map((faq, index) => (
                 <div key={index} className="group">
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full flex items-start justify-between gap-4 py-5 text-left transition-colors hover:text-primary"
+                    className="w-full flex items-start justify-between gap-4 py-4 text-left transition-colors hover:text-primary"
                   >
                     <span className="text-foreground font-medium text-[15px] leading-snug pr-4">
                       {faq.question}
@@ -77,7 +77,7 @@ const FAQ = () => {
                     )}
                   >
                     <div className="overflow-hidden">
-                      <p className="text-muted-foreground text-sm leading-relaxed pb-5 pr-8">
+                      <p className="text-muted-foreground text-sm leading-relaxed pb-4 pr-8">
                         {faq.answer}
                       </p>
                     </div>
