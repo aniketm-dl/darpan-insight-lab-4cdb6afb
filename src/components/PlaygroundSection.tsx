@@ -40,7 +40,7 @@ const PlaygroundSection = () => {
           {/* Left Column - Text */}
           <div className="scroll-reveal-left stagger-1">
             <p className="text-base text-foreground mb-3 leading-relaxed">
-              Try a live environment.
+              See it in action — no signup required.
             </p>
             <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
               Use it to explore how AI customer twins answer questions and produce evidence-backed outputs.
