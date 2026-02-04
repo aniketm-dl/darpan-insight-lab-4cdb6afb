@@ -1,65 +1,96 @@
-import { Database, Users, FlaskConical, FileOutput } from "lucide-react";
+import { Database, Users, FlaskConical, FileOutput, ArrowRight } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
     {
       icon: Database,
-      step: "1",
+      step: "01",
       title: "Connect data",
       description: "Import CSV/Parquet or connect sources.",
+      detail: "Your data stays private. We never train on it.",
     },
     {
       icon: Users,
-      step: "2",
+      step: "02",
       title: "Build customer twins",
       description: "Generate segment-aware AI twins based on your data + constraints.",
+      detail: "Each twin inherits behavioral patterns from real segments.",
     },
     {
       icon: FlaskConical,
-      step: "3",
+      step: "03",
       title: "Run experiments",
       description: "Test messaging, UX variations, pricing hypotheses, and scenario questions.",
+      detail: "No code required. Results in minutes.",
     },
     {
       icon: FileOutput,
-      step: "4",
+      step: "04",
       title: "Get decision outputs",
       description: "Evidence trace, confidence signals, and recommended actions.",
+      detail: "Every recommendation links back to source data.",
     },
   ];
 
   return (
-    <section id="how-it-works" className="section-padding bg-muted/30">
-      <div className="section-container">
-        <div className="text-center mb-12">
+    <section id="how-it-works" className="section-padding bg-background relative overflow-hidden">
+      {/* Subtle gradient accent */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="section-container relative z-10">
+        <div className="text-center mb-16">
           <p className="eyebrow">Process</p>
           <h2 className="section-heading">
             How it works
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-4">
-          {steps.map((item, index) => {
-            const IconComponent = item.icon;
-            return (
-              <div key={index} className="relative">
-                <div className="premium-card text-center h-full">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className="w-5 h-5 text-primary" />
+        {/* Timeline layout */}
+        <div className="relative">
+          {/* Connecting line - desktop only */}
+          <div className="hidden lg:block absolute top-[60px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          
+          <div className="grid lg:grid-cols-4 gap-8 lg:gap-6">
+            {steps.map((item, index) => {
+              const IconComponent = item.icon;
+              const isLast = index === steps.length - 1;
+              
+              return (
+                <div key={index} className="relative group">
+                  {/* Step number - floating */}
+                  <div className="flex items-center gap-4 lg:flex-col lg:items-center mb-6">
+                    <div className="relative">
+                      <div className="w-[120px] h-[120px] rounded-2xl bg-gradient-to-br from-muted/80 to-muted/40 border border-border/50 flex items-center justify-center group-hover:border-primary/30 transition-colors duration-300">
+                        <IconComponent className="w-10 h-10 text-primary/80 group-hover:text-primary transition-colors duration-300" />
+                      </div>
+                      {/* Step badge */}
+                      <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shadow-lg shadow-primary/20">
+                        {item.step}
+                      </div>
+                    </div>
+                    
+                    {/* Arrow connector - mobile */}
+                    {!isLast && (
+                      <ArrowRight className="lg:hidden w-5 h-5 text-muted-foreground/50" />
+                    )}
                   </div>
-                  <div className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3">
-                    {item.step}
+                  
+                  {/* Content */}
+                  <div className="lg:text-center">
+                    <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+                      {item.description}
+                    </p>
+                    <p className="text-xs text-muted-foreground/60 italic">
+                      {item.detail}
+                    </p>
                   </div>
-                  <h3 className="text-base font-semibold text-foreground mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
