@@ -6,7 +6,7 @@ import BrandProblem from "@/components/brand/BrandProblem";
 import BrandShift from "@/components/brand/BrandShift";
 import BrandHowItWorks from "@/components/brand/BrandHowItWorks";
 import BrandUseCases from "@/components/brand/BrandUseCases";
-import BrandWhyNow from "@/components/brand/BrandWhyNow";
+
 import BrandAudience from "@/components/brand/BrandAudience";
 import BrandPilotAccess from "@/components/brand/BrandPilotAccess";
 import BrandFAQ from "@/components/brand/BrandFAQ";
@@ -37,7 +37,7 @@ const Brand = () => {
       <BrandShift />
       <BrandHowItWorks />
       <BrandUseCases />
-      <BrandWhyNow />
+      
       <BrandAudience />
       <BrandPilotAccess />
       <BrandFAQ />
