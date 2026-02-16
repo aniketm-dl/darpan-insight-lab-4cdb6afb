@@ -97,29 +97,29 @@ const ComparisonPanel = () => {
   const middleActive = phase === "typing" || phase === "darpan" || phase === "deleting-back";
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl mx-auto px-2 sm:px-0">
       {/* Label — top */}
-      <div className="text-center mb-6 min-h-[28px]">
-        <span className={`text-sm md:text-base font-semibold tracking-wide transition-colors duration-300 ${labelActive ? "text-primary" : "text-muted-foreground"}`}>
+      <div className="text-center mb-4 md:mb-6 min-h-[24px] md:min-h-[28px]">
+        <span className={`text-xs sm:text-sm md:text-base font-semibold tracking-wide transition-colors duration-300 ${labelActive ? "text-primary" : "text-muted-foreground"}`}>
           {labelText}
-          <span className="inline-block w-px h-4 ml-0.5 bg-current animate-pulse align-middle" />
+          <span className="inline-block w-px h-3 md:h-4 ml-0.5 bg-current animate-pulse align-middle" />
         </span>
       </div>
 
       {/* Process flow */}
-      <div className="flex items-center justify-center min-h-[56px]">
+      <div className="flex items-center justify-center min-h-[48px] md:min-h-[56px] gap-0">
         <Step label="SELECT" active={labelActive} />
         <Connector active={labelActive} />
 
         <div
-          className={`flex-shrink-0 rounded-lg px-4 py-2 text-xs md:text-sm font-semibold uppercase tracking-wider border transition-colors duration-300 min-w-[48px] text-center ${
+          className={`flex-shrink rounded-md md:rounded-lg px-2 sm:px-3 md:px-4 py-1.5 md:py-2 text-[10px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider border transition-colors duration-300 min-w-[40px] text-center whitespace-nowrap ${
             middleActive
               ? "border-primary/60 text-primary shadow-[0_0_10px_hsl(var(--primary)/0.15)]"
               : "border-border/60 text-muted-foreground"
           }`}
         >
           {middleText}
-          <span className="inline-block w-px h-4 ml-0.5 bg-current animate-pulse align-middle" />
+          <span className="inline-block w-px h-3 md:h-4 ml-0.5 bg-current animate-pulse align-middle" />
         </div>
 
         <Connector active={labelActive} />
@@ -131,7 +131,7 @@ const ComparisonPanel = () => {
 
 const Step = ({ label, active }: { label: string; active: boolean }) => (
   <div
-    className={`flex-shrink-0 rounded-lg px-4 py-2 text-xs md:text-sm font-semibold uppercase tracking-wider border transition-all duration-300 ${
+    className={`flex-shrink-0 rounded-md md:rounded-lg px-2 sm:px-3 md:px-4 py-1.5 md:py-2 text-[10px] sm:text-xs md:text-sm font-semibold uppercase tracking-wider border transition-all duration-300 ${
       active
         ? "border-primary/60 text-primary shadow-[0_0_10px_hsl(var(--primary)/0.15)]"
         : "border-border/60 text-muted-foreground"
@@ -144,7 +144,7 @@ const Step = ({ label, active }: { label: string; active: boolean }) => (
 const Connector = ({ active }: { active: boolean }) => (
   <div
     className={`flex-shrink-0 transition-all duration-300 ${
-      active ? "w-6 md:w-10 h-[2px] bg-primary/50" : "w-4 md:w-6 h-px bg-border/60"
+      active ? "w-3 sm:w-6 md:w-10 h-[2px] bg-primary/50" : "w-2 sm:w-4 md:w-6 h-px bg-border/60"
     }`}
   />
 );
