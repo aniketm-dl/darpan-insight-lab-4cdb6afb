@@ -109,23 +109,37 @@ const Twins = () => {
 
       {/* WHAT YOU SHARE */}
       <section id="what-we-collect" className="section-padding bg-muted/30">
-        <div className="section-container">
+        <div className="section-container text-center">
           <div className="scroll-reveal">
             <p className="eyebrow">What You Share</p>
             <h2 className="section-heading mb-6">What you share</h2>
           </div>
-          <div className="max-w-2xl scroll-reveal stagger-1">
+          <div className="max-w-2xl mx-auto scroll-reveal stagger-1">
             <p className="body-text mb-8">
               We interview you using structured AI conversations to map how you think, what you value, and how you make trade-offs. We capture your preferences, motivations, and decision patterns — all through consented, intentional inputs.
             </p>
-            <ul className="space-y-2 mb-8">
-              {["Lifestyle preferences", "Spending behavior", "Risk tolerance", "Career aspirations", "Social tendencies", "Decision logic"].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-foreground text-sm">
-                  <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                  {item}
-                </li>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
+              {[
+                { label: "Lifestyle preferences", example: "Morning routines, travel habits, fitness goals" },
+                { label: "Spending behavior", example: "Budget priorities, impulse vs planned purchases" },
+                { label: "Risk tolerance", example: "Investment style, career bets, comfort with change" },
+                { label: "Career aspirations", example: "5-year goals, industry preferences, growth drivers" },
+                { label: "Social tendencies", example: "Introvert vs extrovert, group size, communication style" },
+                { label: "Decision logic", example: "Gut vs data, speed vs deliberation, solo vs consensus" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="group relative h-20 rounded-xl border border-border bg-card cursor-pointer overflow-hidden transition-all duration-300 hover:border-primary/50"
+                >
+                  <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-2">
+                    <span className="text-foreground text-sm font-medium">{item.label}</span>
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center px-3 transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 bg-primary/10">
+                    <span className="text-muted-foreground text-xs text-center leading-snug">{item.example}</span>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
             <p className="text-muted-foreground text-sm">
               No passive tracking. No hidden data scraping. Everything is consented.
             </p>
@@ -135,57 +149,54 @@ const Twins = () => {
 
       {/* WHAT YOUR TWIN BECOMES */}
       <section className="section-padding">
-        <div className="section-container">
+        <div className="section-container text-center">
           <div className="scroll-reveal">
             <p className="eyebrow">Your Twin</p>
             <h2 className="section-heading mb-6">What your digital twin becomes</h2>
           </div>
-          <div className="max-w-2xl scroll-reveal stagger-1">
-            <p className="body-text mb-8">
+          <div className="max-w-2xl mx-auto scroll-reveal stagger-1">
+            <p className="body-text">
               Your twin is a structured behavioral model of you. It reflects how you evaluate options and improves as you update it. The more nuanced it becomes, the more valuable it is.
             </p>
-            <ul className="space-y-2 mb-8">
-              {[
-                "Represents your decision patterns",
-                "Simulates likely responses to scenarios",
-                "Updates as your life evolves",
-                "Earns when brands interact with it",
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-foreground text-sm">
-                  <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-foreground font-semibold text-sm">Better twins earn more.</p>
           </div>
         </div>
       </section>
 
       {/* HOW YOU EARN */}
       <section className="section-padding bg-muted/30">
-        <div className="section-container">
+        <div className="section-container text-center">
           <div className="scroll-reveal">
             <p className="eyebrow">Earnings</p>
             <h2 className="section-heading mb-6">Earn from your thinking</h2>
           </div>
-          <div className="max-w-2xl scroll-reveal stagger-1">
-            <p className="body-text mb-8">
-              Brands run simulations instead of recruiting panels. When your twin is selected for a study, you earn. You also earn for participating in new interviews and keeping your twin up to date.
+          <div className="max-w-2xl mx-auto scroll-reveal stagger-1">
+            <p className="body-text mb-4">
+              Brands run simulations on these digital twins instead of recruiting panels. When your twin is selected for a study, you earn.
             </p>
-            <ul className="space-y-2 mb-8">
+            <p className="body-text mb-10">
+              Early users earn from creating their digital twins. You earn at each step.
+            </p>
+
+            {/* Flow diagram */}
+            <div className="flex items-center justify-center gap-0 scroll-reveal stagger-2">
               {[
-                "Paid per research interaction",
-                "Paid for updating your twin",
-                "Higher-quality twins receive more usage",
+                { step: "01", label: "Creating your twin" },
+                { step: "02", label: "Updating your twin" },
+                { step: "03", label: "Research study" },
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-foreground text-sm">
-                  <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                  {item}
-                </li>
+                <div key={i} className="flex items-center">
+                  <div className="flex flex-col items-center gap-2 px-3 md:px-6">
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-primary/40 bg-primary/5 flex items-center justify-center">
+                      <span className="text-primary font-bold text-sm">{item.step}</span>
+                    </div>
+                    <span className="text-foreground text-xs md:text-sm font-medium text-center max-w-[100px]">{item.label}</span>
+                  </div>
+                  {i < 2 && (
+                    <ArrowRight className="w-4 h-4 text-primary/60 flex-shrink-0 -mt-5" />
+                  )}
+                </div>
               ))}
-            </ul>
-            <p className="text-muted-foreground text-sm italic">Your perspective has value.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -199,17 +210,9 @@ const Twins = () => {
           <div className="scroll-reveal text-center mb-8">
             <p className="eyebrow">Early Access</p>
             <h2 className="section-heading mb-4">Why build now</h2>
-            <p className="body-text max-w-lg mx-auto mb-6">
+            <p className="body-text max-w-lg mx-auto">
               The earlier you build your twin, the more it learns. Founding members shape the future of the platform and early twins gain higher visibility and usage.
             </p>
-            <ul className="space-y-2 mb-8 inline-block text-left">
-              {["Priority access", "Higher earning potential", "Influence roadmap direction"].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-foreground text-sm">
-                  <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div className="max-w-md mx-auto">
