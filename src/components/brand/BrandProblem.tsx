@@ -15,9 +15,9 @@ const reasons = [
   {
     num: "02",
     title: "Speed",
-    short: "Studies take four to eight weeks.",
+    short: "Studies take 4-8 weeks.",
     detail:
-      "Studies take four to eight weeks. Recruitment delays insights further. By the time results arrive, the market has already moved on and decisions have been made without data.",
+      "Studies take 4-8 weeks. Recruitment delays insights further. By the time results arrive, the market has already moved on and decisions have been made without data.",
     image: problemSpeed,
   },
   {
@@ -25,7 +25,7 @@ const reasons = [
     title: "Access",
     short: "70% of startups skip formal research.",
     detail:
-      "Seventy percent of startups skip formal research. Most decisions rely on intuition. The tools that exist are built for enterprises, leaving everyone else without proper customer intelligence.",
+      "70% of startups skip formal research. Most decisions rely on intuition. The tools that exist are built for enterprises, leaving everyone else without proper customer intelligence.",
     image: problemCatchup,
   },
 ];
