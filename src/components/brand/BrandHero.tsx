@@ -18,7 +18,7 @@ const BrandHero = () => {
           {/* Left — Text */}
           <div className="scroll-reveal">
             <p className="eyebrow mb-4">For Brands</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-6">
               Market research,{" "}
               <span className="text-gradient">re-engineered for speed.</span>
             </h1>

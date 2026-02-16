@@ -152,7 +152,7 @@
   
   /* Section heading */
   .section-heading {
-    @apply text-[40px] md:text-[44px] font-bold text-foreground leading-tight;
+    @apply text-[28px] sm:text-[36px] md:text-[44px] font-bold text-foreground leading-tight;
   }
   
   /* Body text */

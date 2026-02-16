@@ -87,7 +87,7 @@ const Twins = () => {
         <div className="section-container">
           <div className="max-w-2xl scroll-reveal">
             <p className="eyebrow">For Individuals</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight mb-6">
               Build your digital twin.<br />
               Own it. <span className="text-gradient">Earn from it.</span>
             </h1>
@@ -271,7 +271,7 @@ const Twins = () => {
       <section className="section-padding-lg bg-muted/30">
         <div className="section-container text-center">
           <div className="scroll-reveal max-w-lg mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground leading-tight mb-6">
               Your mind, modeled and <span className="text-gradient">amplified.</span>
             </h2>
             <Button onClick={scrollToForm} size="xl" className="font-medium">
