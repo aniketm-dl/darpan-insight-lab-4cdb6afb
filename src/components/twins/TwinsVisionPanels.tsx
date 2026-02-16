@@ -9,7 +9,7 @@ const visions = [
     title: "Life Decision Simulation",
     short: "Test major life choices before committing.",
     detail:
-      "Imagine choosing between two colleges, two cities, or two career paths. Your twin simulates how each option aligns with your values, lifestyle, and long-term goals — so you decide with clarity, not anxiety.",
+      "Imagine choosing between two colleges, two cities, or two career paths. Your twin simulates the next few years of your life for each available option so you decide with clarity, not anxiety.",
     image: visionDecision,
   },
   {
@@ -17,7 +17,7 @@ const visions = [
     title: "Social Discovery",
     short: "Find people you're likely to connect with.",
     detail:
-      "Your twin understands your social tendencies, interests, and communication style. It can surface people with complementary perspectives — for collaboration, friendship, or mentorship — without exposing your raw data.",
+      "Your twin understands your social tendencies, interests, and communication style. It can simulate your initial few conversations with other digital twins and help you build your social graph faster and better.",
     image: visionSocial,
   },
   {
@@ -25,7 +25,7 @@ const visions = [
     title: "Train for Important Conversations",
     short: "Prepare for interviews, negotiations, or difficult talks.",
     detail:
-      "Rehearse a salary negotiation, a founder pitch, or a difficult personal conversation. Your twin models how you tend to respond under pressure and helps you refine your approach before the real moment.",
+      "Prepare for an important conversation like a salary negotiation, a founder pitch, or a difficult personal conversation. Rehearse with twins of the counter party before the real moment.",
     image: visionConversations,
   },
 ];
@@ -40,9 +40,7 @@ const TwinsVisionPanels = () => {
           {/* Left — headline + reasons list */}
           <div className="scroll-reveal">
             <p className="eyebrow">Vision</p>
-            <h2 className="section-heading mb-4">
-              The future of your digital twin
-            </h2>
+            <h2 className="section-heading mb-4">The future of your digital twin</h2>
             <p className="body-text mb-12">
               Today, your twin earns from research. Tomorrow, it helps you navigate the decisions that shape your life.
             </p>
@@ -88,11 +86,7 @@ const TwinsVisionPanels = () => {
                   active === i ? "flex-[4]" : "flex-[0.4]"
                 }`}
               >
-                <img
-                  src={v.image}
-                  alt={v.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+                <img src={v.image} alt={v.title} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
 
                 {/* Collapsed */}
@@ -115,9 +109,7 @@ const TwinsVisionPanels = () => {
                     active === i ? "opacity-100" : "opacity-0 pointer-events-none"
                   }`}
                 >
-                  <span className="text-[80px] font-bold text-primary/30 leading-none mb-2">
-                    {v.num}
-                  </span>
+                  <span className="text-[80px] font-bold text-primary/30 leading-none mb-2">{v.num}</span>
                   <h3 className="text-2xl font-bold text-white mb-3">{v.title}</h3>
                   <p className="text-sm text-white/80 leading-relaxed max-w-sm">{v.detail}</p>
                 </div>
