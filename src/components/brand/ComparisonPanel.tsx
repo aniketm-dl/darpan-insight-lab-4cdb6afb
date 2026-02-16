@@ -97,33 +97,33 @@ const ComparisonPanel = () => {
   const middleActive = phase === "typing" || phase === "darpan" || phase === "deleting-back";
 
   return (
-    <div className="premium-card p-6 md:p-8 border-border/50 max-w-xl mx-auto">
+    <div className="max-w-2xl mx-auto">
+      {/* Label — top */}
+      <div className="text-center mb-6 min-h-[28px]">
+        <span className={`text-sm md:text-base font-semibold tracking-wide transition-colors duration-300 ${labelActive ? "text-primary" : "text-muted-foreground"}`}>
+          {labelText}
+          <span className="inline-block w-px h-4 ml-0.5 bg-current animate-pulse align-middle" />
+        </span>
+      </div>
+
       {/* Process flow */}
-      <div className="flex items-center justify-center mb-6 min-h-[48px]">
+      <div className="flex items-center justify-center min-h-[56px]">
         <Step label="SELECT" active={labelActive} />
         <Connector active={labelActive} />
 
         <div
-          className={`flex-shrink-0 rounded-md px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider border transition-colors duration-300 min-w-[40px] text-center ${
+          className={`flex-shrink-0 rounded-lg px-4 py-2 text-xs md:text-sm font-semibold uppercase tracking-wider border transition-colors duration-300 min-w-[48px] text-center ${
             middleActive
               ? "border-primary/60 text-primary shadow-[0_0_10px_hsl(var(--primary)/0.15)]"
               : "border-border/60 text-muted-foreground"
           }`}
         >
           {middleText}
-          <span className="inline-block w-px h-3 ml-0.5 bg-current animate-pulse align-middle" />
+          <span className="inline-block w-px h-4 ml-0.5 bg-current animate-pulse align-middle" />
         </div>
 
         <Connector active={labelActive} />
         <Step label="INSIGHTS" active={labelActive} />
-      </div>
-
-      {/* Label */}
-      <div className="text-center text-xs font-medium tracking-wide min-h-[20px]">
-        <span className={`transition-colors duration-300 ${labelActive ? "text-primary" : "text-muted-foreground"}`}>
-          {labelText}
-          <span className="inline-block w-px h-3 ml-0.5 bg-current animate-pulse align-middle" />
-        </span>
       </div>
     </div>
   );
@@ -131,7 +131,7 @@ const ComparisonPanel = () => {
 
 const Step = ({ label, active }: { label: string; active: boolean }) => (
   <div
-    className={`flex-shrink-0 rounded-md px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider border transition-all duration-300 ${
+    className={`flex-shrink-0 rounded-lg px-4 py-2 text-xs md:text-sm font-semibold uppercase tracking-wider border transition-all duration-300 ${
       active
         ? "border-primary/60 text-primary shadow-[0_0_10px_hsl(var(--primary)/0.15)]"
         : "border-border/60 text-muted-foreground"
