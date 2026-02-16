@@ -1,10 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import ComparisonPanel from "./ComparisonPanel";
 
 const BrandHero = () => {
-  const navigate = useNavigate();
-
   const scrollToForm = () => {
     document.getElementById("pilot-access")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -38,53 +36,9 @@ const BrandHero = () => {
             </div>
           </div>
 
-          {/* Right — Animated Infographic */}
+          {/* Right — Comparison Panel */}
           <div className="scroll-reveal stagger-2">
-            <div className="grid grid-cols-2 gap-4">
-              {/* Traditional */}
-              <div className="premium-card p-6 flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4">
-                  <Clock className="w-6 h-6 text-destructive" />
-                </div>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Traditional</p>
-                <div className="w-full space-y-2">
-                  {[100, 80, 55, 30].map((w, i) => (
-                    <div
-                      key={i}
-                      className="h-2 rounded-full bg-destructive/20 overflow-hidden"
-                    >
-                      <div
-                        className="h-full bg-destructive/50 rounded-full animate-[pulse_3s_ease-in-out_infinite]"
-                        style={{ width: `${w}%`, animationDelay: `${i * 0.4}s` }}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <p className="text-xs text-muted-foreground mt-3">4–8 weeks</p>
-              </div>
-
-              {/* Darpan */}
-              <div className="premium-card p-6 flex flex-col items-center text-center border-primary/20">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-primary" />
-                </div>
-                <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-3">Darpan</p>
-                <div className="w-full space-y-2">
-                  {[100, 100, 100, 100].map((w, i) => (
-                    <div
-                      key={i}
-                      className="h-2 rounded-full bg-primary/20 overflow-hidden"
-                    >
-                      <div
-                        className="h-full bg-primary/60 rounded-full transition-all duration-700"
-                        style={{ width: `${w}%`, animationDelay: `${i * 0.1}s` }}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <p className="text-xs text-primary mt-3">Instant</p>
-              </div>
-            </div>
+            <ComparisonPanel />
           </div>
         </div>
       </div>
