@@ -2,40 +2,31 @@ import { useState } from "react";
 import problemSpeed from "@/assets/problem-speed.jpg";
 import problemCost from "@/assets/problem-cost.jpg";
 import problemCatchup from "@/assets/problem-catchup.jpg";
-import problemData from "@/assets/problem-data.jpg";
 
 const reasons = [
   {
     num: "01",
-    title: "Speed Kills Opportunities",
-    short: "Traditional qualitative research takes 8-12 weeks.",
+    title: "Cost",
+    short: "Typical study costs $15,000 to $100,000.",
     detail:
-      "Traditional qualitative research takes 8-12 weeks. By then, your campaign window is 70% gone, trends have shifted, and competitors have launched. Our AI brings insights back in hours, not weeks.",
-    image: problemSpeed,
-  },
-  {
-    num: "02",
-    title: "Expensive & Outdated",
-    short: "Manual research is too expensive to scale.",
-    detail:
-      "Manual research is too expensive to scale. Companies end up testing only once a quarter, relying on guesswork for every other decision. Our AI reduces costs by 90% while increasing frequency.",
+      "Typical study costs $15,000 to $100,000. Agencies dominate enterprise budgets. Most companies can't justify the spend, so they skip research entirely and rely on gut feeling.",
     image: problemCost,
   },
   {
-    num: "03",
-    title: "Always Playing Catch-Up",
-    short: "Competitors move faster with better data.",
+    num: "02",
+    title: "Speed",
+    short: "Studies take four to eight weeks.",
     detail:
-      "By the time your research report lands, your competitor has already shipped two iterations. Static research can't keep pace with agile product cycles. Continuous AI simulation keeps you ahead.",
-    image: problemCatchup,
+      "Studies take four to eight weeks. Recruitment delays insights further. By the time results arrive, the market has already moved on and decisions have been made without data.",
+    image: problemSpeed,
   },
   {
-    num: "04",
-    title: "Data Without Real Stories",
-    short: "Quantitative data misses the human context.",
+    num: "03",
+    title: "Access",
+    short: "70% of startups skip formal research.",
     detail:
-      "Dashboards full of numbers tell you what happened, not why. Without qualitative depth, teams build on assumptions. Our digital twins provide the narrative behind every data point.",
-    image: problemData,
+      "Seventy percent of startups skip formal research. Most decisions rely on intuition. The tools that exist are built for enterprises, leaving everyone else without proper customer intelligence.",
+    image: problemCatchup,
   },
 ];
 
@@ -48,11 +39,8 @@ const BrandProblem = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left — headline + reasons list */}
           <div className="scroll-reveal">
-            <h2 className="text-[36px] md:text-[44px] font-bold leading-tight mb-12">
-              Why{" "}
-              <span className="text-muted-foreground">Traditional Methods Fail Without an</span>
-              <br />
-              <span className="text-primary">AI UX Researcher?</span>
+            <h2 className="section-heading mb-12">
+              What is wrong with traditional methods?
             </h2>
 
             <div className="flex flex-col">
