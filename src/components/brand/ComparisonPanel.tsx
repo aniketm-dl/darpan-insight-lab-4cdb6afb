@@ -1,105 +1,109 @@
-import { useState } from "react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
-const traditionalSteps = [
-  "Define Scope",
-  "Find Vendor",
-  "Recruit Panel",
-  "Screen Participants",
-  "Design Survey",
-  "Launch Fieldwork",
-  "Wait for Responses",
-  "Clean Data",
-  "Analyze Results",
-  "Generate Report",
-];
-
-const darpanSteps = [
-  "Select Segment",
-  "Define Scenario",
-  "Run Simulation",
-  "Receive Insights",
-];
+import { useState, useEffect } from "react";
 
 const ComparisonPanel = () => {
-  const [mode, setMode] = useState<"traditional" | "darpan">("darpan");
-  const isDarpan = mode === "darpan";
-  const steps = isDarpan ? darpanSteps : traditionalSteps;
+  const [isDarpan, setIsDarpan] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsDarpan((prev) => !prev);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <TooltipProvider delayDuration={100}>
-      <div className="premium-card p-6 md:p-8 border-border/50 max-w-xl mx-auto">
-        {/* Toggle */}
-        <div className="flex items-center justify-center gap-1 mb-8 p-1 rounded-lg bg-muted/30 w-fit mx-auto">
-          <button
-            onClick={() => setMode("traditional")}
-            className={`px-4 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
-              !isDarpan
-                ? "bg-destructive/20 text-destructive"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Traditional
-          </button>
-          <button
-            onClick={() => setMode("darpan")}
-            className={`px-4 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
-              isDarpan
-                ? "bg-primary/20 text-primary"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Darpan
-          </button>
+    <div className="premium-card p-6 md:p-8 border-border/50 max-w-xl mx-auto">
+      {/* Process flow */}
+      <div className="flex items-center justify-center gap-0 mb-6 min-h-[48px]">
+        {/* SELECT */}
+        <Step label="SELECT" active={isDarpan} />
+        <Connector active={isDarpan} />
+
+        {/* RECRUIT - fades out in Darpan */}
+        <div
+          className="flex items-center transition-all duration-300 ease-in-out"
+          style={{
+            opacity: isDarpan ? 0 : 1,
+            width: isDarpan ? 0 : undefined,
+            overflow: "hidden",
+          }}
+        >
+          <Step label="RECRUIT" active={false} />
+          <Connector active={false} />
         </div>
 
-        {/* Nodes */}
-        <div className="flex items-center justify-center gap-0 mb-6 min-h-[40px]">
-          {steps.map((label, i) => (
-            <div key={`${mode}-${i}`} className="flex items-center animate-fade-in" style={{ animationDelay: `${i * 30}ms` }}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div
-                    className={`rounded-full transition-all duration-200 cursor-default ${
-                      isDarpan
-                        ? "w-4 h-4 bg-primary/70 shadow-[0_0_8px_hsl(var(--primary)/0.3)]"
-                        : "w-3 h-3 bg-muted-foreground/40"
-                    }`}
-                  />
-                </TooltipTrigger>
-                <TooltipContent side="top" className="text-xs">
-                  {label}
-                </TooltipContent>
-              </Tooltip>
-              {i < steps.length - 1 && (
-                <div
-                  className={`h-px transition-all duration-200 ${
-                    isDarpan
-                      ? "w-8 md:w-12 bg-primary/40"
-                      : "w-3 md:w-4 bg-muted-foreground/20"
-                  }`}
-                />
-              )}
-            </div>
-          ))}
+        {/* SURVEY - fades out in Darpan */}
+        <div
+          className="flex items-center transition-all duration-300 ease-in-out"
+          style={{
+            opacity: isDarpan ? 0 : 1,
+            width: isDarpan ? 0 : undefined,
+            overflow: "hidden",
+          }}
+        >
+          <Step label="SURVEY" active={false} />
+          <Connector active={false} />
         </div>
 
-        {/* Summary */}
-        <p className={`text-center text-xs transition-colors duration-200 ${
-          isDarpan ? "text-primary" : "text-muted-foreground"
-        }`}>
-          {isDarpan
-            ? "4 steps. Fully controlled. Minutes."
-            : "10 steps. Multiple dependencies. 4–8 weeks."}
-        </p>
+        {/* SIMULATE - fades in for Darpan */}
+        <div
+          className="flex items-center transition-all duration-300 ease-in-out"
+          style={{
+            opacity: isDarpan ? 1 : 0,
+            width: isDarpan ? undefined : 0,
+            overflow: "hidden",
+          }}
+        >
+          <Step label="SIMULATE" active={true} />
+          <Connector active={true} />
+        </div>
+
+        {/* ANALYSIS - fades out in Darpan */}
+        <div
+          className="flex items-center transition-all duration-300 ease-in-out"
+          style={{
+            opacity: isDarpan ? 0 : 1,
+            width: isDarpan ? 0 : undefined,
+            overflow: "hidden",
+          }}
+        >
+          <Step label="ANALYSIS" active={false} />
+          <Connector active={false} />
+        </div>
+
+        {/* INSIGHTS */}
+        <Step label="INSIGHTS" active={isDarpan} />
       </div>
-    </TooltipProvider>
+
+      {/* Summary text */}
+      <p
+        className={`text-center text-xs font-medium tracking-wide transition-colors duration-300 ${
+          isDarpan ? "text-primary" : "text-muted-foreground"
+        }`}
+      >
+        {isDarpan ? "Darpan. Minutes." : "Traditional research. 4–8 weeks."}
+      </p>
+    </div>
   );
 };
+
+const Step = ({ label, active }: { label: string; active: boolean }) => (
+  <div
+    className={`flex-shrink-0 rounded-md px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider border transition-all duration-300 ${
+      active
+        ? "border-primary/60 text-primary scale-105 shadow-[0_0_10px_hsl(var(--primary)/0.15)]"
+        : "border-border/60 text-muted-foreground scale-100"
+    }`}
+  >
+    {label}
+  </div>
+);
+
+const Connector = ({ active }: { active: boolean }) => (
+  <div
+    className={`flex-shrink-0 transition-all duration-300 ${
+      active ? "w-6 md:w-8 h-[2px] bg-primary/50" : "w-4 md:w-6 h-px bg-border/60"
+    }`}
+  />
+);
 
 export default ComparisonPanel;
