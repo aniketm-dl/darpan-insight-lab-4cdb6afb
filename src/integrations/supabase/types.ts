@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      brand_applications: {
+        Row: {
+          biggest_bottleneck: string
+          company: string
+          created_at: string
+          email: string
+          id: string
+          industry: string
+          monthly_research_spend: string
+          status: string
+        }
+        Insert: {
+          biggest_bottleneck: string
+          company: string
+          created_at?: string
+          email: string
+          id?: string
+          industry: string
+          monthly_research_spend: string
+          status?: string
+        }
+        Update: {
+          biggest_bottleneck?: string
+          company?: string
+          created_at?: string
+          email?: string
+          id?: string
+          industry?: string
+          monthly_research_spend?: string
+          status?: string
+        }
+        Relationships: []
+      }
       demo_submissions: {
         Row: {
           company: string
@@ -134,6 +167,33 @@ export type Database = {
           q7?: string
           q8?: string
           q9?: string
+        }
+        Relationships: []
+      }
+      twin_applications: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          name: string
+          referral_code: string | null
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          referral_code?: string | null
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          referral_code?: string | null
+          status?: string
         }
         Relationships: []
       }
