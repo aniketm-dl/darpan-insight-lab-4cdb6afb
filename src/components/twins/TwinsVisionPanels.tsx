@@ -17,7 +17,7 @@ const visions = [
     title: "Social Discovery",
     short: "Find people you're likely to connect with.",
     detail:
-      "Your twin understands your social tendencies, interests, and communication style. It can simulate your initial few conversations with other digital twins and help you build your social graph faster and better.",
+      "Your twin understands your social tendencies, interests, and communication style. It can simulate your initial few conversations with other digital twins and help you find the right people faster.",
     image: visionSocial,
   },
   {
