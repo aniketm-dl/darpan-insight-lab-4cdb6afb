@@ -11,6 +11,7 @@ import Survey from "./pages/Survey";
 import Playground from "./pages/Playground";
 import Twins from "./pages/Twins";
 import Brand from "./pages/Brand";
+import Home from "./pages/Home";
 
 // Import Space Grotesk font
 import '@fontsource/space-grotesk';
@@ -45,6 +46,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/playground" element={<Playground />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
