@@ -19,6 +19,7 @@ export type Database = {
           biggest_bottleneck: string
           company: string
           created_at: string
+          current_research_tools: string | null
           email: string
           id: string
           industry: string
@@ -29,6 +30,7 @@ export type Database = {
           biggest_bottleneck: string
           company: string
           created_at?: string
+          current_research_tools?: string | null
           email: string
           id?: string
           industry: string
@@ -39,6 +41,7 @@ export type Database = {
           biggest_bottleneck?: string
           company?: string
           created_at?: string
+          current_research_tools?: string | null
           email?: string
           id?: string
           industry?: string

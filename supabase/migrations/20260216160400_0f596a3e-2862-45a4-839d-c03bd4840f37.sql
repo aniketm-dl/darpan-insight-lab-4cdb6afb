@@ -1,0 +1,1 @@
+ALTER TABLE public.brand_applications ADD COLUMN current_research_tools text;
