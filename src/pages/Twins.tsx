@@ -14,9 +14,17 @@ import twinStep1 from "@/assets/twin-step-1.png";
 import twinStep2 from "@/assets/twin-step-2.png";
 import twinStep3 from "@/assets/twin-step-3.png";
 
+const reasonOptions = [
+  "Passive Income",
+  "Life Decision Simulation",
+  "Social Discovery",
+  "Conversation Trainer",
+];
+
 const twinSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Invalid email").max(255),
+  reasons: z.array(z.string()).min(1, "Select at least one reason"),
 });
 
 const faqs = [
@@ -32,7 +40,7 @@ const Twins = () => {
   const { toast } = useToast();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [referralCode, setReferralCode] = useState("");
+  const [reasons, setReasons] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -41,7 +49,7 @@ const Twins = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = twinSchema.safeParse({ name, email });
+    const result = twinSchema.safeParse({ name, email, reasons });
     if (!result.success) {
       toast({ title: "Error", description: result.error.errors[0].message, variant: "destructive" });
       return;
@@ -51,7 +59,7 @@ const Twins = () => {
     const { error } = await supabase.from("twin_applications" as any).insert({
       name: result.data.name,
       email: result.data.email,
-      referral_code: referralCode.trim() || null,
+      referral_code: result.data.reasons.join(", "),
     } as any);
 
     setIsSubmitting(false);
@@ -254,7 +262,26 @@ const Twins = () => {
               <form onSubmit={handleSubmit} className="space-y-4 scroll-reveal stagger-1">
                 <Input placeholder="Full name" value={name} onChange={(e) => setName(e.target.value)} required maxLength={100} className="bg-card border-border" />
                 <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required maxLength={255} className="bg-card border-border" />
-                <Input placeholder="Referral code (optional)" value={referralCode} onChange={(e) => setReferralCode(e.target.value)} maxLength={50} className="bg-card border-border" />
+                <div>
+                  <p className="text-sm text-muted-foreground mb-2">Why do you want to join? (select all that apply)</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {reasonOptions.map((reason) => (
+                      <button
+                        key={reason}
+                        type="button"
+                        onClick={() => setReasons((prev) => prev.includes(reason) ? prev.filter((r) => r !== reason) : [...prev, reason])}
+                        className={cn(
+                          "text-sm px-3 py-2 rounded-lg border transition-colors text-left",
+                          reasons.includes(reason)
+                            ? "border-primary bg-primary/10 text-foreground"
+                            : "border-border bg-card text-muted-foreground hover:border-primary/50"
+                        )}
+                      >
+                        {reason}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <Button type="submit" className="w-full font-medium" disabled={isSubmitting}>
                   {isSubmitting ? "Submitting..." : "Become a Founding Twin"}
                 </Button>
