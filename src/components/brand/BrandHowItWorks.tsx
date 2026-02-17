@@ -38,24 +38,33 @@ const BrandHowItWorks = () => (
         <h2 className="section-heading">Three steps to insight</h2>
       </div>
 
-      {/* Steps with inline labels + images */}
-      <div className="grid md:grid-cols-3 gap-6 items-stretch">
+      {/* Step cards */}
+      <div className="grid md:grid-cols-3 gap-6 mb-12">
         {steps.map((s, i) => (
-          <div key={i} className={`flex flex-col scroll-reveal stagger-${i + 1}`}>
-            {/* Step label */}
-            <div className="mb-3">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-bold text-primary uppercase tracking-widest">{s.step}</span>
-                <span className="text-sm font-semibold text-foreground">{s.title}</span>
-              </div>
-              <p className="text-xs text-muted-foreground">{s.desc}</p>
+          <div key={i} className={`premium-card p-8 text-center scroll-reveal stagger-${i + 1}`}>
+            <span className="text-xs font-bold text-primary uppercase tracking-widest">{s.step}</span>
+            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto my-4">
+              <s.icon className="w-7 h-7 text-primary" />
             </div>
-            {/* Image - no card wrapper, fills available height */}
-            <div className="flex-1 overflow-hidden rounded-lg">
+            <h3 className="text-foreground font-semibold mb-2">{s.title}</h3>
+            <p className="text-muted-foreground text-sm">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Screenshot journey - horizontal */}
+      <div className="grid md:grid-cols-3 gap-4">
+        {steps.map((s, i) => (
+          <div key={i} className={`scroll-reveal stagger-${i + 1}`}>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest">{s.step}</span>
+              <span className="text-xs font-medium text-muted-foreground">{s.title}</span>
+            </div>
+            <div className="premium-card overflow-hidden p-1.5 aspect-[4/3]">
               <img
                 src={s.image}
                 alt={s.imageAlt}
-                className="w-full h-full object-cover object-top rounded-lg"
+                className="w-full h-full object-contain rounded-md"
                 loading="lazy"
               />
             </div>
