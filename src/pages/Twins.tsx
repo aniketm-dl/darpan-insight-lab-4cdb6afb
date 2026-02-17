@@ -82,6 +82,11 @@ const Twins = () => {
           { label: "FAQ", section: "twins-faq" },
         ]}
         showBack
+        cta={
+          <Button onClick={scrollToForm} size="sm" className="font-medium">
+            Build My Twin
+          </Button>
+        }
       />
 
       {/* HERO */}

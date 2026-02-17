@@ -1,5 +1,6 @@
 import { useScrollRevealMultiple } from "@/hooks/useScrollReveal";
 import PageHeader from "@/components/PageHeader";
+import { Button } from "@/components/ui/button";
 import BrandHero from "@/components/brand/BrandHero";
 import BrandProblem from "@/components/brand/BrandProblem";
 import BrandShift from "@/components/brand/BrandShift";
@@ -23,9 +24,19 @@ const navLinks = [
 const Brand = () => {
   useScrollRevealMultiple();
 
+  const scrollToPilot = () => {
+    document.getElementById("pilot-access")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const headerCta = (
+    <Button onClick={scrollToPilot} size="sm" className="font-medium">
+      Apply for Pilot
+    </Button>
+  );
+
   return (
     <div className="min-h-screen bg-background">
-      <PageHeader navLinks={navLinks} showBack />
+      <PageHeader navLinks={navLinks} showBack cta={headerCta} />
 
       <BrandHero />
       <BrandProblem />
