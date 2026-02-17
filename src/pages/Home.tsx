@@ -43,9 +43,8 @@ const Home = () => {
             </Button>
             <Button
               onClick={() => navigate("/twins")}
-              variant="outline"
               size="xl"
-              className="min-w-[180px] font-medium"
+              className="min-w-[180px] font-medium bg-secondary text-secondary-foreground hover:bg-secondary/90"
             >
               Build My Twin
             </Button>
