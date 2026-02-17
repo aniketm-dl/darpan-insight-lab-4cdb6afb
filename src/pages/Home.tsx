@@ -52,6 +52,33 @@ const Home = () => {
         </div>
       </section>
       <Founders />
+
+      {/* Footer */}
+      <footer className="border-t border-border/50 bg-muted/30">
+        <div className="section-container py-12 md:py-16">
+          <div className="grid md:grid-cols-3 gap-10">
+            <div>
+              <span className="text-foreground font-bold text-lg tracking-tight">
+                DARPAN<span className="text-primary">LABS</span>
+              </span>
+              <p className="text-muted-foreground text-sm mt-3 max-w-xs">
+                AI-powered customer twins for instant insights and faster decisions
+              </p>
+            </div>
+            <div>
+              <a href="mailto:aniketm@darpanlabs.ai" className="text-muted-foreground text-sm hover:text-foreground transition-colors">
+                Book a Demo
+              </a>
+            </div>
+            <div className="md:text-right">
+              <p className="text-muted-foreground text-sm font-medium mb-2">Contact</p>
+              <a href="mailto:aniketm@darpanlabs.ai" className="text-foreground text-sm hover:text-primary transition-colors">
+                aniketm@darpanlabs.ai
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
