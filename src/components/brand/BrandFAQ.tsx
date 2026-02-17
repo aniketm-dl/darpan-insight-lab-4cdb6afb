@@ -14,7 +14,7 @@ const BrandFAQ = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="section-padding bg-muted/30">
+    <section id="brand-faq" className="section-padding bg-muted/30">
       <div className="section-container">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
           <div className="lg:col-span-4 scroll-reveal">
