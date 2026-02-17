@@ -64,7 +64,7 @@ const BrandHowItWorks = () => (
               <img
                 src={s.image}
                 alt={s.imageAlt}
-                className="w-full h-full object-cover object-top rounded-md"
+                className="w-full h-full object-contain rounded-md"
                 loading="lazy"
               />
             </div>
