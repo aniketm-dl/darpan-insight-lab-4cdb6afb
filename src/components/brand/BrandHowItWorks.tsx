@@ -51,7 +51,7 @@ const BrandHowItWorks = () => (
               <p className="text-xs text-muted-foreground">{s.desc}</p>
             </div>
             {/* Image - no card wrapper, fills available height */}
-            <div className="overflow-hidden rounded-lg aspect-[5/4]">
+            <div className="flex-1 overflow-hidden rounded-lg">
               <img
                 src={s.image}
                 alt={s.imageAlt}
