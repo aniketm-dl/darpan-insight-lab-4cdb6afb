@@ -14,9 +14,20 @@ const Home = () => {
   const navigate = useNavigate();
   useScrollRevealMultiple();
 
+  const headerCta = (
+    <>
+      <Button onClick={() => navigate("/brand")} size="sm" className="font-medium">
+        I'm a Brand
+      </Button>
+      <Button onClick={() => navigate("/twins")} size="sm" className="font-medium bg-secondary text-secondary-foreground hover:bg-secondary/90">
+        Build My Twin
+      </Button>
+    </>
+  );
+
   return (
     <div className="min-h-screen bg-background">
-      <PageHeader navLinks={navLinks} />
+      <PageHeader navLinks={navLinks} cta={headerCta} />
 
       <section className="h-screen flex items-center justify-center pt-16">
         <div className="text-center px-6">

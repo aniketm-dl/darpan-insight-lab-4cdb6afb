@@ -1,5 +1,5 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { ReactNode } from "react";
 
 interface NavLink {
   label: string;
@@ -9,11 +9,11 @@ interface NavLink {
 interface PageHeaderProps {
   navLinks: NavLink[];
   showBack?: boolean;
+  cta?: ReactNode;
 }
 
-const PageHeader = ({ navLinks, showBack = false }: PageHeaderProps) => {
+const PageHeader = ({ navLinks, showBack = false, cta }: PageHeaderProps) => {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -25,16 +25,16 @@ const PageHeader = ({ navLinks, showBack = false }: PageHeaderProps) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="section-container flex items-center h-16 gap-4">
-        {showBack && (
-          <button
-            onClick={() => navigate("/")}
-            className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors text-sm shrink-0"
-          >
-            <ArrowLeft size={16} />
-            <span className="hidden sm:inline">Back</span>
-          </button>
-        )}
+        {/* Logo */}
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-baseline shrink-0"
+        >
+          <span className="text-lg font-bold text-foreground tracking-tight">DARPAN</span>
+          <span className="text-lg font-bold text-primary tracking-tight ml-0.5">LABS</span>
+        </button>
 
+        {/* Section links */}
         <nav className="flex items-center gap-1 overflow-x-auto scrollbar-hide flex-1 min-w-0">
           {navLinks.map((link) => (
             <button
@@ -47,10 +47,12 @@ const PageHeader = ({ navLinks, showBack = false }: PageHeaderProps) => {
           ))}
         </nav>
 
-        <div className="flex items-baseline shrink-0 ml-auto">
-          <span className="text-lg font-bold text-foreground tracking-tight">DARPAN</span>
-          <span className="text-lg font-bold text-primary tracking-tight ml-0.5">LABS</span>
-        </div>
+        {/* CTAs */}
+        {cta && (
+          <div className="hidden sm:flex items-center gap-2 shrink-0 ml-auto">
+            {cta}
+          </div>
+        )}
       </div>
     </header>
   );
