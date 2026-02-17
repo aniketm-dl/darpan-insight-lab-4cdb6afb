@@ -10,7 +10,7 @@ const cases = [
 ];
 
 const BrandUseCases = () => (
-  <section className="section-padding bg-card/50">
+  <section id="use-cases" className="section-padding bg-card/50">
     <div className="section-container">
       <div className="text-center mb-10 scroll-reveal">
         <p className="eyebrow">Capabilities</p>

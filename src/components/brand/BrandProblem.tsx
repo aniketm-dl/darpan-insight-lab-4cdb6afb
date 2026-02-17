@@ -34,7 +34,7 @@ const BrandProblem = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="section-padding bg-background">
+    <section id="brand-problem" className="section-padding bg-background">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left — headline + reasons list */}

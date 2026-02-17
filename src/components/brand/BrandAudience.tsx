@@ -7,7 +7,7 @@ const checks = [
 ];
 
 const BrandAudience = () => (
-  <section className="section-padding bg-muted/30">
+  <section id="brand-audience" className="section-padding bg-muted/30">
     <div className="section-container">
       <div className="max-w-2xl mx-auto scroll-reveal">
         <p className="eyebrow text-center">Audience</p>

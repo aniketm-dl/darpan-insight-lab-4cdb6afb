@@ -9,6 +9,7 @@ import { useScrollRevealMultiple } from "@/hooks/useScrollReveal";
 import { z } from "zod";
 import { cn } from "@/lib/utils";
 import TwinsVisionPanels from "@/components/twins/TwinsVisionPanels";
+import PageHeader from "@/components/PageHeader";
 
 const twinSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -68,19 +69,17 @@ const Twins = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Nav */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
-        <div className="section-container flex items-center h-16">
-          <button onClick={() => navigate("/")} className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm">
-            <ArrowLeft size={16} />
-            Back
-          </button>
-          <div className="flex items-baseline ml-auto">
-            <span className="text-lg font-bold text-foreground tracking-tight">DARPAN</span>
-            <span className="text-lg font-bold text-primary tracking-tight ml-0.5">LABS</span>
-          </div>
-        </div>
-      </header>
+      <PageHeader
+        navLinks={[
+          { label: "What You Share", section: "what-we-collect" },
+          { label: "Your Twin", section: "your-twin" },
+          { label: "Earnings", section: "earnings" },
+          { label: "Vision", section: "vision" },
+          { label: "Early Access", section: "join-early" },
+          { label: "FAQ", section: "twins-faq" },
+        ]}
+        showBack
+      />
 
       {/* HERO */}
       <section className="min-h-screen flex items-center pt-20 pb-16">
@@ -148,7 +147,7 @@ const Twins = () => {
       </section>
 
       {/* WHAT YOUR TWIN BECOMES */}
-      <section className="section-padding">
+      <section id="your-twin" className="section-padding">
         <div className="section-container text-center">
           <div className="scroll-reveal">
             <p className="eyebrow">Your Twin</p>
@@ -163,7 +162,7 @@ const Twins = () => {
       </section>
 
       {/* HOW YOU EARN */}
-      <section className="section-padding bg-muted/30">
+      <section id="earnings" className="section-padding bg-muted/30">
         <div className="section-container text-center">
           <div className="scroll-reveal">
             <p className="eyebrow">Earnings</p>
@@ -236,7 +235,7 @@ const Twins = () => {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding">
+      <section id="twins-faq" className="section-padding">
         <div className="section-container">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
             <div className="lg:col-span-4 scroll-reveal">
