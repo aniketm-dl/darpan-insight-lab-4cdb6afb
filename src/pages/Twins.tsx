@@ -10,6 +10,9 @@ import { z } from "zod";
 import { cn } from "@/lib/utils";
 import TwinsVisionPanels from "@/components/twins/TwinsVisionPanels";
 import PageHeader from "@/components/PageHeader";
+import twinStep1 from "@/assets/twin-step-1.png";
+import twinStep2 from "@/assets/twin-step-2.png";
+import twinStep3 from "@/assets/twin-step-3.png";
 
 const twinSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -154,9 +157,31 @@ const Twins = () => {
             <h2 className="section-heading mb-6">What your digital twin becomes</h2>
           </div>
           <div className="max-w-2xl mx-auto scroll-reveal stagger-1">
-            <p className="body-text">
+            <p className="body-text mb-12">
               Your twin is a structured behavioral model of you. It reflects how you evaluate options and improves as you update it. The more nuanced it becomes, the more valuable it is.
             </p>
+          </div>
+
+          {/* 3-step horizontal journey */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { step: "01", title: "AI Interview", desc: "Have a natural conversation with our AI interviewer to share your preferences and decision patterns.", image: twinStep1 },
+              { step: "02", title: "Build Your Profile", desc: "Complete structured modules that map your spending, lifestyle, risk tolerance, and more.", image: twinStep2 },
+              { step: "03", title: "Your Twin Dashboard", desc: "Track your earnings, badges, and industry segments as brands interact with your twin.", image: twinStep3 },
+            ].map((s, i) => (
+              <div key={i} className={`scroll-reveal stagger-${i + 1}`}>
+                <div className="overflow-hidden aspect-[4/3] rounded-lg border border-border">
+                  <img src={s.image} alt={s.title} className="w-full h-full object-cover object-top" loading="lazy" />
+                </div>
+                <div className="mt-3 text-left">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-bold text-primary uppercase tracking-widest">{s.step}</span>
+                    <h3 className="text-foreground font-semibold text-sm">{s.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm">{s.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
