@@ -52,19 +52,19 @@ const BrandHowItWorks = () => (
         ))}
       </div>
 
-      {/* Screenshot journey */}
-      <div className="space-y-8">
+      {/* Screenshot journey - horizontal */}
+      <div className="grid md:grid-cols-3 gap-4">
         {steps.map((s, i) => (
           <div key={i} className={`scroll-reveal stagger-${i + 1}`}>
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-2 mb-2">
               <span className="text-xs font-bold text-primary uppercase tracking-widest">{s.step}</span>
-              <span className="text-sm font-medium text-foreground">{s.title}</span>
+              <span className="text-xs font-medium text-muted-foreground">{s.title}</span>
             </div>
-            <div className="premium-card overflow-hidden p-2">
+            <div className="premium-card overflow-hidden p-1.5">
               <img
                 src={s.image}
                 alt={s.imageAlt}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-md"
                 loading="lazy"
               />
             </div>
