@@ -60,11 +60,11 @@ const BrandHowItWorks = () => (
               <span className="text-xs font-bold text-primary uppercase tracking-widest">{s.step}</span>
               <span className="text-xs font-medium text-muted-foreground">{s.title}</span>
             </div>
-            <div className="premium-card overflow-hidden p-1.5">
+            <div className="premium-card overflow-hidden p-1.5 aspect-[4/3]">
               <img
                 src={s.image}
                 alt={s.imageAlt}
-                className="w-full h-auto rounded-md"
+                className="w-full h-full object-cover object-top rounded-md"
                 loading="lazy"
               />
             </div>
