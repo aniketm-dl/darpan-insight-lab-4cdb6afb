@@ -32,7 +32,7 @@ import {
 type Step = 1 | 2 | 3 | 4;
 
 const RESEARCH_QUESTION =
-  "Which body wash concept resonates most with urban women aged 22-38?";
+  "I have ideated 5 body wash concepts for women aged 22-30, but I have budget to develop only one. Which one would drive the most revenue?";
 
 
 const conceptsData = [
@@ -249,7 +249,8 @@ const GridContent = ({ children }: { children: React.ReactNode }) => (
       flex: 1,
       minHeight: 0,
       position: "relative",
-      overflow: "hidden",
+      overflow: "auto",
+      WebkitOverflowScrolling: "touch" as any,
     }}
   >
     {/* Subtle dot grid background */}
@@ -279,7 +280,7 @@ const GridContent = ({ children }: { children: React.ReactNode }) => (
 // ────────────────────────────────────────────
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex" style={{ height: 780 }}>
+  <div className="flex" style={{ height: "min(700px, 75vh)", minHeight: 400 }}>
     <Sidebar />
     <div className="flex flex-col" style={{ flex: 1, minWidth: 0 }}>
       <Breadcrumb />
@@ -405,10 +406,10 @@ const Step1 = ({ onNext, active }: { onNext: () => void; active: boolean }) => {
       style={{ height: "100%", position: "relative" }}
     >
       {/* Heading */}
-      <h3 style={{ fontSize: 28, fontWeight: 600, color: "#F5F5F5", textAlign: "center", marginBottom: 8, letterSpacing: "-0.025em", lineHeight: 1.3 }}>
+      <h3 className="text-xl sm:text-2xl md:text-[28px]" style={{ fontWeight: 600, color: "#F5F5F5", textAlign: "center", marginBottom: 8, letterSpacing: "-0.025em", lineHeight: 1.3 }}>
         What do you want to research today?
       </h3>
-      <p style={{ fontSize: 14, color: "#666", textAlign: "center", marginBottom: 32, fontWeight: 400 }}>
+      <p className="text-xs sm:text-sm" style={{ color: "#666", textAlign: "center", marginBottom: 24, fontWeight: 400 }}>
         Our AI-powered digital twins will run the study for you
       </p>
 
@@ -416,12 +417,11 @@ const Step1 = ({ onNext, active }: { onNext: () => void; active: boolean }) => {
       <div
         className="transition-all duration-300"
         style={{
-          width: "75%",
-          maxWidth: 620,
+          width: "min(90%, 620px)",
           background: "#1C1C1C",
           border: "1px solid #2A2A2A",
           borderRadius: 16,
-          padding: "18px 22px",
+          padding: "14px 16px",
           cursor: "text",
           boxShadow: "0 4px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.02)",
         }}
@@ -435,7 +435,7 @@ const Step1 = ({ onNext, active }: { onNext: () => void; active: boolean }) => {
         }}
       >
         {/* Row 1 — Text area */}
-        <div style={{ minHeight: 44, fontSize: 15, lineHeight: 1.6, color: "#D0D0D0", marginBottom: 10 }}>
+        <div style={{ minHeight: 60, fontSize: 14, lineHeight: 1.6, color: "#D0D0D0", marginBottom: 12 }}>
           {typed}
           {!submitted && (
             <span
@@ -522,7 +522,7 @@ const Step1 = ({ onNext, active }: { onNext: () => void; active: boolean }) => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.3 }}
-        style={{ marginTop: 36, width: "75%", maxWidth: 620 }}
+        style={{ marginTop: 28, width: "min(90%, 620px)" }}
       >
         <span style={{ fontSize: 11, fontWeight: 600, color: "#444", textTransform: "uppercase", letterSpacing: 1.5, display: "block", marginBottom: 10 }}>
           Recent Studies
@@ -585,7 +585,7 @@ const Step2 = ({ onNext, onBack }: { onNext: () => void; onBack: () => void }) =
       style={{ display: "flex", flexDirection: "column", height: "100%", position: "relative" }}
     >
       {/* Content */}
-      <div style={{ flex: 1, padding: "0 28px", overflow: "hidden" }}>
+      <div style={{ flex: 1, padding: "0 16px", overflow: "auto", WebkitOverflowScrolling: "touch" as any }}>
         {/* Question summary bar */}
         <div
           className="flex items-center gap-3"
@@ -625,7 +625,7 @@ const Step2 = ({ onNext, onBack }: { onNext: () => void; onBack: () => void }) =
                 </span>
                 <span style={{ fontSize: 11, fontWeight: 600, color: "#B6E52A", background: "rgba(182,229,42,0.12)", padding: "3px 10px", borderRadius: 4 }}>5 selected</span>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5" style={{ gap: 8 }}>
                 {conceptsData.map((c, i) => (
                   <motion.div
                     key={c.name}
@@ -636,8 +636,8 @@ const Step2 = ({ onNext, onBack }: { onNext: () => void; onBack: () => void }) =
                     style={{
                       background: "#1A1A1A",
                       border: "1px solid #2A2A2A",
-                      borderRadius: 12,
-                      padding: "20px 18px",
+                      borderRadius: 10,
+                      padding: "14px 12px",
                       minWidth: 0,
                       cursor: "default",
                       transition: "all 0.25s ease",
@@ -662,9 +662,9 @@ const Step2 = ({ onNext, onBack }: { onNext: () => void; onBack: () => void }) =
                       <Check size={14} style={{ color: "#B6E52A" }} />
                     </div>
                     {/* Name */}
-                    <p style={{ fontSize: 15, fontWeight: 600, color: "#F0F0F0", letterSpacing: "-0.01em", marginBottom: 6, lineHeight: 1.2 }}>{c.name}</p>
+                    <p style={{ fontSize: 13, fontWeight: 600, color: "#F0F0F0", letterSpacing: "-0.01em", marginBottom: 4, lineHeight: 1.2 }}>{c.name}</p>
                     {/* Description */}
-                    <p style={{ fontSize: 12, color: "#777", lineHeight: 1.4 }}>{c.desc}</p>
+                    <p style={{ fontSize: 11, color: "#777", lineHeight: 1.4 }}>{c.desc}</p>
                   </motion.div>
                 ))}
               </div>
@@ -801,20 +801,20 @@ const Step2 = ({ onNext, onBack }: { onNext: () => void; onBack: () => void }) =
       </div>
 
       {/* Bottom bar — pinned */}
-      <div style={{ borderTop: "1px solid #2A2A2A", padding: "16px 24px", flexShrink: 0 }}>
+      <div style={{ borderTop: "1px solid #2A2A2A", padding: "12px 16px", flexShrink: 0 }}>
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <button
               onClick={onBack}
-              className="inline-flex items-center gap-1.5 text-[13px] transition-colors"
-              style={{ color: "#666", background: "none", border: "none", cursor: "pointer", padding: "8px 12px" }}
+              className="inline-flex items-center gap-1 text-[12px] sm:text-[13px] transition-colors"
+              style={{ color: "#666", background: "none", border: "none", cursor: "pointer", padding: "8px" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#AAA")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#666")}
             >
               <ArrowLeft size={14} />
-              Back
+              <span className="hidden sm:inline">Back</span>
             </button>
-            <span style={{ fontSize: 12, color: "#555" }}>Estimated time: ~3 minutes</span>
+            <span className="hidden sm:inline" style={{ fontSize: 12, color: "#555" }}>Estimated time: ~3 minutes</span>
           </div>
           <motion.button
             initial={{ opacity: 0, y: 4 }}
@@ -822,12 +822,12 @@ const Step2 = ({ onNext, onBack }: { onNext: () => void; onBack: () => void }) =
             transition={{ duration: 0.3 }}
             onClick={btnVisible ? onNext : undefined}
             disabled={!btnVisible}
-            className="inline-flex items-center gap-2 text-[15px] font-semibold"
+            className="inline-flex items-center gap-2 text-[13px] sm:text-[15px] font-semibold"
             style={{
               background: btnVisible ? "#B6E52A" : "#333",
               color: btnVisible ? "#1A1A1A" : "#666",
               borderRadius: 10,
-              padding: "12px 40px",
+              padding: "10px 24px",
               border: "none",
               cursor: btnVisible ? "pointer" : "default",
               boxShadow: btnVisible ? "0 2px 16px rgba(182, 229, 42, 0.25)" : "none",
@@ -892,7 +892,7 @@ const Step3 = ({ onNext }: { onNext: () => void }) => {
       <div
         style={{
           width: "100%",
-          maxWidth: 480,
+          maxWidth: "min(480px, 90%)",
           background: "#1C1C1C",
           border: "1px solid #262626",
           borderRadius: 16,
@@ -1027,9 +1027,9 @@ const TwinCarousel = () => {
 
   return (
     <div className="flex flex-col" style={{ height: "100%" }}>
-      <div className="flex items-center gap-2" style={{ marginBottom: 8 }}>
-        <Quote size={13} style={{ color: "#666" }} />
-        <span style={{ fontSize: 10, fontWeight: 700, color: "#666", textTransform: "uppercase", letterSpacing: 1.5 }}>
+      <div className="flex items-center gap-2" style={{ marginBottom: 10 }}>
+        <Quote size={14} style={{ color: "#666" }} />
+        <span style={{ fontSize: 11, fontWeight: 700, color: "#666", textTransform: "uppercase", letterSpacing: 1.5 }}>
           What Twins Are Saying
         </span>
       </div>
@@ -1042,19 +1042,19 @@ const TwinCarousel = () => {
           transition={{ duration: 0.25, ease: "easeOut" as const }}
           style={{ flex: 1 }}
         >
-          <div className="flex items-center gap-2.5 mb-2">
-            <div style={{ width: 30, height: 30, borderRadius: "50%", background: q.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: "#1A1A1A" }}>
+          <div className="flex items-center gap-3 mb-3">
+            <div style={{ width: 34, height: 34, borderRadius: "50%", background: q.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: "#1A1A1A" }}>
               {q.initials}
             </div>
             <div>
-              <p style={{ fontSize: 12, fontWeight: 600, color: "#DDD", lineHeight: 1.2 }}>{q.name}</p>
-              <p style={{ fontSize: 10, color: "#B6E52A" }}>{q.persona}</p>
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#DDD", lineHeight: 1.2 }}>{q.name}</p>
+              <p style={{ fontSize: 11, color: "#B6E52A" }}>{q.persona}</p>
             </div>
           </div>
-          <p style={{ fontSize: 12, color: "#999", lineHeight: 1.55, fontStyle: "italic" }}>"{q.quote}"</p>
+          <p style={{ fontSize: 13, color: "#999", lineHeight: 1.6, fontStyle: "italic" }}>"{q.quote}"</p>
         </motion.div>
       </AnimatePresence>
-      <div className="flex items-center gap-1.5" style={{ marginTop: 6 }}>
+      <div className="flex items-center gap-1.5" style={{ marginTop: 8 }}>
         {twinQuotes.map((_, i) => (
           <button
             key={i}
@@ -1086,16 +1086,16 @@ const Step4 = ({ onReset }: { onReset: () => void }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35 }}
       className="flex flex-col"
-      style={{ padding: "16px 24px 16px", height: "100%" }}
+      style={{ padding: "16px 14px 16px", height: "100%" }}
     >
       {/* Top bar: badge + stats + CTAs */}
-      <div className="flex items-center justify-between" style={{ marginBottom: 14, flexShrink: 0 }}>
-        <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-2" style={{ marginBottom: 12, flexShrink: 0 }}>
+        <div className="flex items-center gap-3">
           <span
             style={{
               fontSize: 11,
               fontWeight: 600,
-              padding: "4px 12px",
+              padding: "4px 10px",
               borderRadius: 20,
               background: "rgba(182,229,42,0.1)",
               color: "#B6E52A",
@@ -1104,14 +1104,14 @@ const Step4 = ({ onReset }: { onReset: () => void }) => {
           >
             Study Complete
           </span>
-          <div className="flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-4">
             {[
               ["Responses", "250"],
               ["Confidence", "91%"],
               ["Duration", "2m 34s"],
             ].map(([label, val]) => (
               <div key={label} className="text-center">
-                <p style={{ fontSize: 9, color: "#666", textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</p>
+                <p style={{ fontSize: 10, color: "#666", textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</p>
                 <p style={{ fontSize: 13, fontWeight: 700, color: "#E5E5E5", fontVariantNumeric: "tabular-nums" }}>{val}</p>
               </div>
             ))}
@@ -1123,7 +1123,7 @@ const Step4 = ({ onReset }: { onReset: () => void }) => {
               background: "#B6E52A",
               color: "#1A1A1A",
               borderRadius: 8,
-              padding: "7px 18px",
+              padding: "6px 14px",
               fontWeight: 600,
               fontSize: 12,
               border: "none",
@@ -1134,7 +1134,7 @@ const Step4 = ({ onReset }: { onReset: () => void }) => {
           >
             <span className="inline-flex items-center gap-1.5">
               <Download size={12} />
-              Download Report
+              Report
             </span>
           </button>
           <button
@@ -1144,7 +1144,7 @@ const Step4 = ({ onReset }: { onReset: () => void }) => {
               border: "1px solid #333",
               color: "#BBB",
               borderRadius: 8,
-              padding: "7px 14px",
+              padding: "6px 12px",
               fontWeight: 600,
               fontSize: 12,
               cursor: "pointer",
@@ -1153,122 +1153,79 @@ const Step4 = ({ onReset }: { onReset: () => void }) => {
           >
             <span className="inline-flex items-center gap-1.5">
               <RotateCcw size={12} />
-              New Study
+              New
             </span>
           </button>
         </div>
       </div>
 
-      {/* Winner card — horizontal compact */}
-      <div
-        style={{
-          background: "rgba(182,229,42,0.04)",
-          border: "1px solid rgba(182,229,42,0.12)",
-          borderRadius: 12,
-          padding: "14px 20px",
-          marginBottom: 12,
-          flexShrink: 0,
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            width: 180,
-            height: 180,
-            top: -60,
-            right: -40,
-            background: "radial-gradient(circle, rgba(182,229,42,0.05) 0%, transparent 70%)",
-          }}
-        />
-        <div className="flex items-center gap-6">
-          {/* Left: winner label + name */}
-          <div className="flex items-center gap-3" style={{ minWidth: 0 }}>
-            <div>
-              <div className="flex items-center gap-1.5" style={{ marginBottom: 4 }}>
-                <ArrowUp size={12} style={{ color: "#B6E52A" }} />
-                <span style={{ fontSize: 10, fontWeight: 700, color: "#B6E52A", textTransform: "uppercase", letterSpacing: 1 }}>Top Performer</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#FB923C", boxShadow: "0 0 6px rgba(251,146,60,0.4)" }} />
-                <span style={{ fontSize: 18, fontWeight: 700, color: "#F5F5F5", letterSpacing: "-0.02em" }}>{winner.name}</span>
-              </div>
-            </div>
-          </div>
-          {/* Right: scores */}
-          <div className="flex items-center gap-2 ml-auto">
-            {(["purchase", "unique", "relevance", "price"] as const).map((key) => {
-              const labels: Record<string, string> = { purchase: "Purchase", unique: "Unique", relevance: "Relevance", price: "Price" };
-              const val = winner[key];
-              const pill = scorePill(val);
-              return (
-                <div key={key} className="text-center" style={{ background: "#1A1A1A", borderRadius: 6, padding: "6px 10px", minWidth: 56 }}>
-                  <p style={{ fontSize: 9, color: "#666", textTransform: "uppercase", letterSpacing: 0.3, marginBottom: 2 }}>{labels[key]}</p>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: pill.color, fontVariantNumeric: "tabular-nums" }}>{val}%</span>
-                </div>
-              );
-            })}
-            <div className="text-center" style={{ background: "rgba(182,229,42,0.12)", borderRadius: 6, padding: "6px 12px", minWidth: 60 }}>
-              <p style={{ fontSize: 9, color: "#888", textTransform: "uppercase", letterSpacing: 0.3, marginBottom: 2 }}>Score</p>
-              <span style={{ fontSize: 15, fontWeight: 800, color: "#B6E52A", fontVariantNumeric: "tabular-nums" }}>{winner.composite}%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Rankings table — compact */}
+      {/* Full rankings table with highlighted winner */}
       <div
         style={{
           background: "#1C1C1C",
           border: "1px solid #262626",
-          borderRadius: 12,
-          overflow: "hidden",
+          borderRadius: 14,
+          overflow: "auto",
           marginBottom: 12,
           flexShrink: 0,
+          WebkitOverflowScrolling: "touch",
         }}
       >
         <table className="w-full text-left" style={{ borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ borderBottom: "1px solid #262626" }}>
-              <th style={{ fontSize: 9, fontWeight: 600, color: "#555", textTransform: "uppercase", padding: "7px 16px", letterSpacing: 1 }}>#</th>
-              <th style={{ fontSize: 9, fontWeight: 600, color: "#555", textTransform: "uppercase", padding: "7px 12px", letterSpacing: 1 }}>Concept</th>
+              <th style={{ fontSize: 10, fontWeight: 600, color: "#555", textTransform: "uppercase", padding: "10px 18px", letterSpacing: 1 }}>#</th>
+              <th style={{ fontSize: 10, fontWeight: 600, color: "#555", textTransform: "uppercase", padding: "10px 14px", letterSpacing: 1 }}>Concept</th>
               {["Purchase", "Unique", "Relevance", "Price", "Score"].map((h) => (
-                <th key={h} style={{ fontSize: 9, fontWeight: 600, color: "#555", textTransform: "uppercase", padding: "7px 8px", letterSpacing: 1, textAlign: "center" }}>
+                <th key={h} style={{ fontSize: 10, fontWeight: 600, color: "#555", textTransform: "uppercase", padding: "10px 12px", letterSpacing: 1, textAlign: "center" }}>
                   {h}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {resultsConcepts.slice(1).map((r, i) => {
+            {resultsConcepts.map((r, i) => {
               const vals = [r.purchase, r.unique, r.relevance, r.price, r.composite];
               return (
                 <tr
                   key={r.name}
                   style={{
-                    borderBottom: i < resultsConcepts.length - 2 ? "1px solid #222" : "none",
+                    borderBottom: i < resultsConcepts.length - 1 ? `1px solid ${r.winner ? "rgba(182,229,42,0.1)" : "#222"}` : "none",
+                    background: r.winner ? "rgba(182,229,42,0.04)" : "transparent",
+                    borderLeft: r.winner ? "3px solid #B6E52A" : "3px solid transparent",
                   }}
                 >
-                  <td style={{ padding: "7px 16px", fontSize: 11, fontWeight: 600, color: "#555" }}>
-                    {i + 2}
+                  <td style={{ padding: r.winner ? "14px 18px" : "10px 18px", fontSize: 13, fontWeight: 600, color: r.winner ? "#B6E52A" : "#555" }}>
+                    {i + 1}
                   </td>
-                  <td style={{ padding: "7px 12px" }}>
-                    <span style={{ fontSize: 12, fontWeight: 400, color: "#AAA" }}>{r.name}</span>
+                  <td style={{ padding: r.winner ? "14px 14px" : "10px 14px" }}>
+                    <div className="flex items-center gap-2">
+                      {r.winner && <ArrowUp size={13} style={{ color: "#B6E52A" }} />}
+                      <span style={{ fontSize: r.winner ? 15 : 13, fontWeight: r.winner ? 600 : 400, color: r.winner ? "#F5F5F5" : "#AAA" }}>
+                        {r.name}
+                      </span>
+                      {r.winner && (
+                        <span style={{ fontSize: 10, fontWeight: 600, color: "#B6E52A", background: "rgba(182,229,42,0.12)", padding: "2px 8px", borderRadius: 4, marginLeft: 4 }}>
+                          TOP
+                        </span>
+                      )}
+                    </div>
                   </td>
                   {vals.map((v, j) => {
                     const isComposite = j === vals.length - 1;
-                    const pill = scorePill(v);
+                    const pill = isComposite && r.winner
+                      ? { bg: "rgba(182,229,42,0.15)", color: "#B6E52A" }
+                      : scorePill(v);
                     return (
-                      <td key={j} style={{ padding: "7px 8px", textAlign: "center" }}>
+                      <td key={j} style={{ padding: r.winner ? "14px 12px" : "10px 12px", textAlign: "center" }}>
                         <span
                           style={{
-                            fontSize: 11,
-                            fontWeight: isComposite ? 700 : 500,
-                            padding: isComposite ? "2px 8px" : 0,
-                            borderRadius: 4,
+                            fontSize: r.winner ? 14 : 13,
+                            fontWeight: (isComposite || r.winner) ? 700 : 600,
+                            padding: isComposite ? "3px 10px" : 0,
+                            borderRadius: 5,
                             background: isComposite ? pill.bg : "transparent",
-                            color: isComposite ? pill.color : v >= 80 ? "#4ADE80" : v >= 70 ? "#FACC15" : "#F87171",
+                            color: isComposite ? pill.color : r.winner ? "#F5F5F5" : v >= 80 ? "#4ADE80" : v >= 70 ? "#FACC15" : "#F87171",
                           }}
                         >
                           {v}
@@ -1284,30 +1241,39 @@ const Step4 = ({ onReset }: { onReset: () => void }) => {
       </div>
 
       {/* Bottom row: AI Recommendation + Twin Quote */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3" style={{ flex: 1, minHeight: 0 }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ flex: 1, minHeight: 0 }}>
         {/* AI Recommendation */}
         <div
           style={{
-            background: "#1C1C1C",
-            border: "1px solid #262626",
-            borderRadius: 12,
-            padding: "14px 18px",
+            background: "linear-gradient(135deg, rgba(182,229,42,0.06) 0%, rgba(182,229,42,0.02) 100%)",
+            border: "1px solid rgba(182,229,42,0.12)",
+            borderRadius: 14,
+            padding: "14px 16px",
             display: "flex",
             flexDirection: "column",
           }}
         >
-          <div className="flex items-center gap-2" style={{ marginBottom: 8 }}>
-            <Sparkles size={13} style={{ color: "#B6E52A" }} />
-            <span style={{ fontSize: 10, fontWeight: 700, color: "#B6E52A", textTransform: "uppercase", letterSpacing: 1.5 }}>
-              AI Recommendation
-            </span>
+          <div className="flex items-center justify-between" style={{ marginBottom: 12 }}>
+            <div className="flex items-center gap-2">
+              <Sparkles size={14} style={{ color: "#B6E52A" }} />
+              <span style={{ fontSize: 11, fontWeight: 700, color: "#B6E52A", textTransform: "uppercase", letterSpacing: 1.5 }}>
+                AI Recommendation
+              </span>
+            </div>
+            <span style={{ fontSize: 10, color: "#555", background: "rgba(255,255,255,0.04)", padding: "2px 8px", borderRadius: 4 }}>91% confidence</span>
           </div>
-          <p style={{ fontSize: 12, color: "#BBB", lineHeight: 1.6, flex: 1 }}>
-            Lead with <span style={{ color: "#F5F5F5", fontWeight: 600 }}>Citrus Grove</span> as primary SKU — strongest composite with highest purchase intent (91%). Consider <span style={{ color: "#F5F5F5", fontWeight: 600 }}>Charcoal Clean</span> as secondary for the uniqueness segment.
-          </p>
-          <div className="flex items-center gap-2" style={{ marginTop: 8 }}>
-            <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#B6E52A", opacity: 0.5 }} />
-            <span style={{ fontSize: 10, color: "#555" }}>Based on 250 responses · 91% confidence</span>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontSize: 13, color: "#CCC", lineHeight: 1.7, marginBottom: 8 }}>
+              Lead with <span style={{ color: "#B6E52A", fontWeight: 600 }}>Citrus Grove</span> as primary SKU — strongest composite score with highest purchase intent (91%).
+            </p>
+            <p style={{ fontSize: 13, color: "#888", lineHeight: 1.7 }}>
+              Consider <span style={{ color: "#DDD", fontWeight: 500 }}>Charcoal Clean</span> as secondary variant for the uniqueness-driven segment.
+            </p>
+          </div>
+          <div className="flex items-center gap-3" style={{ marginTop: 10 }}>
+            <span style={{ fontSize: 11, color: "#555" }}>250 twin responses</span>
+            <span style={{ color: "#333" }}>·</span>
+            <span style={{ fontSize: 11, color: "#555" }}>5 concepts evaluated</span>
           </div>
         </div>
 
@@ -1316,8 +1282,9 @@ const Step4 = ({ onReset }: { onReset: () => void }) => {
           style={{
             background: "#1C1C1C",
             border: "1px solid #262626",
-            borderRadius: 12,
-            padding: "14px 18px",
+            borderLeft: "3px solid #38BDF8",
+            borderRadius: 14,
+            padding: "14px 16px",
             display: "flex",
             flexDirection: "column",
           }}
@@ -1358,7 +1325,7 @@ const FlowDemo = () => {
     <section
       id="how-it-works"
       className="relative overflow-hidden"
-      style={{ padding: "140px 0 80px" }}
+      style={{ padding: "clamp(60px, 12vw, 140px) 0 clamp(40px, 8vw, 80px)" }}
     >
       {/* Graph-paper grid background */}
       <div

@@ -56,7 +56,7 @@ const BrandPilotAccess = () => {
   ];
 
   return (
-    <section id="pilot-access" className="relative overflow-hidden" style={{ padding: "100px 0 80px", background: "#0F0F0F" }}>
+    <section id="pilot-access" className="relative overflow-hidden" style={{ padding: "clamp(60px, 10vw, 100px) 0 clamp(40px, 8vw, 80px)", background: "#0F0F0F" }}>
 
       <div className="relative z-10 max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -75,8 +75,8 @@ const BrandPilotAccess = () => {
               Pilot Program
             </p>
             <h2
+              className="text-2xl sm:text-3xl lg:text-4xl"
               style={{
-                fontSize: 36,
                 fontWeight: 700,
                 color: "#F5F5F5",
                 lineHeight: 1.2,
@@ -87,11 +87,11 @@ const BrandPilotAccess = () => {
               Become a founding brand partner
             </h2>
             <p style={{ fontSize: 15, color: "#888", lineHeight: 1.7, marginBottom: 36, maxWidth: 420 }}>
-              We're onboarding ten pilot brands. Early partners get direct founder collaboration, custom simulation design, and priority roadmap influence.
+              We're onboarding pilot brands. Early partners get direct founder collaboration, custom simulation design, and priority roadmap influence.
             </p>
 
-            {/* Perks grid */}
-            <div className="grid grid-cols-2 gap-3">
+            {/* Perks grid — hidden on mobile */}
+            <div className="hidden md:grid grid-cols-2 gap-3">
               {perks.map((perk) => (
                 <div
                   key={perk.title}
@@ -147,14 +147,14 @@ const BrandPilotAccess = () => {
                   background: "#1A1A1A",
                   border: "1px solid #222",
                   borderRadius: 16,
-                  padding: "32px 28px",
+                  padding: "clamp(20px, 4vw, 32px) clamp(16px, 3vw, 28px)",
                 }}
               >
                 <p style={{ fontSize: 16, fontWeight: 600, color: "#E5E5E5", marginBottom: 4 }}>Apply for pilot access</p>
                 <p style={{ fontSize: 13, color: "#666", marginBottom: 24 }}>Takes less than 2 minutes</p>
 
                 <form onSubmit={handleSubmit} className="space-y-3">
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <Input placeholder="Company name" value={form.company} onChange={(e) => set("company", e.target.value)} required maxLength={100} className="bg-[#141414] border-[#2A2A2A] focus:border-[#B6E52A]/40 h-11" />
                     <Input placeholder="Industry" value={form.industry} onChange={(e) => set("industry", e.target.value)} required maxLength={100} className="bg-[#141414] border-[#2A2A2A] focus:border-[#B6E52A]/40 h-11" />
                   </div>

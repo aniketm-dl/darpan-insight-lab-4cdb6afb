@@ -219,21 +219,25 @@ const DigitalTwins = () => {
             </p>
           </div>
 
-          {/* Fan of cards — desktop: centered arc, mobile: horizontal scroll */}
+          {/* Fan of cards — desktop: centered arc, mobile: show center 3 only */}
           <div
-            className="flex justify-center items-end -space-x-2 md:-space-x-3 overflow-x-auto md:overflow-visible pb-4 px-4 md:px-0 snap-x snap-mandatory md:snap-none scroll-reveal stagger-2"
+            className="flex justify-center items-end -space-x-2 md:-space-x-3 overflow-hidden pb-4 px-4 md:px-0 scroll-reveal stagger-2"
             onMouseLeave={() => setActiveIndex(CENTER_INDEX)}
           >
-            {twins.map((twin, i) => (
-              <div key={twin.name} className="snap-center">
-                <TwinCard
-                  twin={twin}
-                  index={i}
-                  isActive={activeIndex === i}
-                  onActivate={() => setActiveIndex(i)}
-                />
-              </div>
-            ))}
+            {twins.map((twin, i) => {
+              // On mobile, only show center 3 cards (index 2, 3, 4)
+              const mobileHidden = i < 2 || i > 4 ? "hidden md:block" : "";
+              return (
+                <div key={twin.name} className={mobileHidden}>
+                  <TwinCard
+                    twin={twin}
+                    index={i}
+                    isActive={activeIndex === i}
+                    onActivate={() => setActiveIndex(i)}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

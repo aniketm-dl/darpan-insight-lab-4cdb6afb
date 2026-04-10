@@ -20,7 +20,7 @@ const Home = () => {
 
       {/* Footer */}
       <footer style={{ borderTop: "1px solid #1A1A1A", background: "#0C0C0C" }}>
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8" style={{ padding: "48px 0 32px" }}>
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8" style={{ paddingTop: "clamp(28px, 5vw, 48px)", paddingBottom: "clamp(20px, 4vw, 32px)" }}>
           {/* Main row */}
           <div className="flex flex-col md:flex-row items-start justify-between gap-8" style={{ marginBottom: 32 }}>
             {/* Brand */}
@@ -34,7 +34,7 @@ const Home = () => {
             </div>
 
             {/* Links */}
-            <div className="flex gap-12">
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
               <div>
                 <p style={{ fontSize: 11, fontWeight: 700, color: "#555", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 12 }}>Product</p>
                 <div className="flex flex-col gap-2">

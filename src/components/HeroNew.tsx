@@ -312,7 +312,7 @@ const HeroNew = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background py-20">
+    <section ref={sectionRef} className="relative min-h-[70vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-background py-16 lg:py-20">
       {/* Graph-paper grid background */}
       <div
         className="absolute inset-0 z-0"
@@ -324,16 +324,16 @@ const HeroNew = () => {
       />
 
       {/* Ambient blurs */}
-      <div className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] rounded-full bg-primary/[0.02] blur-[140px] z-0" />
-      <div className="absolute bottom-[-10%] right-[20%] w-[400px] h-[400px] rounded-full bg-secondary/[0.015] blur-[120px] z-0" />
+      <div className="absolute top-[-10%] left-[20%] w-[min(500px,80vw)] h-[min(500px,80vw)] rounded-full bg-primary/[0.02] blur-[140px] z-0" />
+      <div className="absolute bottom-[-10%] right-[20%] w-[min(400px,70vw)] h-[min(400px,70vw)] rounded-full bg-secondary/[0.015] blur-[120px] z-0" />
 
-      {/* SVG lines */}
+      {/* SVG lines — hidden on mobile */}
       {lineData.length > 0 && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.5 }}
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none hidden lg:block"
           style={{ zIndex: 1 }}
         >
           <ConnectionLines lineData={lineData} />
