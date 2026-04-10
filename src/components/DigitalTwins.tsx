@@ -221,7 +221,7 @@ const DigitalTwins = () => {
 
           {/* Fan of cards — desktop: centered arc, mobile: show center 3 only */}
           <div
-            className="flex justify-center items-end -space-x-2 md:-space-x-3 overflow-hidden pb-4 px-4 md:px-0 scroll-reveal stagger-2"
+            className="flex justify-center items-end -space-x-2 md:-space-x-3 overflow-hidden md:overflow-visible pb-4 px-4 md:px-0 scroll-reveal stagger-2"
             onMouseLeave={() => setActiveIndex(CENTER_INDEX)}
           >
             {twins.map((twin, i) => {

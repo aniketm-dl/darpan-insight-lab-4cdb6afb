@@ -92,9 +92,10 @@ const BrandPilotAccess = () => {
 
             {/* Perks grid — hidden on mobile */}
             <div className="hidden md:grid grid-cols-2 gap-3">
-              {perks.map((perk) => (
+              {perks.map((perk, i) => (
                 <div
                   key={perk.title}
+                  className={`scroll-reveal stagger-${i + 1}`}
                   style={{
                     background: "rgba(255,255,255,0.02)",
                     border: "1px solid #222",

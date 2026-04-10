@@ -22,7 +22,7 @@ const Home = () => {
       <footer style={{ borderTop: "1px solid #1A1A1A", background: "#0C0C0C" }}>
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8" style={{ paddingTop: "clamp(28px, 5vw, 48px)", paddingBottom: "clamp(20px, 4vw, 32px)" }}>
           {/* Main row */}
-          <div className="flex flex-col md:flex-row items-start justify-between gap-8" style={{ marginBottom: 32 }}>
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8 scroll-reveal" style={{ marginBottom: 32 }}>
             {/* Brand */}
             <div>
               <span style={{ fontSize: 18, fontWeight: 700, color: "#F0F0F0", letterSpacing: "-0.01em" }}>
