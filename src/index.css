@@ -375,3 +375,130 @@
     transform: scale(1);
   }
 }
+
+/* === Hero Section Animations === */
+
+/* Floating bob animation for network nodes */
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes float-bob-reverse {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(12px); }
+}
+
+@keyframes float-bob-slow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-10px) translateX(5px); }
+  66% { transform: translateY(6px) translateX(-3px); }
+}
+
+/* Gradient orb drift */
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(40px, -30px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(30px, 40px) scale(1.02); }
+}
+
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-50px, 20px) scale(0.97); }
+  50% { transform: translate(30px, -40px) scale(1.04); }
+  75% { transform: translate(-20px, -20px) scale(1); }
+}
+
+/* Connection line pulse */
+@keyframes line-pulse {
+  0% { stroke-dashoffset: 200; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes dot-travel {
+  0% { offset-distance: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* Subtle grid fade */
+@keyframes grid-fade {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.06; }
+}
+
+/* Hero utility classes */
+.hero-float-1 { animation: float-bob 5s ease-in-out infinite; }
+.hero-float-2 { animation: float-bob-reverse 6s ease-in-out infinite; }
+.hero-float-3 { animation: float-bob-slow 7s ease-in-out infinite; }
+.hero-float-4 { animation: float-bob 5.5s ease-in-out infinite 0.5s; }
+.hero-float-5 { animation: float-bob-reverse 6.5s ease-in-out infinite 1s; }
+.hero-float-6 { animation: float-bob-slow 8s ease-in-out infinite 0.3s; }
+
+.hero-orb-1 { animation: orb-drift-1 20s ease-in-out infinite; }
+.hero-orb-2 { animation: orb-drift-2 25s ease-in-out infinite; }
+
+.hero-dot-grid {
+  background-image: radial-gradient(circle, hsl(var(--muted-foreground) / 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Glassmorphic card for floating nodes */
+.glass-node {
+  background: hsl(var(--card) / 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border) / 0.5);
+  border-radius: 14px;
+  box-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.3), inset 0 1px 0 hsl(var(--foreground) / 0.04);
+}
+
+/* Hero floating UI cards */
+.hero-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  padding: 14px 16px;
+  width: 190px;
+  box-shadow:
+    0 1px 3px hsl(0 0% 0% / 0.08),
+    0 6px 20px -6px hsl(0 0% 0% / 0.12);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+
+.hero-card:hover {
+  box-shadow:
+    0 2px 6px hsl(0 0% 0% / 0.1),
+    0 12px 32px -8px hsl(0 0% 0% / 0.16);
+  border-color: hsl(var(--primary) / 0.2);
+  transform: translateY(-2px);
+}
+
+/* Tag pills inside hero cards */
+.hero-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: hsl(var(--muted) / 0.7);
+  font-size: 9px;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+}
+
+/* Connection line styles */
+.connection-line {
+  stroke: hsl(var(--primary) / 0.15);
+  stroke-width: 1;
+  stroke-dasharray: 6 4;
+  fill: none;
+}
+
+.connection-line-blue {
+  stroke: hsl(var(--secondary) / 0.15);
+  stroke-width: 1;
+  stroke-dasharray: 6 4;
+  fill: none;
+}

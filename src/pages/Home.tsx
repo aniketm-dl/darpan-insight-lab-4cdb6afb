@@ -1,91 +1,85 @@
-import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import HeaderNew from "@/components/HeaderNew";
+import HeroNew from "@/components/HeroNew";
+import DigitalTwins from "@/components/DigitalTwins";
+import FlowDemo from "@/components/FlowDemo";
+import BrandPilotAccess from "@/components/brand/BrandPilotAccess";
 import Founders from "@/components/Founders";
-import MarketplaceFlow from "@/components/MarketplaceFlow";
-import PageHeader from "@/components/PageHeader";
 import { useScrollRevealMultiple } from "@/hooks/useScrollReveal";
 
-const navLinks = [
-  { label: "Marketplace", section: "marketplace-flow" },
-  { label: "Team", section: "founders" },
-];
-
 const Home = () => {
-  const navigate = useNavigate();
   useScrollRevealMultiple();
-
-  const headerCta = (
-    <>
-      <Button onClick={() => navigate("/brand")} size="sm" className="font-medium">
-        I'm a Brand
-      </Button>
-      <Button onClick={() => navigate("/twins")} size="sm" className="font-medium bg-secondary text-secondary-foreground hover:bg-secondary/90">
-        Build My Twin
-      </Button>
-    </>
-  );
 
   return (
     <div className="min-h-screen bg-background">
-      <PageHeader navLinks={navLinks} cta={headerCta} />
-
-      <section className="h-screen flex items-center justify-center pt-16">
-        <div className="text-center px-6">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6">
-            The Customer Intelligence
-            <br />
-            <span className="text-primary">Marketplace</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10">
-            Where consumers build AI twins and brands run instant market research.
-          </p>
-
-          <div id="marketplace-flow" className="mb-12 scroll-reveal">
-            <MarketplaceFlow />
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={() => navigate("/brand")}
-              size="xl"
-              className="min-w-[180px] font-medium"
-            >
-              I'm a Brand
-            </Button>
-            <Button
-              onClick={() => navigate("/twins")}
-              size="xl"
-              className="min-w-[180px] font-medium bg-secondary text-secondary-foreground hover:bg-secondary/90"
-            >
-              Build My Twin
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HeaderNew />
+      <HeroNew />
+      <DigitalTwins />
+      <FlowDemo />
+      <BrandPilotAccess />
       <Founders />
 
       {/* Footer */}
-      <footer className="border-t border-border/50 bg-muted/30">
-        <div className="section-container py-12 md:py-16">
-          <div className="grid md:grid-cols-3 gap-10">
+      <footer style={{ borderTop: "1px solid #1A1A1A", background: "#0C0C0C" }}>
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8" style={{ padding: "48px 0 32px" }}>
+          {/* Main row */}
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8" style={{ marginBottom: 32 }}>
+            {/* Brand */}
             <div>
-              <span className="text-foreground font-bold text-lg tracking-tight">
-                DARPAN<span className="text-primary">LABS</span>
+              <span style={{ fontSize: 18, fontWeight: 700, color: "#F0F0F0", letterSpacing: "-0.01em" }}>
+                DARPAN<span style={{ color: "#B6E52A" }}>LABS</span>
               </span>
-              <p className="text-muted-foreground text-sm mt-3 max-w-xs">
-                AI-powered customer twins for instant insights and faster decisions
+              <p style={{ fontSize: 13, color: "#555", marginTop: 8, maxWidth: 280, lineHeight: 1.5 }}>
+                AI-powered customer twins for instant market research and faster product decisions.
               </p>
             </div>
-            <div>
-              <a href="mailto:aniketm@darpanlabs.ai" className="text-muted-foreground text-sm hover:text-foreground transition-colors">
-                Book a Demo
-              </a>
+
+            {/* Links */}
+            <div className="flex gap-12">
+              <div>
+                <p style={{ fontSize: 11, fontWeight: 700, color: "#555", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 12 }}>Product</p>
+                <div className="flex flex-col gap-2">
+                  {[
+                    { label: "Digital Twins", id: "digital-twins" },
+                    { label: "How It Works", id: "how-it-works" },
+                    { label: "Pilot Access", id: "pilot-access" },
+                  ].map((link) => (
+                    <button
+                      key={link.id}
+                      onClick={() => document.getElementById(link.id)?.scrollIntoView({ behavior: "smooth" })}
+                      style={{ fontSize: 13, color: "#777", background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left", transition: "color 0.15s ease" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "#E5E5E5")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "#777")}
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p style={{ fontSize: 11, fontWeight: 700, color: "#555", textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 12 }}>Contact</p>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="mailto:aniketm@darpanlabs.ai"
+                    style={{ fontSize: 13, color: "#777", textDecoration: "none", transition: "color 0.15s ease" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#B6E52A")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "#777")}
+                  >
+                    aniketm@darpanlabs.ai
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="md:text-right">
-              <p className="text-muted-foreground text-sm font-medium mb-2">Contact</p>
-              <a href="mailto:aniketm@darpanlabs.ai" className="text-foreground text-sm hover:text-primary transition-colors">
-                aniketm@darpanlabs.ai
-              </a>
+          </div>
+
+          {/* Bottom bar */}
+          <div style={{ borderTop: "1px solid #1A1A1A", paddingTop: 20 }}>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+              <p style={{ fontSize: 12, color: "#444" }}>
+                &copy; {new Date().getFullYear()} DarpanLabs. All rights reserved.
+              </p>
+              <p style={{ fontSize: 12, color: "#333" }}>
+                Built in India
+              </p>
             </div>
           </div>
         </div>

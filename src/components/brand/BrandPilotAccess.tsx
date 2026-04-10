@@ -48,45 +48,149 @@ const BrandPilotAccess = () => {
     }
   };
 
-  return (
-    <section id="pilot-access" className="section-padding-lg">
-      <div className="section-container max-w-md mx-auto">
-        <div className="text-center mb-8 scroll-reveal">
-          <p className="eyebrow">Pilot Program</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Founding Brand Access</h2>
-          <p className="text-muted-foreground text-sm max-w-sm mx-auto">
-            We are onboarding ten pilot brands. Early partners receive direct founder collaboration, custom simulation design support, and priority roadmap influence.
-          </p>
-        </div>
+  const perks = [
+    { title: "Direct Founder Access", desc: "Work 1-on-1 with our founding team" },
+    { title: "Custom Simulations", desc: "Tailored twin panels for your audience" },
+    { title: "Roadmap Influence", desc: "Shape the product based on your needs" },
+    { title: "Priority Support", desc: "Dedicated onboarding and research design" },
+  ];
 
-        {submitted ? (
-          <div className="premium-card text-center p-8 scroll-reveal">
-            <h3 className="text-xl font-bold text-foreground mb-2">Application received.</h3>
-            <p className="text-muted-foreground text-sm">We'll be in touch shortly.</p>
+  return (
+    <section id="pilot-access" className="relative overflow-hidden" style={{ padding: "100px 0 80px", background: "#0F0F0F" }}>
+
+      <div className="relative z-10 max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Left — Copy */}
+          <div className="scroll-reveal">
+            <p
+              style={{
+                fontSize: 12,
+                fontWeight: 700,
+                color: "#B6E52A",
+                textTransform: "uppercase",
+                letterSpacing: 2,
+                marginBottom: 16,
+              }}
+            >
+              Pilot Program
+            </p>
+            <h2
+              style={{
+                fontSize: 36,
+                fontWeight: 700,
+                color: "#F5F5F5",
+                lineHeight: 1.2,
+                letterSpacing: "-0.025em",
+                marginBottom: 16,
+              }}
+            >
+              Become a founding brand partner
+            </h2>
+            <p style={{ fontSize: 15, color: "#888", lineHeight: 1.7, marginBottom: 36, maxWidth: 420 }}>
+              We're onboarding ten pilot brands. Early partners get direct founder collaboration, custom simulation design, and priority roadmap influence.
+            </p>
+
+            {/* Perks grid */}
+            <div className="grid grid-cols-2 gap-3">
+              {perks.map((perk) => (
+                <div
+                  key={perk.title}
+                  style={{
+                    background: "rgba(255,255,255,0.02)",
+                    border: "1px solid #222",
+                    borderRadius: 12,
+                    padding: "16px 18px",
+                  }}
+                >
+                  <p style={{ fontSize: 14, fontWeight: 600, color: "#E5E5E5", marginBottom: 4 }}>{perk.title}</p>
+                  <p style={{ fontSize: 12, color: "#666", lineHeight: 1.4 }}>{perk.desc}</p>
+                </div>
+              ))}
+            </div>
+
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4 scroll-reveal stagger-1">
-            <Input placeholder="Company name" value={form.company} onChange={(e) => set("company", e.target.value)} required maxLength={100} className="bg-card border-border" />
-            <Input placeholder="Industry" value={form.industry} onChange={(e) => set("industry", e.target.value)} required maxLength={100} className="bg-card border-border" />
-            <Select onValueChange={(v) => set("monthly_research_spend", v)}>
-              <SelectTrigger className="bg-card border-border">
-                <SelectValue placeholder="Monthly research spend" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="<$5k">Less than $5k</SelectItem>
-                <SelectItem value="$5k-$25k">$5k – $25k</SelectItem>
-                <SelectItem value="$25k-$100k">$25k – $100k</SelectItem>
-                <SelectItem value=">$100k">More than $100k</SelectItem>
-              </SelectContent>
-            </Select>
-            <Input placeholder="Current research tools" value={form.current_research_tools} onChange={(e) => set("current_research_tools", e.target.value)} maxLength={500} className="bg-card border-border" />
-            <Textarea placeholder="Biggest research bottleneck" value={form.biggest_bottleneck} onChange={(e) => set("biggest_bottleneck", e.target.value)} required maxLength={500} className="bg-card border-border min-h-[80px]" />
-            <Input type="email" placeholder="Work email" value={form.email} onChange={(e) => set("email", e.target.value)} required maxLength={255} className="bg-card border-border" />
-            <Button type="submit" className="w-full font-medium" disabled={isSubmitting}>
-              {isSubmitting ? "Submitting..." : "Apply for Pilot Access"}
-            </Button>
-          </form>
-        )}
+
+          {/* Right — Form */}
+          <div className="scroll-reveal stagger-1">
+            {submitted ? (
+              <div
+                style={{
+                  background: "#1A1A1A",
+                  border: "1px solid rgba(182,229,42,0.15)",
+                  borderRadius: 16,
+                  padding: "48px 32px",
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  style={{
+                    width: 48,
+                    height: 48,
+                    borderRadius: "50%",
+                    background: "rgba(182,229,42,0.12)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto 16px",
+                  }}
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B6E52A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <h3 style={{ fontSize: 20, fontWeight: 700, color: "#F5F5F5", marginBottom: 8 }}>Application received</h3>
+                <p style={{ fontSize: 14, color: "#888" }}>We'll be in touch within 48 hours.</p>
+              </div>
+            ) : (
+              <div
+                style={{
+                  background: "#1A1A1A",
+                  border: "1px solid #222",
+                  borderRadius: 16,
+                  padding: "32px 28px",
+                }}
+              >
+                <p style={{ fontSize: 16, fontWeight: 600, color: "#E5E5E5", marginBottom: 4 }}>Apply for pilot access</p>
+                <p style={{ fontSize: 13, color: "#666", marginBottom: 24 }}>Takes less than 2 minutes</p>
+
+                <form onSubmit={handleSubmit} className="space-y-3">
+                  <div className="grid grid-cols-2 gap-3">
+                    <Input placeholder="Company name" value={form.company} onChange={(e) => set("company", e.target.value)} required maxLength={100} className="bg-[#141414] border-[#2A2A2A] focus:border-[#B6E52A]/40 h-11" />
+                    <Input placeholder="Industry" value={form.industry} onChange={(e) => set("industry", e.target.value)} required maxLength={100} className="bg-[#141414] border-[#2A2A2A] focus:border-[#B6E52A]/40 h-11" />
+                  </div>
+                  <Select onValueChange={(v) => set("monthly_research_spend", v)}>
+                    <SelectTrigger className="bg-[#141414] border-[#2A2A2A] focus:border-[#B6E52A]/40 h-11">
+                      <SelectValue placeholder="Monthly research spend" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="<$5k">Less than $5k</SelectItem>
+                      <SelectItem value="$5k-$25k">$5k – $25k</SelectItem>
+                      <SelectItem value="$25k-$100k">$25k – $100k</SelectItem>
+                      <SelectItem value=">$100k">More than $100k</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Input placeholder="Current research tools (optional)" value={form.current_research_tools} onChange={(e) => set("current_research_tools", e.target.value)} maxLength={500} className="bg-[#141414] border-[#2A2A2A] focus:border-[#B6E52A]/40 h-11" />
+                  <Textarea placeholder="What's your biggest research bottleneck?" value={form.biggest_bottleneck} onChange={(e) => set("biggest_bottleneck", e.target.value)} required maxLength={500} className="bg-[#141414] border-[#2A2A2A] focus:border-[#B6E52A]/40 min-h-[80px] resize-none" />
+                  <Input type="email" placeholder="Work email" value={form.email} onChange={(e) => set("email", e.target.value)} required maxLength={255} className="bg-[#141414] border-[#2A2A2A] focus:border-[#B6E52A]/40 h-11" />
+                  <Button
+                    type="submit"
+                    className="w-full font-semibold h-11 text-[14px]"
+                    disabled={isSubmitting}
+                    style={{
+                      boxShadow: "0 2px 16px rgba(182,229,42,0.25)",
+                    }}
+                  >
+                    {isSubmitting ? "Submitting..." : "Apply for Pilot Access"}
+                  </Button>
+                </form>
+
+                <p style={{ fontSize: 11, color: "#555", textAlign: "center", marginTop: 16 }}>
+                  No commitment required. We'll reach out to schedule a call.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );
