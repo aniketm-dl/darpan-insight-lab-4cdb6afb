@@ -18,7 +18,7 @@ const Founders = () => {
       linkedin: "https://www.linkedin.com/in/aniket-g-a19644113/",
     },
     {
-      name: "Aditya Niranjan Mishra",
+      name: "Aniket Niranjan Mishra",
       companies: ["American Express", "Citi Bank", "MyShubhLife"],
       education: "IIM Ahmedabad, IIT Kharagpur",
       image: aniketMishraImg,
