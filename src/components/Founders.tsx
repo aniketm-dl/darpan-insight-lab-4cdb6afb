@@ -29,8 +29,8 @@ const Founders = () => {
     {
       name: "Aditya Niranjan Mishra",
       role: "Research Analyst",
-      companies: ["Google", "WinZO Games", "Rupifi"],
-      education: "IIM Ahmedabad, BITS Pilani",
+      companies: ["Wells Fargo"],
+      education: "IIM Mumbai, NIT Bhopal",
       image: manavJainImg,
       linkedin: "https://www.linkedin.com/in/manav-jain-784176173/",
     },
