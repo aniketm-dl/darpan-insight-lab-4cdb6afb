@@ -1,6 +1,6 @@
 import aniketGudadheImg from "@/assets/aniket-gudadhe.png";
 import aniketMishraImg from "@/assets/aniket-mishra.png";
-import adityaMishraAsset from "@/assets/aditya-mishra.jpeg.asset.json";
+import adityaMishraAsset from "@/assets/aditya-suit.png.asset.json";
 
 const LinkedInIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
