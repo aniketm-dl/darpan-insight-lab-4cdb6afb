@@ -1,6 +1,6 @@
 import aniketGudadheImg from "@/assets/aniket-gudadhe.png";
 import aniketMishraImg from "@/assets/aniket-mishra.png";
-import manavJainImg from "@/assets/manav-jain.png";
+import adityaMishraAsset from "@/assets/aditya-mishra.jpeg.asset.json";
 
 const LinkedInIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -31,7 +31,7 @@ const Founders = () => {
       role: "Research Analyst",
       companies: ["Wells Fargo"],
       education: "IIM Mumbai, NIT Bhopal",
-      image: manavJainImg,
+      image: adityaMishraAsset.url,
       linkedin: "https://www.linkedin.com/in/aditya-niranjan-mishra/",
     },
   ];
