@@ -25,7 +25,7 @@ const Founders = () => {
       linkedin: "https://www.linkedin.com/in/aniket-niranjan-mishra-1203/",
     },
     {
-      name: "Manav Jain",
+      name: "Aditya Niranjan Mishra",
       companies: ["Google", "WinZO Games", "Rupifi"],
       education: "IIM Ahmedabad, BITS Pilani",
       image: manavJainImg,
