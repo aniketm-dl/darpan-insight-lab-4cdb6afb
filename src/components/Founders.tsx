@@ -28,7 +28,7 @@ const Founders = () => {
     },
     {
       name: "Aditya Niranjan Mishra",
-      role: "Research Analyst",
+      role: "Researcher",
       companies: ["Wells Fargo"],
       education: "IIM Mumbai, NIT Bhopal",
       image: adityaMishraAsset.url,
