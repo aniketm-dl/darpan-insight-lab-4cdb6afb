@@ -32,7 +32,7 @@ const Founders = () => {
       companies: ["Wells Fargo"],
       education: "IIM Mumbai, NIT Bhopal",
       image: manavJainImg,
-      linkedin: "https://www.linkedin.com/in/manav-jain-784176173/",
+      linkedin: "https://www.linkedin.com/in/aditya-niranjan-mishra/",
     },
   ];
 
