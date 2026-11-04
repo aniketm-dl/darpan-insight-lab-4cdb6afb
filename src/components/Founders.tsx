@@ -12,6 +12,7 @@ const Founders = () => {
   const founders = [
     {
       name: "Aniket Gudadhe",
+      role: "Co-founder",
       companies: ["Oracle", "Amazon"],
       education: "IIM Ahmedabad, IIT Guwahati",
       image: aniketGudadheImg,
@@ -19,6 +20,7 @@ const Founders = () => {
     },
     {
       name: "Aniket Niranjan Mishra",
+      role: "Co-founder",
       companies: ["American Express", "Citi Bank", "MyShubhLife"],
       education: "IIM Ahmedabad, IIT Kharagpur",
       image: aniketMishraImg,
@@ -26,6 +28,7 @@ const Founders = () => {
     },
     {
       name: "Aditya Niranjan Mishra",
+      role: "Research Analyst",
       companies: ["Google", "WinZO Games", "Rupifi"],
       education: "IIM Ahmedabad, BITS Pilani",
       image: manavJainImg,
@@ -137,7 +140,7 @@ const Founders = () => {
               <h3 style={{ fontSize: 17, fontWeight: 600, color: "#F5F5F5", marginBottom: 4 }}>
                 {founder.name}
               </h3>
-              <p style={{ fontSize: 12, color: "#B6E52A", fontWeight: 600, letterSpacing: 0.5, marginBottom: 16 }}>Co-founder</p>
+              <p style={{ fontSize: 12, color: "#B6E52A", fontWeight: 600, letterSpacing: 0.5, marginBottom: 16 }}>{founder.role}</p>
 
               {/* Divider */}
               <div style={{ width: 32, height: 1, background: "#2A2A2A", margin: "0 auto 16px" }} />
